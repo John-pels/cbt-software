@@ -1,0 +1,34 @@
+body{
+	background: black;
+}
+h1{
+	color: #eee;
+	font-weight: bold;
+	font-size: 50px;
+}
+h3,h4{
+	color: #eee;
+}
+.custom{
+    background: white;
+    min-height: 500px;
+    border-radius: 20px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.custom img{
+	margin-bottom: 10px;
+	margin-left: 10px;
+}
+.custom2{
+    background: white;
+    min-height: 250px;
+    border-radius: 20px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.draggable{
+	display: inline;
+	float: left;
+}
+

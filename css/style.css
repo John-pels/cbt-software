@@ -1,0 +1,58 @@
+* {
+  box-sizing: border-box; }
+
+/*@import url('https://fonts.googleapis.com/css?family=Abel');*/
+body.index_body {
+  font: 15px;
+  /*color: white;*/
+  background-color: #fff; }
+
+h1 {
+  font-family: 'Abel', sans-serif !important; }
+
+.custom {
+  margin: 15px; }
+
+.card {
+  /*border: 1px solid #C16C86;*/
+  font-family: 'Montserrat', sans-serif !important; }
+
+.btn-grey {
+  background-color: #3C5060;
+  color: white;
+  width: 100%; }
+
+.btn-grey:hover {
+  background-color: light(#3C5060, 40%); }
+
+.text-underline {
+  text-decoration: underline;
+  color: black; }
+
+.mt-5 > li {
+  font-size: 1.5em;
+  font-family: 'Raleway', sans-serif;
+  font-weight: lighter;
+  color: #000;
+  margin-bottom: .5em; }
+
+.card-footer-bold {
+  font-weight: bold;
+  line-height: 2.5em; }
+
+.card-title {
+  text-transform: uppercase;
+  color: inherit; }
+
+.display-5 {
+  font-size: 30px; }
+
+.card-header {
+  border: none !important;
+  box-shadow: 0 1px 15px 0 rgba(86, 61, 124, 0.32); }
+
+.card-title-bold {
+  font-weight: bold !important;
+  font-size: 25px; }
+
+/*# sourceMappingURL=style.css.map */
