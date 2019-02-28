@@ -4,7 +4,9 @@
 <div id="loop">
         <div class="list-group">
                 <div class="card">
-                    <div class="card-header display-5">SUBJECT / ENGLISH <img src="images/Opi51c74d0125fd4.png" alt="steve jobs" class="img-thumbnail float-right rounded-circle" width="50" height="100"></div>
+                    <div class="card-header display-5">SUBJECT / ENGLISH 
+                    <i class="fa fa-clock-o"></i> <span class="countdown">1:00:00</span>
+                    <img src="images/Opi51c74d0125fd4.png" alt="steve jobs" class="img-thumbnail float-right rounded-circle" width="50" height="100"> </div>
                     
                     <div class="card-body">
                         <div class="card-title card-title-bold">Question 1 <br>- What is the name of the Current Nigerian President?</div>
