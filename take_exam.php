@@ -162,7 +162,7 @@ icon: "success",
 
 
 }
-// End of sweet alert function for end exam
+// End of sweet alert function for end examination
 
 
 </script>
