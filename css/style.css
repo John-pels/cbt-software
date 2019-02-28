@@ -49,10 +49,32 @@ h1 {
 
 .card-header {
   border: none !important;
-  box-shadow: 0 1px 15px 0 rgba(86, 61, 124, 0.32); }
+  box-shadow: 0 1px 15px 0 rgba(19, 61, 124, 0.32); }
 
 .card-title-bold {
   font-weight: bold !important;
   font-size: 25px; }
+
+.paginate {
+  display: flex;
+  margin-top: 10px; }
+  .paginate li {
+    list-style-type: none; }
+    .paginate li .previous, .paginate li .next {
+      color: dodgerblue;
+      list-style-type: none;
+      line-height: 50px;
+      box-shadow: 0 2px 15px 5px rgba(86, 61, 124, 0.32);
+      padding: 15px;
+      width: 200px;
+      margin: 30px;
+      transition: 100ms all ease-in-out;
+      border-radius: 50%; }
+      .paginate li .previous:hover, .paginate li .next:hover {
+        cursor: pointer;
+        background-color: dodgerblue;
+        color: #fff; }
+    .paginate li .previous {
+      margin-left: 0; }
 
 /*# sourceMappingURL=style.css.map */

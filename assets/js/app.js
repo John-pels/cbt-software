@@ -12,7 +12,7 @@ for(let i = 2; i <= totalPages; i++){
     $(".pagination").append("<li class='page-item current-page'><a class='page-link' href='javascript:void(0)'>"+ i +"</a></li>");
 
 }
-$(".pagination").append("<li class='page-item' id='next-page'><a class='page-link' href='javascript:void(0)'>Next</a></li>");
+$(".pagination").append("<li class='page-item' id='next-page'></li>");
 
 // Adding functionalities to the pages on click
 $(".pagination li.current-page").on("click", function() {
@@ -79,6 +79,50 @@ $("#previous-page").on("click", function (){
     }
 });
 //    End of previouspage buton functionalities
+
+//Adding functionalities to the next and previous button in the container
+//The next button
+$(".next").on("click", function (){
+    let currentPage = $(".pagination li.active").index();
+    if(currentPage === totalPages){
+        return false;
+    } else{
+        currentPage++; //Increment the pages by one when it is clicked
+        $(".pagination li").removeClass("active");
+        $("#loop .list-group").hide();
+
+        const grandTotal = limitPerPage * currentPage;
+       for(let i = grandTotal - limitPerPage; i < grandTotal; i++){
+           $("#loop .list-group:eq(" + i + ")").show();
+       }
+       $(".pagination li.current-page:eq(" + (currentPage - 1) +")").addClass("active");
+
+    }
+});
+//End of the next button
+    // The Previous button
+    $(".previous").on("click", function (){
+        let currentPage = $(".pagination li.active").index();
+        if(currentPage === 1){
+            return false;
+        } else{
+            currentPage--; //Increment the pages by one when it is clicked
+            $(".pagination li").removeClass("active");
+            $("#loop .list-group").hide();
+    
+            const grandTotal = limitPerPage * currentPage;
+           for(let i = grandTotal - limitPerPage; i < grandTotal; i++){
+               $("#loop .list-group:eq(" + i + ")").show();
+           }
+           $(".pagination li.current-page:eq(" + (currentPage - 1) +")").addClass("active");
+    
+        }
+    });
+
+    //End of the previous button
+
+
+//End of adding functionalities to the container
 
 $("#list-subject").hide().show(1000);
 $("#index_proceed").on("click", function(){

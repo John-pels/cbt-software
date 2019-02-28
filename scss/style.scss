@@ -56,9 +56,45 @@ h1	{
 }
 .card-header{
 	border: none !important;
-	box-shadow:0 1px 15px 0 rgba(86,61,124,0.32);
+	box-shadow:0 1px 15px 0 rgba(19,61,124,0.32);
 }
 .card-title-bold{
 	font-weight: bold !important;
 	font-size: 25px;
+}
+.paginate{
+	// width: 100px;
+	// height: 50px;
+	display: flex;
+	// border:1px solid #eee;
+	margin-top: 10px;
+	
+	li{
+		list-style-type: none;
+
+		.previous,.next{
+			color:dodgerblue;
+			list-style-type: none;
+			line-height: 50px;
+			// border: 1px solid rgb(107, 90, 90);
+			box-shadow: 0 2px 15px 5px rgba(86,61,124,0.32);
+			padding: 15px;
+			width: 200px;
+			margin: 30px;
+			transition: 100ms all ease-in-out;
+			border-radius: 50%;
+			&:hover{
+				cursor: pointer;
+				background-color: dodgerblue;
+				color:#fff;
+			}
+		}
+		.previous{
+			margin-left: 0;
+		}
+		
+		}
+		
+	
+	
 }
