@@ -5,7 +5,7 @@
         <div class="list-group">
                 <div class="card">
                     <div class="card-header display-5">SUBJECT / ENGLISH 
-                    <i class="fa fa-clock-o"></i> <span class="countdown">1:00:00</span>
+                    <i class="fa fa-clock-o"></i> <span class="countdown">10</span>
                     <img src="images/Opi51c74d0125fd4.png" alt="steve jobs" class="img-thumbnail float-right rounded-circle" width="50" height="100"> </div>
                     
                     <div class="card-body">
@@ -25,14 +25,13 @@
                             </div>
                             <nav aria-label="Page navigation example">
                                 <ul class="paginate">
-                                    <i class="tooltip">Hello</i>
                                     <li title="Click to go to the previous page"><span class="previous"> <i class="fa fa-arrow-left"></i></span></li>
                                     <li title="Click to go to the next page"><span class="next"><i class="fa fa-arrow-right"></i></span></li>
                                 </ul>
                                 </nav>
                     </div>
                     <div class="card-footer">
-                        <label class="badge badge-info p-3" >TOTAL: <span class="counter">40</span> QUESTIONS</label>
+                        <label class="badge badge-info p-3" >1 of 40 QUESTIONS</label>
                         <button type="button" onClick="ask()" class="btn btn-danger float-right" >END EXAM</button>
                     </div>
                     
@@ -42,76 +41,7 @@
             </div>
             
 
-            <div class="list-group">
-                <div class="card">
-                    <div class="card-header display-5">SUBJECT / ENGLISH <img src="images/Opi51c74d0125fd4.png" alt="steve jobs" class="img-thumbnail float-right rounded-circle" width="50" height="100"></div>
-                    
-                    <div class="card-body">
-                        <div class="card-title card-title-bold">Question 1 <br>- What is the name of the Current Nigerian President?</div>
-                        <form action="">
-                            <div class="form-group">
-                              A  <input type="checkbox" name="firstanswer" id="firstanswer" class="ans"> <label for="firstanswer">President Yaradua</label>
-                            </div>
-                            <div class="form-group">
-                              B <input type="checkbox" name="secondanswer" id="secondanswer" class="ans" > <label for="secondanswer">President Muhammadu Buhari</label>
-                            </div>
-                            <div class="form-group">
-                             C  <input type="checkbox" name="thirdanswer" id="thirdanswer" class="ans" > <label for="thirdanswer">President Goodluck Johnathan</label>
-                            </div>
-                            <div class="form-group">
-                             D   <input type="checkbox" name="fourthanswer" id="fourthanswer" class="ans" > <label for="fourthanswer">President Olusegun Obasanjo</label>
-                            </div>
-                            <nav aria-label="Page navigation example">
-                                <ul class="paginate">
-                                    <li><span class="previous"> <i class="fa fa-arrow-left"></i></span></li>
-                                    <li><span class="next"><i class="fa fa-arrow-right"></i></span></li>
-                                </ul>
-                                </nav>
-                    </div>
-                    <div class="card-footer">
-                    <label class="badge badge-info p-3" >TOTAL: <span class="counter">40</span> QUESTIONS</label>
-                        <button type="button" onClick="ask()" class="btn btn-danger float-right" >END EXAM</button>
-                    </div>
-                   
-                </div>
-               
-            </div>
-            
-
-            <div class="list-group">
-                <div class="card">
-                    <div class="card-header display-5">SUBJECT / ENGLISH <img src="images/Opi51c74d0125fd4.png" alt="steve jobs" class="img-thumbnail float-right rounded-circle" width="50" height="100"></div>
-                    
-                    <div class="card-body">
-                        <div class="card-title card-title-bold">Question 1 <br>- What is the name of the Current Nigerian President?</div>
-                        <form action="">
-                            <div class="form-group">
-                              A  <input type="checkbox" name="firstanswer" id="firstanswer" class="ans"> <label for="firstanswer">President Yaradua</label>
-                            </div>
-                            <div class="form-group">
-                              B <input type="checkbox" name="secondanswer" id="secondanswer" class="ans" > <label for="secondanswer">President Muhammadu Buhari</label>
-                            </div>
-                            <div class="form-group">
-                             C  <input type="checkbox" name="thirdanswer" id="thirdanswer" class="ans" > <label for="thirdanswer">President Goodluck Johnathan</label>
-                            </div>
-                            <div class="form-group">
-                             D   <input type="checkbox" name="fourthanswer" id="fourthanswer" class="ans" > <label for="fourthanswer">President Olusegun Obasanjo</label>
-                            </div>
-                            <nav aria-label="Page navigation example">
-                                <ul class="paginate">
-                                    <li><span class="previous"> <i class="fa fa-arrow-left"></i></span></li>
-                                    <li><span class="next"><i class="fa fa-arrow-right"></i></span></li>
-                                </ul>
-                                </nav>
-                    </div>
-                    <div class="card-footer">
-                    <label class="badge badge-info p-3" >TOTAL: <span class="counter">40</span> QUESTIONS</label>
-                        <button type="button" onClick="ask()" class="btn btn-danger float-right" >END EXAM</button>
-                    </div>
-                   
-                </div>
-               
-            </div>
+           
             
 
                 

@@ -160,3 +160,26 @@ $("#index_proceed").on("click", function(){
         $("#firstanswer").prop("checked", false);
     });
  });
+
+ //End of code
+
+ // Working with the countdown timer
+        let gettime = $(".countdown").text();
+        const counter = setInterval(timer, 1000);
+        // alert(gettime);
+        function timer(){
+            
+            gettime = gettime - 1;
+            console.log(gettime);
+            if(gettime == -1){
+                
+                // return window.location="index.php";
+                clearInterval(counter);
+            }
+        }
+        
+    
+
+
+
+ //End of the countdown timer
