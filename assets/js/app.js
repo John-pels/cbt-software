@@ -166,7 +166,7 @@ $("#index_proceed").on("click", function(){
  // Working with the countdown timer
         let gettime = $(".countdown").text();
         const counter = setInterval(timer, 1000);
-        // alert(gettime);
+        
         function timer(){
             
             gettime = gettime - 1;
