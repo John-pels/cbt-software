@@ -1,4 +1,6 @@
+<?php require ('includes/session.php'); ?>
 <?php include ('includes/header.php'); ?>
+
 <body class="index_body">
 	<div class="container ">
 		<div class="row">
@@ -9,7 +11,7 @@
 						<div class="card-title text-center text-muted badge badge-light" style="width: 100%;"><h4>STEVE JOBS</h4></div>
 							<p>Phone No: +1118e9</p>
 							<p>Reg No: 71hgfbdg</p>
-							<p>Dept: Compt.Sci</p>
+							<p>Dept: Computer Science</p>
 							<p>Level: 1000L</p>
 						
 					</div>

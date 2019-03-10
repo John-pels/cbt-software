@@ -1,3 +1,4 @@
+<?php require ('includes/session.php'); ?>
 <?php include ('includes/header.php'); ?>
 
 <div class="container">

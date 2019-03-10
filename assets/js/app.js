@@ -163,23 +163,16 @@ $("#index_proceed").on("click", function(){
 
  //End of code
 
- // Working with the countdown timer
-        let gettime = $(".countdown").text();
-        const counter = setInterval(timer, 1000);
-        
-        function timer(){
+    //User Login Handler
+        $("button#login").on('click', () => {
+            const loginput = $("#regNumber").val();
+            $("button#login").html('please wait <img src="assets/load.gif">');
+            setTimeout(() => {
+                if(loginput === ""){
+                    $("#display_error").append('<div class="alert alert-danger" >Invalid login details please another one</div>');
+                }
+                $("button#login").html('LOGIN');
+            }, 2000);
             
-            gettime = gettime - 1;
-            console.log(gettime);
-            if(gettime == -1){
-                
-                // return window.location="index.php";
-                clearInterval(counter);
-            }
-        }
-        
-    
-
-
-
- //End of the countdown timer
+        })
+    //End of user login handler
