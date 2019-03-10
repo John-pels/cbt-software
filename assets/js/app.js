@@ -129,8 +129,8 @@ $("#index_proceed").on("click", function(){
     $(".hide").fadeOut();
     $(".take-in").append("<h2 class='display-4'><img src='assets/js/load.gif' alt='Loader' style='width:50px;'>Please Wait, While Subjects are being loaded</h2>");
     setTimeout(()=>{
-        $(".take-in").load("subjects.php");
-    },500);
+        window.location="subjects.php";
+    },1500);
     
 }); 
 
