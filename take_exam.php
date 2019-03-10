@@ -31,7 +31,7 @@
                                 </nav>
                     </div>
                     <div class="card-footer">
-                        <label class="badge badge-info p-3" >1 of 40 QUESTIONS</label>
+                        <label class="badge badge-info p-3" >40 QUESTIONS</label>
                         <button type="button" onClick="ask()" class="btn btn-danger float-right" >END EXAM</button>
                     </div>
                     
