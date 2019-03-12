@@ -1,12 +1,16 @@
-
+<?php session_start(); ?>
 <?php include ('includes/header.php'); ?>
-
+<?php if (isset($_SESSION['id'])) {
+        header("location: instruction.php");
+} ?>
+<?php include_once ('includes/display_error.php'); ?>
 <title>Exam Login page</title>
 <link rel="stylesheet" href="css/indexstyle.css">
 <body>
         
     <div class="container-page">
-    <div id="display_error"></div>
+    <?php include ('includes/script.php'); ?>
+   
                     <div class="container">
                         <div class="row">
                         <div class="col-lg-6 offset-lg-5 col-md-6  offset-md-4 col-sm-4 offset-sm-3">
@@ -25,10 +29,10 @@
                                         
                                         <center><h3>Login to Examination Portal</h3> </center>
                                         <div class="form-input">
-                                        <input type="text" name="regNumber"  id="regNumber"  placeholder="e-Mail Address/Registration/Matric Number">
+                                        <input type="text" name="regNumber"  id="regNumber"  class="form-control" placeholder="e-Mail Address/Registration/Matric Number" required="required">
                                         </div>
                                         <center>
-                                        <button type="button" class="btn btn-success btn-submit" id="login">LOGIN</button>
+                                        <button type="submit" name="login" class="btn btn-success btn-submit" id="login">LOGIN</button>
                                         </center>
                                         </form>
                                         </div>      
@@ -37,8 +41,8 @@
                 <div class="row">
                         <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-sm-11 col-xs-12">
                         
-                          <p> <?php echo date("Y");?> &copy;Copyright Trisight Technology</p> 
-                                            </div>                    
+                          <center><p> <?php echo date("Y");?> &copy;Copyright Trisight Technology</p></center>
+                        </div>                    
                 </div>
                                                          
                         </div>

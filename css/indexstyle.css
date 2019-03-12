@@ -8,8 +8,14 @@ body#indexpage {
 	height: 100%;
 	margin: 0;
 	padding: 0;
+	
 }
-
+.positioning{
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	margin:auto;
+}
 .container-page {
 	width: 100%;
 	height: 100vh;
@@ -17,6 +23,8 @@ body#indexpage {
 	animation-iteration-count: infinite;
 	animation-duration: 20s;
 	transition: 1s;
+	position:  absolute;
+	z-index: -1000;
 }
 
 @keyframes change {

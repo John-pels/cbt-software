@@ -163,16 +163,13 @@ $("#index_proceed").on("click", function(){
 
  //End of code
 
-    //User Login Handler
-        $("button#login").on('click', () => {
-            const loginput = $("#regNumber").val();
-            $("button#login").html('please wait <img src="assets/load.gif">');
-            setTimeout(() => {
-                if(loginput === ""){
-                    $("#display_error").append('<div class="alert alert-danger" >Invalid login details please another one</div>');
-                }
-                $("button#login").html('LOGIN');
-            }, 2000);
-            
-        })
-    //End of user login handler
+   // Working with the logout button click
+    $("#logout").click(function ()  {
+        $(this).html('LOGGING OUT...');
+        const delay = 3000;
+        setTimeout(() => {
+            window.location = "./includes/logout.php";
+        }, delay);
+    });
+
+   //End of logout button click

@@ -16,7 +16,7 @@
 						
 					</div>
 					<div class="card-footer">
-						<button type="submit" class="btn btn-grey"> LOG OUT   <i class="fa fa-sign-out"></i></button>
+						<button type="button" class="btn btn-grey" id="logout"> LOG OUT   <i class="fa fa-sign-out"></i></button>
 					</div>
 				</div>
 			</div>
