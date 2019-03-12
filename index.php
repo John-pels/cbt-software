@@ -28,9 +28,12 @@
                                         <br/>
                                         
                                         <center><h3>Login to Examination Portal</h3> </center>
-                                        <div class="form-input">
-                                        <input type="text" name="regNumber"  id="regNumber"  class="form-control" placeholder="e-Mail Address/Registration/Matric Number" required="required">
-                                        </div>
+                                                                <div class="input-group mb-3 mt-3" >
+                        <div class="input-group-prepend" >
+                        <span class="input-group-text" id="basic-addon1" style="background-color: #94CDC5;"><i class="fa fa-user" style="color: #8A82A8;"></i></span>
+                        </div>
+                        <input type="text" name="regNumber"  id="regNumber"  class="form-control" placeholder="e-Mail Address/Registration/Matric Number" required="required">
+                        </div>
                                         <center>
                                         <button type="submit" name="login" class="btn btn-success btn-submit" id="login">LOGIN</button>
                                         </center>
