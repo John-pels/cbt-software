@@ -1,1 +1,0 @@
-Examination System - This is an app for students in any type of institution to take examination. This is the newly introduced system rather than using a manual system which is paper based

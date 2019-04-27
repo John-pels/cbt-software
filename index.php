@@ -16,7 +16,7 @@
                         <div class="col-lg-6 offset-lg-5 col-md-6  offset-md-4 col-sm-4 offset-sm-3">
                                     <div class="content-header">
                                             
-                                                     <img src="images/tri_icon-02.png" alt="Brand" class="img-fluid" >
+                                                     <img src="images/tri_icon-02.png" alt="Brand" class="img-fluid" width="150" height="200" >
                                 
                                     </div>
                                     </div> 
