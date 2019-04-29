@@ -6,7 +6,7 @@
 <div id="loop">
         <div class="list-group">
                 <div class="card">
-                    <div class="card-header display-5">SUBJECT: ENGLISH LANGAGE
+                    <div class="card-header display-5">SUBJECT: ENGLISH LANGUAGE
 
                      <span id="countdown" class="float-right" style="color: green;">
                                  
