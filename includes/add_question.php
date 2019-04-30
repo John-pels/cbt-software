@@ -19,13 +19,11 @@ if (isset($_POST['btn-submit'])) {
             if($query)
              {
                    	printf ('<script>alert.render("Question Uploaded!");
- 					window.location = "../admin/question_portal.php";
  					</script>');
   }
   else
   {
     prinf ('<script>alert.render("Error in Uploading!");
- 					window.location = "../admin/question_portal.php";
  					</script>');
   }
 }
@@ -45,19 +43,16 @@ if(isset($_POST['addAdmin'])){
       }
           if($existingUser === $username){
             echo ('<script>alert.render("Username already Exist!");
-            window.location = "../admin/question_portal.php";
             </script>');
           }
           else {
             $insert_data = mysqli_query($con, "INSERT INTO admin (Username, Password) VALUES ('$username','$password')") or die(mysqli_error($con));
           if($insert_data){
-            echo ('<script> alert.render("An admin added!");
-            window.location = "../admin/question_portal.php";
+            echo ('<script> alert.render("New admin added!");
             </script>');
           }
           else {
             echo ('<script> alert.render("Something went wrong, try again!");
-            window.location = "../admin/question_portal.php";
             </script>');
           }
 }
@@ -83,4 +78,25 @@ if(isset($_POST['addAdmin'])){
                  $errorMessage =  "<div class='alert alert-danger'>Invalid Username or Password</div>";
                 }
             }
+    ?>
+
+    <!-- For Enabling/Disabling Subjects -->
+    <?php
+    if(isset($_POST['updateStatus'])){
+      $classGroup = $_POST['classGroup'];
+      $subjectStatus = $_POST['subjectStatus'];
+      $status = $_POST['status'];
+
+        $query = mysqli_query($con,"UPDATE subject SET status='$status' WHERE class_id = '$classGroup' && sub_id = '$subjectStatus'");
+        if($query)
+        {
+        echo ('<script> alert.render("Status Updated Successfully!");
+        </script>');
+      }
+      else 
+      {
+        echo ('<script> alert.render("Something went wrong, try again!");
+        </script>');
+      }
+    }
     ?>

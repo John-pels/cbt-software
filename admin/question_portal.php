@@ -34,6 +34,7 @@ include '../includes/add_question.php';
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="#">Questions Management Portal</a></li>
 				<li><a href="javascript:void(0);"  data-target ="#addAdmin" data-toggle ="modal">Add Admin <i class="fa fa-user"></i></a></li>
+				<li><a href="javascript:void(0);"  data-target ="#updateStatus" data-toggle ="modal">Subject Status <i class="fa fa-edit"></i></a></li>
 				<li><a href="javascript:void(0);"  onclick="ask();">Logout <i class="fa fa-sign-out"></i></a></li>
 			</ul>
 			</div>
@@ -41,8 +42,8 @@ include '../includes/add_question.php';
 			</div>
         </nav>
         <div class="container-fluid">
-            <div class="jumbotron" style="height: 130px !important; color:#449D44;">
-                <h1 style="font-size: 4rem;">Welcome! <?php echo $_SESSION['username'];?></h1>
+            <div class="jumbotron" style="height: 130px !important; color:#449D44; position:sticky;top:0;">
+                <h1 style="font-size: 4rem; font-weight:700;">Welcome! <?php echo $_SESSION['username'];?></h1>
             </div>
             <div class="row">
                 <div class="col-lg-5 col-md-4 col-sm-12 col-xs-12">
@@ -153,6 +154,19 @@ icon: "success",
         }
         
         </script>
+          <script>
+        function subjectAction(val){
+            $.ajax({
+                type: "POST",
+                url: "../includes/subjects.php",
+                data: 'subjectStatus='+val,
+                success: function(data){
+                    $("#subjectStatus").html(data);
+                }
+            });
+        }
+        
+        </script>
            <script src="../assets/js/jquery-3.2.1.min.js"></script>
         <script src="../assets/sweetalert.min.js"></script>
     <script src="../dist/js/bootstrap.min.js"></script>
@@ -180,6 +194,62 @@ icon: "success",
         </div>
         
         <button type="submit" class="btn btn-success" name="addAdmin" style="width: 100%;">Add</button>
+</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--For Enabling/Disabling of Subjects-->
+<div class="modal fade" id="updateStatus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="background: #243665; color:#FFF;">
+        <h5 class="modal-title" id="exampleModalLabel" style="font-size:25px; line-height:15px;">Enable/Disable Subject(s)</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color:#FFF;">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form method="post" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="exampleInputname">Class</label>
+          <select name="classGroup" id="classGroup" class="form-control" style="margin-bottom:10px;" onchange="subjectAction(this.value)" required>
+                                <option value="select" >Select  Class</option>
+                                <?php
+                                    $query = mysqli_query($con, "SELECT * FROM class");
+                                    $count = mysqli_num_rows($query);
+                                     for ($i = 1; $i <= $count; $i++)
+                                     {
+                                         $fetch = mysqli_fetch_array($query);
+                                         $countid = $fetch['id'];
+                                         ?>
+                                         <option value="<?php echo $countid; ?>"> <?php echo $fetch['class'];?></option>
+                                         <?php
+                                     }
+                                ?>
+                            </select>  
+		</div>
+		   <div class="form-group">
+          <label for="exampleInputname">Subject(s)</label>
+          <select name="subjectStatus" id="subjectStatus" class="form-control" style="margin-bottom:10px; margin-top:10px;" required>
+                                <option value="select" >Select  Subject</option>
+                            </select>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputname">Action</label>
+          <select name="status" id="status" class="form-control" style="margin-bottom:10px; margin-top:10px;" required>
+                                <option selected="selected">Select  Action</option>
+                                <option value="Enabled" >Enabled</option>
+                                <option value="Disabled" >Disabled</option>
+                            </select>
+        </div>
+        
+        <button type="submit" class="btn btn-success" name="updateStatus" style="width: 100%;">Update Status</button>
 </form>
       </div>
       <div class="modal-footer">
