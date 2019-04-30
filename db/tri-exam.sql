@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 20, 2019 at 04:02 AM
+-- Generation Time: Apr 30, 2019 at 04:00 PM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `online_exam`
+-- Database: `tri-exam`
 --
 
 -- --------------------------------------------------------
@@ -98,6 +98,32 @@ INSERT INTO `question` (`id`, `class_id`, `subject_id`, `question_desc`, `option
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `register`
+--
+
+CREATE TABLE `register` (
+  `reg_id` int(11) NOT NULL,
+  `first` varchar(50) NOT NULL,
+  `middle` varchar(50) NOT NULL,
+  `last` varchar(50) NOT NULL,
+  `phone` varchar(30) NOT NULL,
+  `image` varchar(250) NOT NULL,
+  `reg_no` varchar(50) NOT NULL,
+  `level` varchar(20) NOT NULL,
+  `dept` varchar(50) NOT NULL,
+  `reg_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `register`
+--
+
+INSERT INTO `register` (`reg_id`, `first`, `middle`, `last`, `phone`, `image`, `reg_no`, `level`, `dept`, `reg_date`) VALUES
+(1, 'olajide', 'tomiwa', 'joshua', '08136023230', 'uploads/IMG-20190208-WA0023.jpg', 'tri8982726', '500L', 'Computer Science', '2019-03-09 20:09:07');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `subject`
 --
 
@@ -105,48 +131,69 @@ CREATE TABLE `subject` (
   `sub_id` int(255) NOT NULL,
   `class_id` int(255) NOT NULL,
   `sub_name` varchar(255) NOT NULL,
-  `sub_regdate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `sub_regdate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `status` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `subject`
 --
 
-INSERT INTO `subject` (`sub_id`, `class_id`, `sub_name`, `sub_regdate`) VALUES
-(1, 1, 'Physics', '2018-11-16 00:46:35'),
-(2, 1, 'Chemistry', '2018-11-16 00:46:43'),
-(3, 1, 'Biology', '2018-11-16 00:46:49'),
-(4, 1, 'Mathematics', '2018-11-16 00:46:57'),
-(5, 1, 'Further Mathematics', '2018-11-16 00:47:12'),
-(6, 1, 'Use of English ', '2018-11-16 00:51:29'),
-(7, 1, 'Agricultural Science', '2018-11-16 00:47:34'),
-(8, 1, 'Geography', '2018-11-16 00:47:42'),
-(9, 1, 'Economics', '2018-11-16 00:47:51'),
-(10, 2, 'Government', '2018-11-16 00:48:03'),
-(11, 2, 'I.R.S', '2019-03-12 14:47:07'),
-(12, 2, 'C.R.S', '2019-03-12 14:46:53'),
-(13, 2, 'Literature in English', '2018-11-16 00:49:09'),
-(14, 2, 'Use of English', '2018-11-16 00:49:37'),
-(15, 3, 'Mathematics', '2018-11-16 00:49:53'),
-(16, 3, 'Use of English', '2018-11-16 00:50:12'),
-(17, 3, 'Account', '2018-11-16 00:50:27'),
-(18, 3, 'Commerce', '2018-11-16 00:50:43'),
-(19, 3, 'Government', '2018-11-16 00:50:54'),
-(20, 3, 'Economics', '2018-11-16 00:51:06'),
-(21, 2, 'Mathematics', '2019-03-12 12:20:56'),
-(22, 2, 'Economics', '2019-03-12 12:22:04'),
-(23, 1, 'Computer Studies', '2019-03-12 14:34:49'),
-(24, 2, 'Computer Studies', '2019-03-12 14:34:49'),
-(25, 3, 'Computer Studies', '2019-03-12 14:35:55'),
-(26, 2, 'French Language', '2019-03-12 14:37:32'),
-(27, 2, 'History', '2019-03-12 14:37:44'),
-(28, 2, 'Fine and Applied Arts', '2019-03-12 14:44:17'),
-(29, 2, 'Yoruba Language', '2019-03-12 14:44:17'),
-(30, 1, 'Yoruba language', '2019-03-12 14:44:17'),
-(31, 3, 'Yoruba Language', '2019-03-12 14:44:17'),
-(32, 1, 'Igbo Language', '2019-03-12 14:44:17'),
-(33, 2, 'Igbo Language', '2019-03-12 14:44:59'),
-(34, 3, 'Igbo Language', '2019-03-12 14:45:30');
+INSERT INTO `subject` (`sub_id`, `class_id`, `sub_name`, `sub_regdate`, `status`) VALUES
+(1, 1, 'Physics', '2019-04-29 19:44:47', 'Disabled'),
+(2, 1, 'Chemistry', '2019-04-29 19:51:48', 'Disabled'),
+(3, 1, 'Biology', '2019-04-29 19:29:46', 'Disabled'),
+(4, 1, 'Mathematics', '2019-04-29 19:29:46', 'Disabled'),
+(5, 1, 'Further Mathematics', '2019-04-30 05:52:55', 'Disabled'),
+(6, 1, 'Use of English ', '2019-04-29 19:29:46', 'Disabled'),
+(7, 1, 'Agricultural Science', '2019-04-29 19:29:46', 'Disabled'),
+(8, 1, 'Geography', '2019-04-29 19:29:46', 'Disabled'),
+(9, 1, 'Economics', '2019-04-29 19:29:46', 'Disabled'),
+(10, 2, 'Government', '2019-04-29 19:48:35', 'Disabled'),
+(11, 2, 'I.R.S', '2019-04-29 19:29:46', 'Disabled'),
+(12, 2, 'C.R.S', '2019-04-29 19:29:46', 'Disabled'),
+(13, 2, 'Literature in English', '2019-04-29 19:29:46', 'Disabled'),
+(14, 2, 'Use of English', '2019-04-29 19:29:46', 'Disabled'),
+(15, 3, 'Mathematics', '2019-04-29 19:29:46', 'Disabled'),
+(16, 3, 'Use of English', '2019-04-29 19:29:46', 'Disabled'),
+(17, 3, 'Account', '2019-04-29 19:29:46', 'Disabled'),
+(18, 3, 'Commerce', '2019-04-29 19:29:46', 'Disabled'),
+(19, 3, 'Government', '2019-04-29 19:29:46', 'Disabled'),
+(20, 3, 'Economics', '2019-04-29 19:29:46', 'Disabled'),
+(21, 2, 'Mathematics', '2019-04-29 19:29:46', 'Disabled'),
+(22, 2, 'Economics', '2019-04-29 19:29:46', 'Disabled'),
+(23, 1, 'Computer Studies', '2019-04-29 19:29:46', 'Disabled'),
+(24, 2, 'Computer Studies', '2019-04-29 19:29:46', 'Disabled'),
+(25, 3, 'Computer Studies', '2019-04-29 19:29:46', 'Disabled'),
+(26, 2, 'French Language', '2019-04-29 19:29:46', 'Disabled'),
+(27, 2, 'History', '2019-04-29 19:29:46', 'Disabled'),
+(28, 2, 'Fine and Applied Arts', '2019-04-29 19:29:46', 'Disabled'),
+(29, 2, 'Yoruba Language', '2019-04-29 19:29:46', 'Disabled'),
+(30, 1, 'Yoruba language', '2019-04-29 19:29:46', 'Disabled'),
+(31, 3, 'Yoruba Language', '2019-04-29 19:29:46', 'Disabled'),
+(32, 1, 'Igbo Language', '2019-04-29 19:29:46', 'Disabled'),
+(33, 2, 'Igbo Language', '2019-04-29 19:29:46', 'Disabled'),
+(34, 3, 'Igbo Language', '2019-04-29 19:29:46', 'Disabled');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `timer`
+--
+
+CREATE TABLE `timer` (
+  `timer_id` int(11) NOT NULL,
+  `student_id` varchar(50) NOT NULL,
+  `timer` varchar(50) NOT NULL,
+  `duration` int(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `timer`
+--
+
+INSERT INTO `timer` (`timer_id`, `student_id`, `timer`, `duration`) VALUES
+(1, '1', '09:55:42', 0);
 
 --
 -- Indexes for dumped tables
@@ -171,10 +218,22 @@ ALTER TABLE `question`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `register`
+--
+ALTER TABLE `register`
+  ADD PRIMARY KEY (`reg_id`);
+
+--
 -- Indexes for table `subject`
 --
 ALTER TABLE `subject`
   ADD PRIMARY KEY (`sub_id`);
+
+--
+-- Indexes for table `timer`
+--
+ALTER TABLE `timer`
+  ADD PRIMARY KEY (`timer_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -196,10 +255,20 @@ ALTER TABLE `class`
 ALTER TABLE `question`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
+-- AUTO_INCREMENT for table `register`
+--
+ALTER TABLE `register`
+  MODIFY `reg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
 -- AUTO_INCREMENT for table `subject`
 --
 ALTER TABLE `subject`
   MODIFY `sub_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+--
+-- AUTO_INCREMENT for table `timer`
+--
+ALTER TABLE `timer`
+  MODIFY `timer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
