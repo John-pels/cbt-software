@@ -34,7 +34,7 @@
                         <input type="text" name="regNumber"  id="regNumber"  class="form-control" placeholder="e-Mail Address/Registration/Matric Number" required="required">
                         </div>
                                         <center>
-                                        <button type="submit" name="login" class="btn btn-success btn-submit" id="login" onclick = "userLogin(this.value)">LOGIN</button>
+                                        <button type="submit" name="login" class="btn btn-success btn-submit" id="login">LOGIN</button>
                                         </center>
                                         </form>
                                         </div>      

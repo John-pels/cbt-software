@@ -63,16 +63,16 @@
                     </div>
                     </div>
                     <div class="col-sm-3">
-                    <div class="card">
-                    <div class="card-body">
-                    <div class="card-title card-title-bold text-center">Candidate's Bio-Data</div>
-					<img src="images/Opi51c74d0125fd4.png" class="card-img-top img-thumbnail" alt="Steve Jobs" style="height:300px;"> 
-                    <div class="card-title  badge badge-light" style="width: 100%;"><h4> AJEIGBE JOHN OLUWASEYI</h4></div>
-							<p>Phone No.: +2348188974303</p>
-							<p>Reg. No.: 71hgfbdg</p>
-							<p>Department: Science </p>
-							<p>Class: 100L</p>
-						
+                    <div class="card m-3">
+                    <div class="card-body ">
+                    <div class="card-title card-title-light text-center">Candidate's Bio-Data</div>
+					<img src="images/Opi51c74d0125fd4.png" class="card-img-top img-thumbnail" alt="Steve Jobs" style="height:150px;width: 200px !important;"> 
+                    <div class="card-title   badge-light" style="color: green;"><h4> AJEIGBE JOHN O.</h4></div>
+							<p style="color: gray;">Phone No: <span  style="color: green; font-weight: bold; font-size: 0.8rem;">+2348188974303</span>   <br>
+							Reg. No: <span style="color: green; font-weight: bold; font-size: 0.8rem;">71hgfbdg</span>  <br>
+							Department: <span style="color: green; font-weight: bold; font-size: 0.8rem;">Science</span>  <br>
+							Class: <span style="color: green; font-weight: bold; font-size: 0.8rem;">100L</span>  <br>
+						      </p>
 					</div>                   
                     <button type="button" onClick="ask()" class="btn btn-danger float-right" >END EXAM</button>                                
                     </div>
