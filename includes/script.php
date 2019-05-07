@@ -1,12 +1,12 @@
 <?php 
 // session_start();
 include_once ('config.php');
+include_once ('functions.php');
     
-    if(isset($_POST['login'])){
+    // if(isset($_POST['login'])){
         $regNumber = mysqli_real_escape_string($con, addslashes($_POST['regNumber']));
         if (empty($regNumber)){
-            $_SESSION['msg'] = "Input cannot be left empty";
-            $_SESSION['msg_type'] = "danger";
+            output("empty");
 
         } else{
             $sql = "SELECT * FROM register WHERE reg_no='$regNumber'";
@@ -16,16 +16,16 @@ include_once ('config.php');
              $userid = $fetch['reg_id'];
                 if ($countrow == 1){
                     $_SESSION['id'] = $userid;
-                    header("location: ./instruction.php");
+                    // header("location: ./instruction.php");
+                    output(1);
         } else{
-            $_SESSION['msg'] = "Invalid Email, Reg Number or matric number";
-            $_SESSION['msg_type'] = "danger";
+            output(2);
             header("location: ./index.php");
         }
         }
 
         
-    }
+    // }
     
         
     

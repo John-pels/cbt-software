@@ -1,5 +1,6 @@
 <?php require ('includes/config.php'); ?>
 <?php require ('includes/session.php'); ?>
+<?php require ('includes/functions.php'); ?>
 <?php include ('includes/header.php'); ?>
 
 <div class="container-fluid">
