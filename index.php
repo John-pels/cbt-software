@@ -59,45 +59,5 @@
         <?php include ('includes/footer.php'); ?>
         </body>
 </html>
- <script>
-        $(document).ready(function(){
-        var emptyNotice = $("#empty_notice");
-        var errorMsg = $("#error-message");
-        var regNumber = $("#loginForm #regNumber");
-        $("#loginForm #login").click(function(){
-                // Getting the email field
-                // $(this).attr("disabled", true);
-                regNumber.val();
-                // Checking the validity and sending the data to the server using ajax
-                if (regNumber === "") {
-                //     $("#loginFrom #login").attr("disabled", false);
-                    emptyNotice.slideDown(500).delay(2000).hide(500);  
-                }
-                else 
-                {
-                       $.ajax({
-                               url: "script.php",
-                               type: "post",
-                               data: {regNumber:regNumber},
-                               success: function (response){
-                                        var msg = "";
-                                        if (response === 1){
-                                                window.location="instruction.php";
-                                        } else if (response === 2){
-                                                errorMsg = $("#error-message");
-                                        } else if (response === "empty"){
-                                                emptyNotice.slideDown(500).delay(2000).hide(500);   
-                                        }
-                                          else{
-                                                // $("#loginForm")[0].reset();
-                                        }
-                               }
-                       })
-                }
-        });
 
-        });
-   
-   
-    </script>
 

@@ -1,12 +1,12 @@
 <?php 
-// session_start();
+session_start();
 include_once ('config.php');
 include_once ('functions.php');
     
     // if(isset($_POST['login'])){
         $regNumber = mysqli_real_escape_string($con, addslashes($_POST['regNumber']));
         if (empty($regNumber)){
-            output("empty");
+            echo "empty";
 
         } else{
             $sql = "SELECT * FROM register WHERE reg_no='$regNumber'";
@@ -17,10 +17,10 @@ include_once ('functions.php');
                 if ($countrow == 1){
                     $_SESSION['id'] = $userid;
                     // header("location: ./instruction.php");
-                    output(1);
+                    echo "1";
         } else{
-            output(2);
-            header("location: ./index.php");
+            echo "2";
+            // header("location: ../index.php");
         }
         }
 
