@@ -19,11 +19,11 @@
                                cache:false,
                                success:function (response){
                                         var msg = "";
-                                        if (response == "1"){
+                                        if (response == 1){
                                                 window.location="instruction.php";
-                                        } else if (response == "2"){
-                                                errorMsg = $("#error-message").slideDown(500).delay(2000).hide(500);
-                                                // $("#loginForm")[0].reset();
+                                        } else if (response == 2){
+                                                errorMsg.slideDown(500).delay(2000).hide(500);
+                                                $("#loginForm")[0].reset();
                                         } else if (response == "empty"){
                                                 emptyNotice.slideDown(500).delay(4000).hide(500);   
                                                 

@@ -51,8 +51,8 @@
 					<ul class="mt-5 ">
 						<li><?php output($data['text']); ?></li>
 					</ul>
-					<?php endwhile ?>
-					<a href="subject.php?sid=<?php output($_SESSION['id']); amp; sname=<? ?>"><button class="btn btn-info" style="width: 100%;">PROCEED &nbsp;&nbsp;&nbsp;<i class="fa fa-arrow-right"></i></button></a>
+					<?php endwhile; ?>
+					<a href="subjects.php?sid=<?php output($userid) ?>"><button class="btn btn-info" style="width: 100%;">PROCEED &nbsp;&nbsp;&nbsp;<i class="fa fa-arrow-right"></i></button></a>
 					
 				</div>
 			</div>
