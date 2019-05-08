@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 20, 2019 at 12:51 PM
+-- Generation Time: May 08, 2019 at 09:42 PM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 7.1.7
 
@@ -64,6 +64,31 @@ INSERT INTO `class` (`id`, `class`, `sortname`) VALUES
 (1, 'Science Class', 'SC'),
 (2, 'Art Class', 'AT'),
 (3, 'Commercial Class', 'CM');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `instruction`
+--
+
+CREATE TABLE `instruction` (
+  `id` int(11) NOT NULL,
+  `text` text NOT NULL,
+  `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `instruction`
+--
+
+INSERT INTO `instruction` (`id`, `text`, `date`) VALUES
+(1, 'You are required to comply with the directions given by the head invigilator at the examination venue.', '2019-05-08 13:48:15'),
+(2, 'Your student identity card or other valid photo identification must be visible on your desk during the entire examination (Student ID App with photo is not valid as identification).', '2019-05-08 13:48:15'),
+(3, 'You may keep food and drink on or by the desk during the entire examination. You may eat and drink whenever you want.', '2019-05-08 13:48:47'),
+(4, 'You are not permitted to leave the venue for a break before 9.30 a.m.   If you wish to withdraw from the examination, please note that you are not permitted to leave the venue before 10 a.m. at the earliest, see below, Withdrawing from an examination.', '2019-05-08 13:48:47'),
+(5, 'If anything in the examination question paper is unclear, you can contact the lecturer visiting the venue. Such contact is facilitated by the head invigilator at the venue.\r\nLaw: The student representatives do not represent the faculty, but if anything in the examination question paper is unclear the student representative at the venue can pass on the query to the right person(s) in charge.', '2019-05-08 13:49:20'),
+(6, 'Papers and computer/laptop are to be covered when you leave your place.', '2019-05-08 13:49:20'),
+(7, 'If you experience technical problems during a digital examination, you must immediately contact one of the invigilators. The invigilator will call for technical support. Failure to report such technical problems might be treated as cheating or an attempt to cheat.  ', '2019-05-08 13:49:35');
 
 -- --------------------------------------------------------
 
@@ -194,7 +219,8 @@ CREATE TABLE `timer` (
 --
 
 INSERT INTO `timer` (`timer_id`, `student_id`, `timer`, `duration`) VALUES
-(1, '1', '11:50:42', 0);
+(1, '1', '11:50:42', 0),
+(2, '', '12:46:02', 0);
 
 --
 -- Indexes for dumped tables
@@ -210,6 +236,12 @@ ALTER TABLE `admin`
 -- Indexes for table `class`
 --
 ALTER TABLE `class`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `instruction`
+--
+ALTER TABLE `instruction`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -251,6 +283,11 @@ ALTER TABLE `admin`
 ALTER TABLE `class`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
+-- AUTO_INCREMENT for table `instruction`
+--
+ALTER TABLE `instruction`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+--
 -- AUTO_INCREMENT for table `question`
 --
 ALTER TABLE `question`
@@ -269,7 +306,7 @@ ALTER TABLE `subject`
 -- AUTO_INCREMENT for table `timer`
 --
 ALTER TABLE `timer`
-  MODIFY `timer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;COMMIT;
+  MODIFY `timer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
