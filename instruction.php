@@ -1,46 +1,58 @@
 <?php require ('includes/session.php'); ?>
+<?php require ('includes/config.php'); ?>
+<?php require ('includes/functions.php'); ?>
 <?php include ('includes/header.php'); ?>
 
 <body class="index_body">
-	<div class="container ">
+	<div class="container">
 		<div class="row">
 			<div class="col-lg-3 col-md-6 col-sm-12">
 				<div class="card mt-5" >
-					<img src="images/Opi51c74d0125fd4.png" class="card-img-top" alt="Steve Jobs">
+				<?php 
+					$userid = $_SESSION['id'];
+					$selectuserquery = mysqli_query($con, "SELECT * FROM register WHERE reg_id=$userid");
+					$fetch = mysqli_fetch_array($selectuserquery);
+					$first = $fetch['first'];
+					$middle = $fetch['middle'];
+					$last = $fetch['last'];
+					$phone = $fetch['phone'];
+					$regno = $fetch['reg_no'];
+					$dept = $fetch['dept'];
+					$level = $fetch['level'];
+					$image = $fetch['image'];
+					?>
+				
+					<img src="<?php output($image); ?>" class="card-img-top" alt="<?php output( $first.$middle.$last ); ?>">
 					<div class="card-body">
-						<div class="card-title text-center text-muted badge badge-light" style="width: 100%;"><h4>STEVE JOBS</h4></div>
-							<p>Phone No: +1118e9</p>
-							<p>Reg No: 71hgfbdg</p>
-							<p>Dept: Computer Science</p>
-							<p>Level: 1000L</p>
+						<div class="card-title text-center text-muted badge badge-light" ><h4><?php outputTwo($first,$last); ?></h4></div>
+							<p>Phone No: <?php output($phone); ?> </p>
+							<p>Reg No: <?php output($regno); ?></p>
+							<p>Dept: <?php output($dept); ?></p>
+							<p>Level: <?php output($level); ?></p>
 						
 					</div>
 					<div class="card-footer">
 						<button type="button" class="btn btn-grey" id="logout"> LOG OUT   <i class="fa fa-sign-out"></i></button>
 					</div>
 				</div>
+				<?php
+
+				?>
 			</div>
 			<div class="col-lg-9 col-sm-12 take-in"> 
 				<div class="custom mt-5 hide">
 				
 					<h2 class="" id="list-subject">Please follow the Instructions Giving below before proceeding.....</h2>
 					<hr>
-					<ol class="mt-5 ">
-						<li>Instruction A Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</li>
-						<li>Instruction A Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</li>
-						<li>Instruction A Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</li>
-						<li>Instruction A Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</ol>
-						
+					<?php 
+					$getinstruction = getAllInstruction();
+					while(fetchData($data,$getinstruction)): 
+					?>
+					<ul class="mt-5 ">
+						<li><?php output($data['text']); ?></li>
 					</ul>
-					<a href="javascript:void()" id="index_proceed"><button class="btn btn-info" style="width: 100%;">PROCEED &nbsp;&nbsp;&nbsp;<i class="fa fa-arrow-right"></i></button></a>
+					<?php endwhile; ?>
+					<a href="subjects.php?sid=<?php output($userid) ?>"><button class="btn btn-info" style="width: 100%;">PROCEED &nbsp;&nbsp;&nbsp;<i class="fa fa-arrow-right"></i></button></a>
 					
 				</div>
 			</div>

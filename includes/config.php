@@ -5,6 +5,7 @@
     define("password", "");    
     define("dbname", "tri-exam");   
     
+    GLOBAL $con;
     $con = mysqli_connect(servername,username,password,dbname) or die(mysqli_error($con));
     if($con){
         // echo "Connection to the database is successful";

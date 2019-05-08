@@ -12,3 +12,9 @@
 	
 	
 </head>
+<style>
+	 h4#error-message,h4#empty_notice {
+	display: none;
+}
+
+</style>

@@ -9,5 +9,6 @@
 <script type="text/javascript" src="assets/sweetalert.min.js"></script>
 <!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> -->
 <script src="assets/js/app.js"></script>
+<script src="includes/script.js"></script>
 </body>
 </html>
