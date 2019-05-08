@@ -3,7 +3,7 @@
 <body class="index_body">
 	<div class="container ">
 		<div class="row">
-			<div class="col-lg-3 col-md-6 col-sm-12">
+			<!-- <div class="col-lg-3 col-md-6 col-sm-12">
 				<div class="card mt-5" >
 					<img src="images/Opi51c74d0125fd4.png" class="card-img-top" alt="Steve Jobs">
 					<div class="card-body">
@@ -18,8 +18,8 @@
 						<button type="submit" class="btn btn-grey"> LOG OUT   <i class="fa fa-sign-out"></i></button>
 					</div>
 				</div>
-			</div>
-			<div class="col-lg-9 col-sm-12 take-in"> 
+			</div> -->
+			<div class="col-lg-12 col-sm-12 take-in"> 
 				
 			<div class="custom mt-5 show">
 					<h1 class="text-center mb-4" id="list-subject">LIST OF SUBJECTS</h1>

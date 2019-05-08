@@ -13,7 +13,7 @@
                 else
                 {
                        $.ajax({
-                               url: "script.php",
+                               url: "includes/script.php",
                                type: "post",
                                data: {regNumber:regNumber},
                                cache:false,
@@ -23,7 +23,7 @@
                                                 window.location="instruction.php";
                                         } else if (response == "2"){
                                                 errorMsg = $("#error-message").slideDown(500).delay(2000).hide(500);
-                                                $("#loginForm")[0].reset();
+                                                // $("#loginForm")[0].reset();
                                         } else if (response == "empty"){
                                                 emptyNotice.slideDown(500).delay(4000).hide(500);   
                                                 

@@ -44,22 +44,15 @@
 				
 					<h2 class="" id="list-subject">Please follow the Instructions Giving below before proceeding.....</h2>
 					<hr>
-					<ol class="mt-5 ">
-						<li>Instruction A Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</li>
-						<li>Instruction A Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</li>
-						<li>Instruction A Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</li>
-						<li>Instruction A Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</ol>
-						
+					<?php 
+					$getinstruction = getAllInstruction();
+					while(fetchData($data,$getinstruction)): 
+					?>
+					<ul class="mt-5 ">
+						<li><?php output($data['text']); ?></li>
 					</ul>
-					<a href="javascript:void()" id="index_proceed"><button class="btn btn-info" style="width: 100%;">PROCEED &nbsp;&nbsp;&nbsp;<i class="fa fa-arrow-right"></i></button></a>
+					<?php endwhile ?>
+					<a href="subject.php?sid=<?php output($_SESSION['id']); amp; sname=<? ?>"><button class="btn btn-info" style="width: 100%;">PROCEED &nbsp;&nbsp;&nbsp;<i class="fa fa-arrow-right"></i></button></a>
 					
 				</div>
 			</div>
