@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 4.6.5.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 08, 2019 at 09:42 PM
--- Server version: 10.1.25-MariaDB
--- PHP Version: 7.1.7
+-- Generation Time: May 08, 2019 at 10:53 PM
+-- Server version: 10.1.21-MariaDB
+-- PHP Version: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -158,48 +156,49 @@ CREATE TABLE `subject` (
   `sub_id` int(255) NOT NULL,
   `class_id` int(255) NOT NULL,
   `sub_name` varchar(255) NOT NULL,
-  `sub_regdate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `sub_regdate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `status` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `subject`
 --
 
-INSERT INTO `subject` (`sub_id`, `class_id`, `sub_name`, `sub_regdate`) VALUES
-(1, 1, 'Physics', '2018-11-16 00:46:35'),
-(2, 1, 'Chemistry', '2018-11-16 00:46:43'),
-(3, 1, 'Biology', '2018-11-16 00:46:49'),
-(4, 1, 'Mathematics', '2018-11-16 00:46:57'),
-(5, 1, 'Further Mathematics', '2018-11-16 00:47:12'),
-(6, 1, 'Use of English ', '2018-11-16 00:51:29'),
-(7, 1, 'Agricultural Science', '2018-11-16 00:47:34'),
-(8, 1, 'Geography', '2018-11-16 00:47:42'),
-(9, 1, 'Economics', '2018-11-16 00:47:51'),
-(10, 2, 'Government', '2018-11-16 00:48:03'),
-(11, 2, 'I.R.S', '2019-03-12 14:47:07'),
-(12, 2, 'C.R.S', '2019-03-12 14:46:53'),
-(13, 2, 'Literature in English', '2018-11-16 00:49:09'),
-(14, 2, 'Use of English', '2018-11-16 00:49:37'),
-(15, 3, 'Mathematics', '2018-11-16 00:49:53'),
-(16, 3, 'Use of English', '2018-11-16 00:50:12'),
-(17, 3, 'Account', '2018-11-16 00:50:27'),
-(18, 3, 'Commerce', '2018-11-16 00:50:43'),
-(19, 3, 'Government', '2018-11-16 00:50:54'),
-(20, 3, 'Economics', '2018-11-16 00:51:06'),
-(21, 2, 'Mathematics', '2019-03-12 12:20:56'),
-(22, 2, 'Economics', '2019-03-12 12:22:04'),
-(23, 1, 'Computer Studies', '2019-03-12 14:34:49'),
-(24, 2, 'Computer Studies', '2019-03-12 14:34:49'),
-(25, 3, 'Computer Studies', '2019-03-12 14:35:55'),
-(26, 2, 'French Language', '2019-03-12 14:37:32'),
-(27, 2, 'History', '2019-03-12 14:37:44'),
-(28, 2, 'Fine and Applied Arts', '2019-03-12 14:44:17'),
-(29, 2, 'Yoruba Language', '2019-03-12 14:44:17'),
-(30, 1, 'Yoruba language', '2019-03-12 14:44:17'),
-(31, 3, 'Yoruba Language', '2019-03-12 14:44:17'),
-(32, 1, 'Igbo Language', '2019-03-12 14:44:17'),
-(33, 2, 'Igbo Language', '2019-03-12 14:44:59'),
-(34, 3, 'Igbo Language', '2019-03-12 14:45:30');
+INSERT INTO `subject` (`sub_id`, `class_id`, `sub_name`, `sub_regdate`, `status`) VALUES
+(1, 1, 'Physics', '2019-04-29 19:44:47', 'Disabled'),
+(2, 1, 'Chemistry', '2019-04-29 19:51:48', 'Disabled'),
+(3, 1, 'Biology', '2019-04-29 19:29:46', 'Disabled'),
+(4, 1, 'Mathematics', '2019-04-29 19:29:46', 'Disabled'),
+(5, 1, 'Further Mathematics', '2019-04-30 05:52:55', 'Disabled'),
+(6, 1, 'Use of English ', '2019-04-29 19:29:46', 'Disabled'),
+(7, 1, 'Agricultural Science', '2019-04-29 19:29:46', 'Disabled'),
+(8, 1, 'Geography', '2019-04-29 19:29:46', 'Disabled'),
+(9, 1, 'Economics', '2019-04-29 19:29:46', 'Disabled'),
+(10, 2, 'Government', '2019-04-29 19:48:35', 'Disabled'),
+(11, 2, 'I.R.S', '2019-04-29 19:29:46', 'Disabled'),
+(12, 2, 'C.R.S', '2019-04-29 19:29:46', 'Disabled'),
+(13, 2, 'Literature in English', '2019-04-29 19:29:46', 'Disabled'),
+(14, 2, 'Use of English', '2019-04-29 19:29:46', 'Disabled'),
+(15, 3, 'Mathematics', '2019-04-29 19:29:46', 'Disabled'),
+(16, 3, 'Use of English', '2019-04-29 19:29:46', 'Disabled'),
+(17, 3, 'Account', '2019-04-29 19:29:46', 'Disabled'),
+(18, 3, 'Commerce', '2019-04-29 19:29:46', 'Disabled'),
+(19, 3, 'Government', '2019-04-29 19:29:46', 'Disabled'),
+(20, 3, 'Economics', '2019-04-29 19:29:46', 'Disabled'),
+(21, 2, 'Mathematics', '2019-04-29 19:29:46', 'Disabled'),
+(22, 2, 'Economics', '2019-04-29 19:29:46', 'Disabled'),
+(23, 1, 'Computer Studies', '2019-04-29 19:29:46', 'Disabled'),
+(24, 2, 'Computer Studies', '2019-04-29 19:29:46', 'Disabled'),
+(25, 3, 'Computer Studies', '2019-04-29 19:29:46', 'Disabled'),
+(26, 2, 'French Language', '2019-04-29 19:29:46', 'Disabled'),
+(27, 2, 'History', '2019-04-29 19:29:46', 'Disabled'),
+(28, 2, 'Fine and Applied Arts', '2019-04-29 19:29:46', 'Disabled'),
+(29, 2, 'Yoruba Language', '2019-04-29 19:29:46', 'Disabled'),
+(30, 1, 'Yoruba language', '2019-04-29 19:29:46', 'Disabled'),
+(31, 3, 'Yoruba Language', '2019-04-29 19:29:46', 'Disabled'),
+(32, 1, 'Igbo Language', '2019-04-29 19:29:46', 'Disabled'),
+(33, 2, 'Igbo Language', '2019-04-29 19:29:46', 'Disabled'),
+(34, 3, 'Igbo Language', '2019-04-29 19:29:46', 'Disabled');
 
 -- --------------------------------------------------------
 
@@ -219,8 +218,8 @@ CREATE TABLE `timer` (
 --
 
 INSERT INTO `timer` (`timer_id`, `student_id`, `timer`, `duration`) VALUES
-(1, '1', '11:50:42', 0),
-(2, '', '12:46:02', 0);
+(1, '1', '10:50:17', 0),
+(2, '2', '10:50:05', 0);
 
 --
 -- Indexes for dumped tables
@@ -306,8 +305,7 @@ ALTER TABLE `subject`
 -- AUTO_INCREMENT for table `timer`
 --
 ALTER TABLE `timer`
-  MODIFY `timer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;COMMIT;
-
+  MODIFY `timer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
