@@ -1,0 +1,49 @@
+* {
+	box-sizing: border-box;
+	-webkit-box-sizing:border-box;
+	-o-box-sizing:border-box;
+	-moz-box-sizing:border-box; 
+	font-family: 'raleway';
+}
+body{
+	margin: 0;
+	padding: 0;
+	background:  #c9c8c8;
+}
+header{
+	width: 100%;
+	height: 350px;
+	background: url('../images/students avatar.jpg') no-repeat center #FFF;
+	background-position-y: -15px;
+	box-shadow: 0px 0px 10px 0px #6d6b6b;
+}
+fieldset{
+	margin: 0;
+	padding: 0;
+	border: solid;
+}
+.container {
+	background:  #c9c8c8;
+}
+.header-banner>h2{
+	background: #000D38;
+	color: #FFF;
+	font-family: 'raleway';
+}
+div.form-container {
+	background: rgb(250, 247, 247);
+	min-height: 300px;
+	padding:20px;
+	display: table;
+}
+  input[type="text"]{
+	width: 32%;
+	display: table-column;
+	margin: 8px;
+}
+.select,input[type="number"] {
+	width: 32%;
+	display: table-column;
+	margin: 10px;
+
+}
