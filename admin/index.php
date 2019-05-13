@@ -14,7 +14,7 @@ require_once '../includes/add_question.php';
     <link rel="stylesheet" type="text/css" media="screen" href="../css/admin_index.css">
         <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="../assets/font-awesome-4.7.0/css/font-awesome.min.css">
-        <link rel="shortcut icon" href="../images/tri_icon-02.png" type="image/x-icon">
+        <link rel="shortcut icon" href="/images/tri_icon-02.png" type="image/x-icon">
 </head>
 <body>
     <div class="grid-container">

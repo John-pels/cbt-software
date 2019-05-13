@@ -69,13 +69,17 @@ if(isset($_POST['addAdmin'])){
                 $query = mysqli_query($con, "SELECT * FROM admin where Username = '$username' && password= '$password'");
                 $rows = mysqli_num_rows($query);
                 $fetch = mysqli_fetch_array($query);
-                if($rows === 1){
+                if (empty($username) || empty($password)) {
+                  $errorMessage =  "<div class='alert alert-warning'><strong>All fields are required!</strong></div>";
+                }
+                elseif($rows === 1){
                   $_SESSION['id'] = $fetch['id'];
                   $_SESSION['username'] = $fetch['Username'];
                   header("Location: question_portal.php");
                 }
+                
                 else {
-                 $errorMessage =  "<div class='alert alert-danger'>Invalid Username or Password</div>";
+                 $errorMessage =  "<div class='alert alert-danger'><strong>Invalid Username or Password</strong></div>";
                 }
             }
     ?>
@@ -99,4 +103,23 @@ if(isset($_POST['addAdmin'])){
         </script>');
       }
     }
+    ?>
+
+    <!-- For Adding of Instructions -->
+    <?php
+      if (isset($_POST['addInstruction'])) {
+        $instructions = htmlspecialchars($_POST['updateInstruction']);
+
+          $insert = mysqli_query($con, " INSERT INTO instruction (text) VALUES('$instructions')");
+           if($insert)
+        {
+        echo ('<script> alert.render("More Instructions added!");
+        </script>');
+      }
+      else 
+      {
+        echo ('<script> alert.render("Something went wrong, try again!");
+        </script>');
+      }
+        }
     ?>

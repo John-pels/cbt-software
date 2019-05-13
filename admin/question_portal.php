@@ -27,14 +27,15 @@ include '../includes/add_question.php';
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a href="#" class="navbar-brand"><span><img src="../images/tri_icon-02.png" alt="" style="height:40px;"></span> Trisight Technology</a>
+				<a href="#" class="navbar-brand"><span><img src="../images/tri_icon-02.png" alt="" style="height:40px;"></span> Trisight Technologies</a>
 			</div>
 			<div class="collapse navbar-collapse" id="bs-nav-demo">
 			
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#">Questions Management Portal</a></li>
+				<!-- <li><a href="#">Questions Portal</a></li> -->
 				<li><a href="javascript:void(0);"  data-target ="#addAdmin" data-toggle ="modal">Add Admin <i class="fa fa-user"></i></a></li>
-				<li><a href="javascript:void(0);"  data-target ="#updateStatus" data-toggle ="modal">Subject Status <i class="fa fa-edit"></i></a></li>
+        <li><a href="javascript:void(0);"  data-target ="#updateStatus" data-toggle ="modal">Subject Status <i class="fa fa-address-book"></i></a></li>
+				<li><a href="javascript:void(0);"  data-target ="#updateInstruction" data-toggle ="modal">Instructions <i class="fa fa-edit"></i></a></li>        
 				<li><a href="javascript:void(0);"  onclick="ask();">Logout <i class="fa fa-sign-out"></i></a></li>
 			</ul>
 			</div>
@@ -42,8 +43,9 @@ include '../includes/add_question.php';
 			</div>
         </nav>
         <div class="container-fluid">
-            <div class="jumbotron" style="height: 130px !important; color:#449D44; position:sticky;top:0;">
-                <h1 style="font-size: 4rem; font-weight:700;">Welcome! <?php echo $_SESSION['username'];?></h1>
+            <div class="jumbotron" style="height: 130px !important; color:#449D44; position:sticky;top:0;z-index:1;">
+                <h1 style="font-size: 3rem; font-weight:400;">Welcome! <?php echo $_SESSION['username'];?> <span style="float:right; color:#243665;"> Question Management Portal</span> </h1>
+              
             </div>
             <div class="row">
                 <div class="col-lg-5 col-md-4 col-sm-12 col-xs-12">
@@ -104,7 +106,7 @@ include '../includes/add_question.php';
                 </div>
                  
             </div>
-                         <center><span><?php echo date("Y");?> &copy;Copyright Trisight Technology</span></center> 
+                         <center><span><?php echo date("Y");?> &copy;Copyright Trisight Technologies</span></center> 
                                                               
                 </div>
         </div>
@@ -167,6 +169,7 @@ icon: "success",
         }
         
         </script>
+       
            <script src="../assets/js/jquery-3.2.1.min.js"></script>
         <script src="../assets/sweetalert.min.js"></script>
     <script src="../dist/js/bootstrap.min.js"></script>
@@ -259,3 +262,34 @@ icon: "success",
     </div>
   </div>
 </div>
+<!--For updating of instructions-->
+<div class="modal fade" id="updateInstruction" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="background: #243665; color:#FFF;">
+        <h5 class="modal-title" id="exampleModalLabel" style="font-size:25px; line-height:15px;">Add an Instructions</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color:#FFF;">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form method="post" enctype="multipart/form-data">
+        <div class="form-group">
+        <textarea name="updateInstruction" id="updateInstruction"  rows="5" class="form-control" 
+                            placeholder=""  style="margin-bottom:10px;" required>Instruction Description goes here...</textarea>
+                            
+		</div>
+        
+        <button type="submit" class="btn btn-success" name="addInstruction" style="width: 100%;">Add Instructions</button>
+</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <script type="text/javascript">
+                            CKEDITOR.replace('updateInstruction');
+                            </script> -->
