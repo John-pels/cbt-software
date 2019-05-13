@@ -5,7 +5,15 @@
     $_SESSION['id'] = array();
     session_destroy();
     unset($_SESSION['id']);
-    header("location: ../admin/index.php");
+    header("location: ../index.php");
     
     
+?>
+<?php
+    function AdminLogout($id){
+        session_destroy();
+        unset($_SESSION['$id']);
+        header("location: ../admin/index.php");
+    }
+
 ?>

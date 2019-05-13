@@ -108,7 +108,7 @@ if(isset($_POST['addAdmin'])){
     <!-- For Adding of Instructions -->
     <?php
       if (isset($_POST['addInstruction'])) {
-        $instructions = htmlspecialchars($_POST['updateInstruction']);
+        $instructions = addslashes(htmlspecialchars($_POST['updateInstruction'])  );
 
           $insert = mysqli_query($con, " INSERT INTO instruction (text) VALUES('$instructions')");
            if($insert)

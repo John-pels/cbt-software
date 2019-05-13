@@ -51,6 +51,7 @@
     </tr>
   </tfoot>
 </table>
+<button class="btn btn-danger" onclick="quitExam();">QUIT EXAM</button>
 
 
 					
@@ -63,4 +64,5 @@
 
 
 <?php include ('includes/footer.php'); ?>
+<script src="includes/quitExam.js"></script>
 
