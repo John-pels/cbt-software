@@ -3,6 +3,9 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="assets/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Student registration portal</title>
 	<link rel="shortcut icon"  href="images/tri_icon-02.png">
 </head>
@@ -20,8 +23,8 @@
 				<fieldset class="scheduler-border">
 				<legend class="scheduler-border ml-5">Personal Information:</legend>
 				<div class="form-group">
-				Surname: <input type="text" name="Surname" placeholder="Student's Surname" class="form-control" autofocus>
-				Other names: <input type="text" name="otherNames" placeholder="Student OtherNames" class="form-control"  >
+				Surname: <input type="text" name="Surname" placeholder="" class="form-control" autofocus>
+				Other names: <input type="text" name="otherNames" placeholder="" class="form-control"  >
 				Gender: <select name="gender" id="gender" class="form-control select ml-3 ">
 					<option selected="selected">Select...</option>
 					<option value="Male">Male</option>
@@ -90,6 +93,7 @@
 				</select>
 				<div class="text-center">
 					<button type="submit" name="submitForm" class="mt-3">Submit</button>
+					<input type="reset" value="Clear Form" class="m-2 btn btn-danger">
 				</div>
 			</fieldset>
 				</form>

@@ -3,6 +3,7 @@
 	-webkit-box-sizing:border-box;
 	-o-box-sizing:border-box;
 	-moz-box-sizing:border-box; 
+	-ms-box-sizing:border-box;
 	font-family: 'raleway';
 }
 body{
@@ -65,6 +66,12 @@ input[type="file"]{
 	float: left;
 	
 }
+input[type="reset"]{
+	border: none;
+	width: 25% !important;
+	height: 40px !important;
+	cursor: pointer;
+}
 button{
 	background: green;
 	border:none;
@@ -75,4 +82,10 @@ button{
 }
 button:hover{
 	background: rgb(10, 139, 27);
+	color:#FFF;
+    /* -webkit-transition: 0.9 1s ease-in-out;
+    -moz-transition: 0.9 1s ease-in-out;
+    -o-transition: 0.9 1s ease-in-out;
+    -ms-transition: 0.9 1s ease-in-out;    
+    transition: 0.9 1s ease-in-out; */
 }
