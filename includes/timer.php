@@ -76,7 +76,7 @@ function setCountDown ()
   	}
   	if (minutes < 2){
   		clearInterval(SD);
-  		window.location="hello.php";
+  		// window.location="hello.php";
   		$("#countdown").css({color:'red'});
   	}
  	

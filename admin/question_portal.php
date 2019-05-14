@@ -112,6 +112,8 @@ include '../includes/add_question.php';
         </div>
         
         <script>
+        // Getting the input session id
+        <input type="hidden" name="<?php echo $_SESSION['id'] ?>" id="id">
     // Sweetalert function for end exam
  function ask(){
     swal({

@@ -7,65 +7,53 @@
 				
 			<div class="custom mt-5 show">
 					<h1 class="text-center mb-4" id="list-subject">LIST OF SUBJECTS</h1>
-					<div class="card-group">
-						<div class="card mr-2">
-							<div class="card-header">
-								<h2 class="card-title">English</h2>
-							</div>
-							<div class="card-body">
-								<p>Some Basic Instruction here</p>
-							</div>
-							<div class="card-footer">
-								<button class="btn btn-outline-info">TAKE SUBJECT</button>
-								<span class="float-right card-footer-bold"><i class="fa fa-clock-o"> </i> 1hour</span>
-							</div>
-						</div>
+					<table class="table rounded-circle">
+  <thead class="thead-light rounded">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">SUBJECT</th>
+      <th scope="col">DURATION</th>
+      <th scope="col">ACTION</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>English</td>
+      <td>1 hour</td>
+      <td><button class="btn btn-success">START</button></td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Mathematics</td>
+      <td>1 hour</td>
+      <td><button class="btn btn-success">START</button></td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Arts</td>
+      <td>1 hour</td>
+      <td><button class="btn btn-success">START</button></td>
+    </tr>
+	<tr>
+      <th scope="row">4</th>
+      <td>Chemistry</td>
+      <td>1 hour 45 minutes</td>
+      <td><button class="btn btn-success">START</button></td>
+    </tr>
+  </tbody>
+  <tfoot class="thead-light">
+  <tr>
+      <th scope="col">#</th>
+      <th scope="col">SUBJECT</th>
+      <th scope="col">DURATION</th>
+      <th scope="col">ACTION</th>
+    </tr>
+  </tfoot>
+</table>
+<button class="btn btn-danger" onclick="quitExam();">QUIT EXAM</button>
 
-						<div class="card ml-2">
-							<div class="card-header">
-								<h2 class="card-title">Mathematics</h2>
-							</div>
-							<div class="card-body ">
-								<p>Some Basic Instruction here</p>
-							</div>
-							<div class="card-footer">
-								<button class="btn btn-outline-info">TAKE SUBJECT</button>
-								<span class="float-right card-footer-bold"><i class="fa fa-clock-o"> </i> 1hour</span>
-							</div>
-						</div>
-						
-					</div>  <!-- End of the Firsy group-->
 
-					<div class="card-group mt-5">
-						<div class="card mr-2" >
-							<div class="card-header">
-								<h2 class="card-title">Chemistry</h2>
-							</div>
-							<div class="card-body">
-								<p>Some Basic Instruction here</p>
-							</div>
-							<div class="card-footer">
-								<button class="btn btn-outline-info">TAKE SUBJECT</button>
-								<span class="float-right card-footer-bold"><i class="fa fa-clock-o"> </i> 1hour</span>
-							</div>
-						</div>
-
-						<div class="card ml-2">
-							<div class="card-header">
-								<h2 class="card-title">Physics</h2>
-							</div>
-							<div class="card-body">
-								<p>Some Basic Instruction here</p>
-							</div>
-							<div class="card-footer">
-								<button class="btn btn-outline-info">TAKE SUBJECT</button>
-								<span class="float-right card-footer-bold"><i class="fa fa-clock-o"> </i> 1hour</span>
-							</div>
-						</div>
-						
-					</div>
-					</div>
-					
 					
 			
 			
@@ -76,4 +64,5 @@
 
 
 <?php include ('includes/footer.php'); ?>
+<script src="includes/quitExam.js"></script>
 
