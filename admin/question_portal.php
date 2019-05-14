@@ -113,7 +113,7 @@ include '../includes/add_question.php';
         
         <script>
         // Getting the input session id
-        <input type="hidden" name="<?php echo $_SESSION['id'] ?>" id="id">
+        
     // Sweetalert function for end exam
  function ask(){
     swal({
@@ -132,7 +132,7 @@ icon: "success",
 
     
 }).then(function(){
-    window.location="../includes/logout.php";
+    window.location="../includes/adminLogout.php";
 })
 
 } 
