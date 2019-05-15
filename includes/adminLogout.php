@@ -5,7 +5,7 @@
     $_SESSION['id'] = array();
     session_destroy();
     unset($_SESSION['id']);
-    header("location: ../index.php");
+    header("location: ../admin/index.php");
     
     
 ?>
