@@ -73,7 +73,7 @@
                     <div class="card-body">
                     <?php include ('includes/fetchUserData.php'); ?>
                     <div class="card-title card-title-light text-center">Candidate's Bio-Data</div>
-                    <img src="<?php output($fetchUserId['image']); ?>" class="card-img-top " alt="<?php output($fetchUserId['first']. " " . $fetchUserId['last']); ?>" style="height:150px;width: 100% !important;"> 
+                    <img src="<?php output($fetchUserId['image']); ?>" class="card-img-top img-thumbnail ml-4" alt="<?php output($fetchUserId['first']. " " . $fetchUserId['last']); ?>" style="height:150px;width: 80% !important;"> 
                     <div class="card-title   badge-light" style="color: green;"><h4 class="text-center"><?php output($fetchUserId['first']. " " . $fetchUserId['last']); ?></h4></div>
                             <p style="color: gray;"> Phone Number<span  style="color: green; font-weight: bold; font-size: 0.8rem;">+2348188974303</span>   <br>
                             Reg. No: <span style="color: green; font-weight: bold; font-size: 0.8rem;"><?php output($regno); ?> </span>  <br>

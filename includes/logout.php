@@ -9,11 +9,3 @@
     
     
 ?>
-<?php
-    function AdminLogout($id){
-        session_destroy();
-        unset($_SESSION['$id']);
-        header("location: ../admin/index.php");
-    }
-
-?>

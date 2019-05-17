@@ -9,6 +9,7 @@
     
     
 ?>
+<<<<<<< HEAD
 <?php
     // function AdminLogout($id){
     //     session_destroy();
@@ -17,3 +18,5 @@
     // }
 
 ?>
+=======
+>>>>>>> 99f8246340fe7f8093c51b8fde8c5f4cef565220
