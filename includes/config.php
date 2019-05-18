@@ -1,4 +1,7 @@
 <?php 
+
+    // Defining the default timezone
+    date_default_timezone_set("Africa/Lagos");
     //Defining the constants
     define("servername", "localhost");    
     define("username", "root");    

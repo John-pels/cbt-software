@@ -13,7 +13,7 @@
                              <div class="card list-group">
                         <div class="card-header display-5">SUBJECT: ENGLISH LANGUAGE
 
-                     <span id="countdown" class="float-right" style="color: green;"><
+                     <span id="countdown" class="float-right" style="color: green;">
                                  
                             <?php require ('includes/getUserTime.php'); ?>
                             <?php require ('includes/timer.php'); ?>    

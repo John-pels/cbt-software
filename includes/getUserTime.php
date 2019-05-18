@@ -1,7 +1,7 @@
 <?php  
                             // Inserting student information into the timer
                             $takeExam = $_SESSION['id'];
-                            $timei = date("h:i:s");
+                            $timei = date("g:ia");
                             $selectTime = mysqli_query($con, "SELECT * FROM timer WHERE student_id ='$takeExam'");
                             $selectTimeRow = mysqli_num_rows($selectTime);
                             $fetchTime = mysqli_fetch_assoc($selectTime);
@@ -12,7 +12,7 @@
                             } 
                             // If it doesn't exist then insert into the timer table
                             else if ( $selectTimeRow <=0 ){
-                                $insertTime = mysqli_query ($con, "INSERT INTO timer (student_id,timer) VALUES ('$takeExam', '$timei')");
+                                $insertTime = mysqli_query ($con, "INSERT INTO timer (student_id,timer) VALUES ('$takeExam', CURRENT_TIMESTAMP)");
                             }
 
                             ?>
