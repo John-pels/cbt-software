@@ -1,3 +1,6 @@
+<?php
+require ('includes/config.php');
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,7 +21,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-8 offset-lg-2 col-sm-12">
-			<div class="form-container">
+			<div class="form-container" id="container">
 				<form action="" method="post" enctype="multipart/form-data" autocomplete="on" >
 				<fieldset class="scheduler-border">
 				<legend class="scheduler-border ml-5">Personal Information:</legend>
@@ -37,11 +40,20 @@
 			<fieldset class="scheduler-border">
 				<legend class="scheduler-border ml-5">School Information:</legend>
 				<div class="form-group">
-				Department: <select name="department" id="department" class="form-control select ml-3 ">
+				Department: <select name="department" id="department" class="form-control select ml-3 " onchange="showSubject1(this.value);showSubject2(this.value);showSubject3(this.value);showSubject4(this.value);showSubject5(this.value);showSubject6(this.value);showSubject7(this.value);showSubject8(this.value);showSubject9(this.value);">
 					<option selected="selected">Select...</option>
-					<option value="Male">Science</option>
-					<option value="Art">Art</option>
-					<option value="Commercial">Commercial</option>
+					<?php
+					$query = mysqli_query($con,"SELECT * FROM class");
+					$row = mysqli_num_rows($query);
+						for ($i=1; $i <= $row; $i ++) {
+							$fetch = mysqli_fetch_array($query);
+							$id = $fetch['id'];
+					?>
+					<option value="<?php echo $id;?>"><?php echo $fetch['class'];?></option>
+					<?php
+				}
+				?>
+					
 				</select>
 				Level: <select name="level" id="level" class="form-control select ml-3 ">
 					<option selected="selected">Select...</option>
@@ -56,39 +68,39 @@
 				<legend class="scheduler-border ml-5">Examination Information:</legend>
 				<div class="form-group">
 				Subject1: <select name="subject1" id="subject1" class="form-control select ml-3 ">
-					<option selected="selected">Select...</option>
+					<!-- <option selected="selected">Select...</option> -->
 					
 				</select>
-				Subject2: <select name="subject2" id="subject1" class="form-control select ml-3 ">
-					<option selected="selected">Select...</option>
+				Subject2: <select name="subject2" id="subject2" class="form-control select ml-3 ">
+				
 					
 				</select>
-				Subject3: <select name="subject3" id="subject1" class="form-control select ml-3 ">
-					<option selected="selected">Select...</option>
+				Subject3: <select name="subject3" id="subject3" class="form-control select ml-3 ">
+				
 					
 				</select>
-				Subject4: <select name="subject4" id="subject1" class="form-control select ml-3 ">
-					<option selected="selected">Select...</option>
+				Subject4: <select name="subject4" id="subject4" class="form-control select ml-3 ">
+					
 					
 				</select>
-				Subject5: <select name="subject5" id="subject1" class="form-control select ml-3 ">
-					<option selected="selected">Select...</option>
+				Subject5: <select name="subject5" id="subject5" class="form-control select ml-3 ">
+				
 					
 				</select>
-				Subject6: <select name="subject6" id="subject1" class="form-control select ml-3 ">
-					<option selected="selected">Select...</option>
+				Subject6: <select name="subject6" id="subject6" class="form-control select ml-3 ">
+					
 					
 				</select>
-				Subject7: <select name="subject7" id="subject1" class="form-control select ml-3 ">
-					<option selected="selected">Select...</option>
+				Subject7: <select name="subject7" id="subject7" class="form-control select ml-3 ">
+					
 					
 				</select>
-				Subject8: <select name="subject8" id="subject1" class="form-control select ml-3 ">
-					<option selected="selected">Select...</option>
+				Subject8: <select name="subject8" id="subject8" class="form-control select ml-3 ">
+					
 					
 				</select>
-				Subject9: <select name="subject9" id="subject1" class="form-control select ml-3 ">
-					<option selected="selected">Select...</option>
+				Subject9: <select name="subject9" id="subject9" class="form-control select ml-3 ">
+					
 					
 				</select>
 				<div class="text-center">
@@ -104,6 +116,10 @@
 		<div class="text-center"><?php echo date("Y");?> &copy;Copyright Trisight Technologies</div>
 	</div>
 		
+
+		
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/script.js"></script>
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>
