@@ -2,6 +2,7 @@
 <?php require ('includes/session.php'); ?>
 <?php require ('includes/functions.php'); ?>
 <?php //require ('includes/loadQuestions.php'); ?>
+<?php require ('includes/processQuestions.php'); ?>
 <?php include ('includes/header.php'); ?>
 
 <div class="container-fluid">
@@ -9,16 +10,13 @@
                 <div class="row">
                      <div class="col-sm-9">
                      <div id="loop">
-                         <?php 
-                         for ($i=1; $i < 100; $i++) { 
-
-                             $output = '<div class="card list-group">
+                             <div class="card list-group">
                         <div class="card-header display-5">SUBJECT: ENGLISH LANGUAGE
 
-                     <span id="countdown" class="float-right" style="color: green;"><
+                     <span id="countdown" class="float-right" style="color: green;">
                                  
-                            <?php require (\'includes/getUserTime.php\'); ?>
-                            <?php require (\'includes/timer.php\'); ?>    
+                            <?php require ('includes/getUserTime.php'); ?>
+                            <?php require ('includes/timer.php'); ?>    
                     </span>
                      </div>
 
@@ -51,15 +49,19 @@
                    
                                 
                     <div class="card-footer">
-                        <label class="badge badge-info p-3" >40 QUESTIONS</label>
-                    </div>
-                    
-                    </div>';
-                    echo $output;
-                         }
-                          ?>
-
+                            <?php  
+                                // Getting the number of question that the student is going to work on
+                                $getQuestionNumber = mysqli_query($con, "SELECT * FROM register where reg_id='$takeExam'") or die(mysqli_error($con));
+                                $countQuestionNumber = mysqli_num_rows($getQuestionNumber);                        
+                            ?>
+                                    <label class="badge badge-info p-3" ><?php output($countQuestionNumber. "  Available Questions"); ?></label>
+                                    <button class="btn btn-success float-right" type="submit" onclick="submitAnswer();" >SUBMIT ANSWER</button>
                      </div>
+                    
+                </div>
+                    
+                         
+                </div>
 
 
                  </div>

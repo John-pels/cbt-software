@@ -113,6 +113,10 @@ include '../includes/add_question.php';
         
         <script>
         // Getting the input session id
+<<<<<<< HEAD
+        
+=======
+>>>>>>> 99f8246340fe7f8093c51b8fde8c5f4cef565220
     // Sweetalert function for end exam
  function ask(){
     swal({

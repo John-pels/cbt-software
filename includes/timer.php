@@ -10,20 +10,21 @@ $duration = $_SESSION['duration'];
 			$tim = $rowse['timer'];
 			//No of Minute To Use
 			$expected = 10;
-			$dateFormat = "d F Y -- g:i a";
+			$dateFormat = "d F Y -- g:ia";
 		// $targetDate = time() + (25*60);
 		$targetDate = strtotime($rowse['timer']) + ($expected*60);
 
 		// echo $targetDate;
-		//Change the 25 to however many minutes you want to countdown
-$actualDate = time();
-$secondsDiff = $targetDate - $actualDate;
+		//Change the $expected to any minutes you want to countdown
+$actualDate 			= time();
+$secondsDiff 			= $targetDate - $actualDate;
 $remainingDay     = floor($secondsDiff/60/60/24);
 $remainingHour    = floor(($secondsDiff-($remainingDay*60*60*24))/60/60);
 $remainingMinutes = floor(($secondsDiff-($remainingDay*60*60*24)-($remainingHour*60*60))/60);
 $remainingSeconds = floor(($secondsDiff-($remainingDay*60*60*24)-($remainingHour*60*60))-($remainingMinutes*60));
 $actualDateDisplay = date($dateFormat,$actualDate);
 $targetDateDisplay = date($dateFormat,$targetDate);
+
 			
 			//echo $start.'<br>'.$used.'<br>'.$now.'<br>'.$expectedtime;	
 				echo "
@@ -48,7 +49,7 @@ $targetDateDisplay = date($dateFormat,$targetDate);
   var minutes = $("#remainingMinutes").val();
  
   var seconds =  $("#remainingSeconds").val();
-function setCountDown ()
+function setCountDown()
 {
   seconds--;
   if (seconds < 0){
