@@ -1,3 +1,4 @@
+
 <?php
 require ('includes/config.php');
 ?>
@@ -22,19 +23,19 @@ require ('includes/config.php');
 		<div class="row">
 			<div class="col-lg-8 offset-lg-2 col-sm-12">
 			<div class="form-container" id="container">
-				<form action="" method="post" enctype="multipart/form-data" autocomplete="on" >
+				<!-- <form action="" method="post" enctype="multipart/form-data" autocomplete="on" > -->
 				<fieldset class="scheduler-border">
 				<legend class="scheduler-border ml-5">Personal Information:</legend>
 				<div class="form-group">
-				Surname: <input type="text" name="Surname" placeholder="" class="form-control" autofocus>
-				Other names: <input type="text" name="otherNames" placeholder="" class="form-control"  >
+				Surname: <input type="text" name="surname" id="surname" placeholder="" class="form-control" autofocus>
+				Other names: <input type="text" name="otherNames" id="otherNames" placeholder="" class="form-control"  >
 				Gender: <select name="gender" id="gender" class="form-control select ml-3 ">
 					<option selected="selected">Select...</option>
 					<option value="Male">Male</option>
 					<option value="Female">Female</option>
 				</select>
-				Phone no. : <input type="number" name="phoneNumber" placeholder="Student Telephone " class="form-control ml-4" max="14">
-			DOB: <input type="date" name="dateOfBirth" placeholder=" " class="form-control">
+				Phone no. : <input type="number" name="phoneNumber" id="phoneNumber" placeholder="+2348188974303 " class="form-control ml-4" >
+			DOB: <input type="date" name="dateOfBirth" placeholder=" " id="dateOfBirth" class="form-control">
 				</div>
 			</fieldset>
 			<fieldset class="scheduler-border">
@@ -61,8 +62,6 @@ require ('includes/config.php');
 					<option value="S.S.S 2">S.S.S 2</option>
 					<option value="S.S.S 3">S.S.S 3</option>
 				</select>
-			<span style="float:left;">Passport:</span> <input type="file" name="passport" placeholder="" class="form-control ml-5" ><span style="color:red;float:left;" class="mt-2">Not more than 150kb</span>
-				</div>
 			</fieldset>
 			<fieldset class="scheduler-border mb-3">
 				<legend class="scheduler-border ml-5">Examination Information:</legend>
@@ -104,11 +103,11 @@ require ('includes/config.php');
 					
 				</select>
 				<div class="text-center">
-					<button type="submit" name="submitForm" class="mt-3">Submit</button>
-					<input type="reset" value="Clear Form" class="m-2 btn btn-danger">
+					<button type="submit" name="submitForm" id="submitForm" class="mt-3">Proceed</button>
+					
 				</div>
 			</fieldset>
-				</form>
+				<!-- </form> -->
 			</div>
 			</div>
 
@@ -121,5 +120,56 @@ require ('includes/config.php');
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="js/script.js"></script>
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#submitForm").click(function(){
+				var surname = $("#surname").val(),
+					otherNames = $("#otherNames").val(),
+					gender = $("#gender").val(),
+					dateOfBirth = $("#dateOfBirth").val(),
+					phoneNumber = $("#phoneNumber").val(),
+					department = $("#department").val(),
+					level = $("#level").val(),
+					subject1 = $("#subject1").val(),
+					subject2 = $("#subject2").val(),
+					subject3 = $("#subject3").val(),
+					subject4 = $("#subject4").val(),
+					subject5 = $("#subject5").val(),
+					subject6 = $("#subject6").val(),
+					subject7 = $("#subject7").val(),
+					subject8 = $("#subject8").val(),
+					subject9 = $("#subject9").val();
+					if ( surname === '' || otherNames === '' || gender === '' || phoneNumber === '' || department === '' || level === '' || subject1 === '' || subject2 === '' || subject3 === '' || subject4 === '' || subject5 === '' ||  subject6 === '' || subject7 === '' || subject8 === '' || subject9 === '') {
+						alert('Input field cannot be left empty please fill up the required datas');
+					}
+					if ( surname === '') {
+						alert('Input the Surname');
+					}
+					else if(otherNames ===''){
+						alert('Input the Other Names');
+					}
+					
+					else if(phoneNumber ===''){
+						alert('Input the Phone Number');
+					}
+					
+					else{
+						$.ajax({
+							url: "includes/insertData.php",
+							method: "POST",
+							data:{surname:surname,otherNames:otherNames,gender:gender,dateOfBirth:dateOfBirth,phoneNumber:phoneNumber,department:department,level:level,subject1:subject1,subject2:subject2,subject3:subject3,subject4:subject4,subject5:subject5,subject6:subject6,subject7:subject7,subject8:subject8,subject9:subject9},
+							dataType: "text",
+							success:function(php_script_response){
+								alert(php_script_response);
+								window.location = "output.php";
+							}
+						});
+
+					}
+						
+		});
+	});
+</script>
 </body>
 </html>
