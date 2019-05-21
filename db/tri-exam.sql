@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 08, 2019 at 10:53 PM
--- Server version: 10.1.21-MariaDB
--- PHP Version: 5.6.30
+-- Generation Time: May 21, 2019 at 01:48 PM
+-- Server version: 10.1.39-MariaDB
+-- PHP Version: 7.3.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -127,24 +129,36 @@ INSERT INTO `question` (`id`, `class_id`, `subject_id`, `question_desc`, `option
 --
 
 CREATE TABLE `register` (
-  `reg_id` int(11) NOT NULL,
-  `first` varchar(50) NOT NULL,
-  `middle` varchar(50) NOT NULL,
-  `last` varchar(50) NOT NULL,
-  `phone` varchar(30) NOT NULL,
-  `image` varchar(250) NOT NULL,
-  `reg_no` varchar(50) NOT NULL,
-  `level` varchar(20) NOT NULL,
-  `dept` varchar(50) NOT NULL,
-  `reg_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `id` int(11) NOT NULL,
+  `surname` varchar(300) NOT NULL,
+  `otherNames` varchar(300) NOT NULL,
+  `gender` varchar(300) NOT NULL,
+  `phoneNumber` varchar(300) NOT NULL,
+  `DateOfBirth` varchar(300) NOT NULL,
+  `department` varchar(300) NOT NULL,
+  `level` varchar(300) NOT NULL,
+  `passport` varchar(300) NOT NULL,
+  `subject1` varchar(300) NOT NULL,
+  `subject2` varchar(300) NOT NULL,
+  `subject3` varchar(300) NOT NULL,
+  `subject4` varchar(300) NOT NULL,
+  `subject5` varchar(300) NOT NULL,
+  `subject6` varchar(300) NOT NULL,
+  `subject7` varchar(300) NOT NULL,
+  `subject8` varchar(300) NOT NULL,
+  `subject9` varchar(300) NOT NULL,
+  `examNumber` varchar(300) NOT NULL,
+  `regDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `register`
 --
 
-INSERT INTO `register` (`reg_id`, `first`, `middle`, `last`, `phone`, `image`, `reg_no`, `level`, `dept`, `reg_date`) VALUES
-(1, 'olajide', 'tomiwa', 'joshua', '08136023230', 'uploads/IMG-20190208-WA0023.jpg', 'tri8982726', '500L', 'Computer Science', '2019-03-09 20:09:07');
+INSERT INTO `register` (`id`, `surname`, `otherNames`, `gender`, `phoneNumber`, `DateOfBirth`, `department`, `level`, `passport`, `subject1`, `subject2`, `subject3`, `subject4`, `subject5`, `subject6`, `subject7`, `subject8`, `subject9`, `examNumber`, `regDate`) VALUES
+(1, 'Ajeigbe', 'John Oluwaseyi', 'Male', '08188974303', '1999-04-13', '1', 'S.S.S 3', '../images/Student_Images/Ajeigbe John Oluwaseyi.jpg', 'Biology', 'Biology', 'Agricultural Science', 'Biology', 'Biology', 'Biology', 'Biology', 'Biology', 'Biology', '37102095TECH', '2019-05-21 10:42:32'),
+(2, 'Olajide', 'Joshua Tomiwa', 'Male', '08327438759', '1994-05-07', '2', 'S.S.S 2', '../images/Student_Images/Olajide Joshua Tomiwa.jpg', 'C.R.S', 'Computer Studies', 'Economics', 'Fine and Applied Arts', 'French Language', 'Government', 'History', 'History', 'Yoruba Language', '84434651TECH', '2019-05-21 11:42:43'),
+(3, 'Adegoke', 'Peter Adewale', 'Male', '0808237847', '2000-03-05', '3', 'S.S.S 2', '../images/Student_Images/Adegoke Peter Adewale.jpg', 'Account', 'Commerce', 'Computer Studies', 'Government', 'Government', 'Computer Studies', 'Commerce', 'Computer Studies', 'Economics', '62947691TECH', '2019-05-21 11:46:34');
 
 -- --------------------------------------------------------
 
@@ -218,8 +232,7 @@ CREATE TABLE `timer` (
 --
 
 INSERT INTO `timer` (`timer_id`, `student_id`, `timer`, `duration`) VALUES
-(1, '1', '10:50:17', 0),
-(2, '2', '10:50:05', 0);
+(1, '1', '2019-05-19 05:20:35', 0);
 
 --
 -- Indexes for dumped tables
@@ -253,7 +266,7 @@ ALTER TABLE `question`
 -- Indexes for table `register`
 --
 ALTER TABLE `register`
-  ADD PRIMARY KEY (`reg_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `subject`
@@ -276,36 +289,44 @@ ALTER TABLE `timer`
 --
 ALTER TABLE `admin`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- AUTO_INCREMENT for table `class`
 --
 ALTER TABLE `class`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- AUTO_INCREMENT for table `instruction`
 --
 ALTER TABLE `instruction`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
 --
 -- AUTO_INCREMENT for table `question`
 --
 ALTER TABLE `question`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
 --
 -- AUTO_INCREMENT for table `register`
 --
 ALTER TABLE `register`
-  MODIFY `reg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- AUTO_INCREMENT for table `subject`
 --
 ALTER TABLE `subject`
   MODIFY `sub_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+
 --
 -- AUTO_INCREMENT for table `timer`
 --
 ALTER TABLE `timer`
-  MODIFY `timer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `timer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -16,7 +16,7 @@ if(!empty($_POST['subject1']))
     {
         $row = mysqli_fetch_array($select_subject);
         ?>
-        <option value="<?php echo htmlentities($row['sub_id']); ?>"> <?php echo htmlentities($row['sub_name']);?></option>
+        <option value="<?php echo htmlentities($row['sub_name']); ?>"> <?php echo htmlentities($row['sub_name']);?></option>
         <?php
     }
     ?>

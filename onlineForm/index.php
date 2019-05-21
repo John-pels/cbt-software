@@ -35,7 +35,11 @@ require ('includes/config.php');
 					<option value="Female">Female</option>
 				</select>
 				Phone no. : <input type="number" name="phoneNumber" id="phoneNumber" placeholder="+2348188974303 " class="form-control ml-4" >
+<<<<<<< HEAD
 			DOB: <input type="date" name="dateOfBirth" placeholder=" " class="form-control">
+=======
+			DOB: <input type="date" name="dateOfBirth" placeholder=" " id="dateOfBirth" class="form-control">
+>>>>>>> 58baa374c297e3269c38a8b0d0e8ed8684d4a485
 				</div>
 			</fieldset>
 			<fieldset class="scheduler-border">
@@ -62,8 +66,11 @@ require ('includes/config.php');
 					<option value="S.S.S 2">S.S.S 2</option>
 					<option value="S.S.S 3">S.S.S 3</option>
 				</select>
+<<<<<<< HEAD
 			<span style="float:left;">Passport:</span> <input type="file" name="passport" id="passport" placeholder="" class="form-control ml-5" ><span style="color:red;float:left;" class="mt-2">Not more than 150kb</span>
 				</div>
+=======
+>>>>>>> 58baa374c297e3269c38a8b0d0e8ed8684d4a485
 			</fieldset>
 			<fieldset class="scheduler-border mb-3">
 				<legend class="scheduler-border ml-5">Examination Information:</legend>
@@ -105,8 +112,13 @@ require ('includes/config.php');
 					
 				</select>
 				<div class="text-center">
+<<<<<<< HEAD
 					<button type="submit" name="submitForm" id="submitForm" class="mt-3">Submit</button>
 					<input type="reset" value="Clear Form" class="m-2 btn btn-danger">
+=======
+					<button type="submit" name="submitForm" id="submitForm" class="mt-3">Proceed</button>
+					
+>>>>>>> 58baa374c297e3269c38a8b0d0e8ed8684d4a485
 				</div>
 			</fieldset>
 				<!-- </form> -->
@@ -129,6 +141,10 @@ require ('includes/config.php');
 				var surname = $("#surname").val(),
 					otherNames = $("#otherNames").val(),
 					gender = $("#gender").val(),
+<<<<<<< HEAD
+=======
+					dateOfBirth = $("#dateOfBirth").val(),
+>>>>>>> 58baa374c297e3269c38a8b0d0e8ed8684d4a485
 					phoneNumber = $("#phoneNumber").val(),
 					department = $("#department").val(),
 					level = $("#level").val(),
@@ -140,8 +156,15 @@ require ('includes/config.php');
 					subject6 = $("#subject6").val(),
 					subject7 = $("#subject7").val(),
 					subject8 = $("#subject8").val(),
+<<<<<<< HEAD
 					subject9 = $("#subject9").val(),
 					passport = $("#passport").val();
+=======
+					subject9 = $("#subject9").val();
+					if ( surname === '' || otherNames === '' || gender === '' || phoneNumber === '' || department === '' || level === '' || subject1 === '' || subject2 === '' || subject3 === '' || subject4 === '' || subject5 === '' ||  subject6 === '' || subject7 === '' || subject8 === '' || subject9 === '') {
+						alert('Input field cannot be left empty please fill up the required datas');
+					}
+>>>>>>> 58baa374c297e3269c38a8b0d0e8ed8684d4a485
 					if ( surname === '') {
 						alert('Input the Surname');
 					}
@@ -157,12 +180,26 @@ require ('includes/config.php');
 						$.ajax({
 							url: "includes/insertData.php",
 							method: "POST",
+<<<<<<< HEAD
 							data:{surname:surname,otherNames:otherNames,gender:gender,phoneNumber:phoneNumber,department:department,level:level,subject1:subject1,subject2:subject2,subject3:subject3,subject4:subject4,subject5:subject5,subject6:subject6,subject7:subject7,subject8:subject8,subject9:subject9,passport:passport},
 							dataType: "text",
 							success:function(php_script_response){
 								alert(php_script_response);
 							}
 						});
+=======
+							data:{surname:surname,otherNames:otherNames,gender:gender,dateOfBirth:dateOfBirth,phoneNumber:phoneNumber,department:department,level:level,subject1:subject1,subject2:subject2,subject3:subject3,subject4:subject4,subject5:subject5,subject6:subject6,subject7:subject7,subject8:subject8,subject9:subject9},
+							dataType: "text",
+							success:function(php_script_response){
+								alert(php_script_response);
+								window.location = "output.php";
+							},
+							error: function(){
+								alert("Error in Submission, Please try again");
+							}
+						});
+
+>>>>>>> 58baa374c297e3269c38a8b0d0e8ed8684d4a485
 					}
 						
 		});
