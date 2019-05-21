@@ -47,13 +47,18 @@ $fetch  = mysqli_fetch_array($select);
 						Date of Birth: <span><?php echo $fetch['DateOfBirth'];?></span><br>
 				</p>
 					</div>
-					<div class="photograph">
-						<img src="images/dan5276bb68cda93.png" alt="Student's Passport" class="img-thumbnail">
-						<div id="uploadButton">
-							<label>Upload Passport:</label>
-						<input type="file" name="passport">
+					<div class="imageArea">
+							<form id="uploadForm" action="includes/imageUpload.php" method="post">
+					<div class="photograph" id="targetLayer">
+							<!-- <div id="targetLayer">No Image</div> -->
+							<label>Upload Image FIle:</label>
+						<input type="file" name="userPassport">
+						<input type="submit" value="Upload" name="uploadImage" class="btn btn-primary">
 						</div>
+						</form>
 					</div>
+					
+					
 				</fieldset>
 				<fieldset class="scheduler-border">
 					<legend class="scheduler-border">School Information:</legend>
@@ -91,5 +96,31 @@ $fetch  = mysqli_fetch_array($select);
 			window.print();
 		}
 	</script>
+<script src="js/jquery-3.2.1.min.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function(e){
+		$("#uploadForm").on('submit',(function(e){
+			e.preventDefault();
+			$.ajax({
+				url: "includes/imageUpload.php",
+				type: "POST",
+				data: new FormData(this),
+				contentType: false,
+				cache: false,
+				processData: false,
+				success: function(data)
+				{
+					$("#targetLayer").html(data);
+					$("#alert").html("Image Uploaded, Registration Completed!").fadeOut(5000);
+					// $("#alert").append("Registration completed").hide(3000);
+				},
+				error: function(php_script_response){
+					$("#alert").html(php_script_response).hide(5000);
+				}
+			});
+		}));
+	});
+</script>
 </body>
 </html>

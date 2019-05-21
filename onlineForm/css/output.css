@@ -43,9 +43,20 @@ div.personal-info{
     float: left;
 }
 div.photograph{
-    width: 200px;
-    height: 200px;
+    width:300px;
+    height: 300px;
     float: right;
+}
+/*div#targetLayer{
+    background: grey;
+    width: 200px
+    height:100px !important;
+    text-align: center;
+    font-weight: bold;
+}*/
+.image-preview {    
+width:250px;
+height:200px;
 }
 div.personal-info>p, p.data{
     font-size: 1.2rem;

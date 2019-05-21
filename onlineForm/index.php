@@ -163,6 +163,9 @@ require ('includes/config.php');
 							success:function(php_script_response){
 								alert(php_script_response);
 								window.location = "output.php";
+							},
+							error: function(){
+								alert("Error in Submission, Please try again");
 							}
 						});
 
