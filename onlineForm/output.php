@@ -2,12 +2,17 @@
 require_once ('includes/config.php');
 include ('includes/session.php');
  $id = $_SESSION['id'];
-$select = mysqli_query($con,"SELECT * FROM register WHERE id = '$id'");
+$select = mysqli_query($con,"SELECT * FROM register  WHERE id = '$id'");
 $rows = mysqli_num_rows($select);
 $fetch  = mysqli_fetch_array($select);
-
+$department = $fetch['department'];
 ?>
-
+<?php
+$selectDept = mysqli_query($con,"SELECT * FROM register JOIN class on register.department = class.id WHERE class.id = '$department'");
+$deptRows = mysqli_num_rows($select);
+$deptFetch  = mysqli_fetch_array($selectDept);
+$d = $deptFetch['class'];
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -62,7 +67,7 @@ $fetch  = mysqli_fetch_array($select);
 				</fieldset>
 				<fieldset class="scheduler-border">
 					<legend class="scheduler-border">School Information:</legend>
-					<p class="data">Department: <span> <?php echo $fetch['department'];?></span><br>
+					<p class="data">Department: <span> <?php echo $d;?></span><br>
 						Level: <span><?php echo $fetch['level'];?></span><br>
 				</fieldset>
 				<fieldset class="scheduler-border">
