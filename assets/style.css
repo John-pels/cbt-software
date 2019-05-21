@@ -1,0 +1,49 @@
+body{
+    background: #2C2E3D;
+    /*background: url('images/b01a780108e8f5c423406ba011e7c556--website-login-page-login-page-ui.jpg');*/
+    margin: 0;
+    padding: 0;
+    color: #eee;
+}
+
+.login{
+    margin: 10px;
+    margin-top: 100px;
+}
+.login .logo{
+    font-size: 30px;
+
+}
+.login input{
+    margin-bottom: 10px;
+    border: none;
+    border-bottom: 2px solid #286090;
+    background: transparent;
+}
+.login button{
+    height: 50px;
+    /*font-weight: bold;*/
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.logo h2{
+    color: #FF3366;
+    font-size: 100px;
+    font-weight: bold;
+
+}
+.chat-body{
+    background: transparent;
+    height: 370px;
+    overflow-y: scroll;
+}
+
+/*.chat_container{
+    height: 1000px;
+    overflow-y: hidden;
+    background: red;
+}*/
+textarea{
+    height: 50px;
+
+}

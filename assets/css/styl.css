@@ -1,0 +1,133 @@
+body{
+	padding: 0;
+	margin: 0;
+	
+	
+}
+.content{
+	width: 100%;
+	min-height: 1000px;
+	
+
+}
+.content .section-top{
+	width: 100%;
+	height: 300px;
+	background: rgba(0,0,0,.8);
+
+}
+.content .main{
+	height: 500px;
+	display: flex;
+}
+.content .main h2{
+	margin: auto;
+	color: #eee;
+	font-family: 'Roboto', sans-serif;
+	font-size: 70px;
+}
+.content .logo{
+	position: relative;
+	padding-top: 30px;
+	margin: auto;
+	width: 100px;
+	height: 100px;
+}
+
+/*Styling the login page*/
+#login_bg{
+	background: url('../img/login_bg.jpg') center 30%;
+}
+
+.customlogin{
+	/*color: white;*/
+	/*min-height: 400px;*/
+	/*background: black;*/
+	padding: 10px;
+	margin: auto;
+	display: flex;
+	padding-top: 50px;
+	/*margin-top: 140px;*/
+	border-radius: 0px;
+}
+.customlogin h2{
+	margin-top: 30px;
+}
+.customlogin a{
+	color: orange;
+}
+.customlogin a:hover{
+	color: tomato;
+}
+.customlogin input{
+	height: 50px;
+}
+.customlogin form{
+	width: 100%;
+	padding: 10px;
+}
+button[type="submit"]{
+	background: ;
+	border: 1px solid ;
+	cursor: pointer; 
+	margin-bottom: 30px;
+	height: 50px;
+}
+button[type="submit"]:hover{
+	opacity: 1;
+	background: ;
+	border: 1px solid ;
+}
+/*Styling the registration page*/
+.customregister{
+	color: white;
+
+	min-height: 400px;
+	background: rgba(0,0,0,.5);
+	padding: 10px;
+	margin: auto;
+	display: flex;
+	padding-top: 50px;
+	margin-top: 10px;
+	border-radius: 0px;
+}
+.customregister h2{
+	margin-top: 30px;
+}
+.customregister a{
+	color: orange;
+}
+.customregister a:hover{
+	color: tomato;
+}
+.customregister form{
+	width: 100%;
+	padding: 10px;
+}
+.customregister input{
+	margin-bottom: 10px;
+	background: rgba(0,0,0,.5);
+
+}
+.customregister select{
+	margin-bottom: 10px;
+}
+button[type="submit"]{
+	background: ;
+	border: 1px solid ;
+	cursor: pointer; 
+	margin-bottom: 30px;
+}
+button[type="submit"]:hover{
+	opacity: 1;
+	background: ;
+	border: 1px solid ;
+}
+.gradient{
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#111111+0,595959+0,2b2b2b+0,ffffff+100 */
+background: #111111; /* Old browsers */
+background: -moz-linear-gradient(top, #111111 0%, #595959 0%, #2b2b2b 0%, #ffffff 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #111111 0%,#595959 0%,#2b2b2b 0%,#ffffff 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #111111 0%,#595959 0%,#2b2b2b 0%,#ffffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#111111', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+}

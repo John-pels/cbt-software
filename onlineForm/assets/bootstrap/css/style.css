@@ -1,0 +1,215 @@
+  * {
+ 	box-sizing: border-box;
+ 	-moz-box-sizing: border-box;
+ 	-o-box-sizing: border-box;
+ 	-ms-box-sizing:border-box;
+ }
+
+
+ body {
+ 	margin: 0;
+ 	padding: 0;
+ 	scroll-behavior: smooth;
+
+ }
+
+
+ .container {
+			background: transparent;
+			min-height: 100px;
+		
+		}
+		.header {
+			background: transparent;
+			padding: 10px;
+			margin: 10px;
+		
+		}
+		.member1 {
+			background: transparent;
+			height: 300px;
+			margin: 10px;
+			padding: 10px;
+		}
+		.member1:hover{
+			filter: grayscale(100%);
+			transform: scale(1.1);
+		}
+				.member1 img {
+			height: 200px;
+			width: 225px;
+		border-radius:100px;
+		}
+
+		.member2 {
+			background: transparent;
+			height: 300px;
+			margin: 10px;
+			padding: 10px;
+		}
+		.member2:hover{
+			filter: grayscale(100%);
+			transform: scale(1.1);
+		}
+		.member2 img {
+			height: 200px;
+			width: 225px;
+		border-radius:100px;
+		}
+
+		.member3 {
+			background: transparent;
+			height: 300px;
+			margin: 10px;
+			padding: 10px;
+		}
+		.member3:hover{
+			filter: grayscale(100%);
+			transform: scale(1.1);
+		}
+		.member3 img {
+			height: 200px;
+			width: 225px;
+		border-radius:100px;
+		}
+		.member4 {
+			background: transparent;
+			height: 300px;
+			margin: 10px;
+			padding: 10px;
+		}
+		.member4:hover{
+			filter: grayscale(100%);
+			transform: scale(1.1);
+		}
+		.member4 img {
+			height: 200px;
+			width: 225px;
+		border-radius:100px;
+		}
+		.member5 {
+			background: transparent;
+			height: 300px;
+			margin: 10px;
+			padding: 10px;
+		}
+		.member5:hover{
+			filter: grayscale(100%);
+			transform: scale(1.1);
+		}
+		.member5 img {
+			height: 200px;
+			width: 225px;
+		border-radius:100px;
+		}
+		.member6 {
+			background: transparent;
+			height: 300px;
+			margin: 10px;
+			padding: 10px;
+		}
+		.member6:hover{
+			filter: grayscale(100%);
+			transform: scale(1.1);
+		}
+		.member6 img {
+			height: 200px;
+			width: 225px;
+		border-radius:100px;
+		}
+		.member7 {
+			background: transparent;
+			height: 300px;
+			margin: 10px;
+			padding: 10px;
+		}
+		.member7:hover{
+			filter: grayscale(100%);
+			transform: scale(1.1);
+		}
+		.member7 img {
+			height: 200px;
+			width: 225px;
+		border-radius:100px;
+		}
+		.member8 {
+			background: transparent;
+			height: 300px;
+			margin: 10px;
+			padding: 10px;
+		
+		}
+		.member8:hover{
+			filter: grayscale(100%);
+			transform: scale(1.1);
+		}
+		.member8 img {
+			height: 200px;
+			width: 225px;
+		border-radius:100px;
+		}
+		.member9 {
+			background: transparent;
+			height: 300px;
+			margin: 10px;
+			padding: 10px;
+		}
+		.member9:hover{
+			filter: grayscale(100%);
+			transform: scale(1.1);
+		}
+		.member9 img {
+			height: 200px;
+			width: 225px;
+		border-radius:100px;
+		}
+		.member10 {
+			background: transparent;
+			height: 300px;
+			margin: 10px;
+			padding: 10px;
+		}
+		.member10:hover{
+			filter: grayscale(100%);
+			transform: scale(1.1);
+		}
+		.member10 img {
+			height: 200px;
+			width: 225px;
+		border-radius:100px;
+		}
+		p  {
+			color: #F95808;
+		}
+		
+
+		footer {
+		font-family: 'Montserrat', verdana;
+		color: #fff;
+		font-weight: lighter;
+		}
+		div a:hover {
+			text-decoration: none;
+		}
+	/*   i .fa-fa-facebook:hover #fonts{
+			color: #fff;
+		}*/
+		/*footer .col1{
+			background: #fff;
+			width: 200px;
+			height: 100px;
+			float: left;
+		}
+		footer .col2{
+			background: #fff;
+			width: 200px;
+			height: 100px;
+		}
+		footer .col3{
+			background: #fff;
+			width: 200px;
+			height: 100px;
+		}
+	
+	
+*/

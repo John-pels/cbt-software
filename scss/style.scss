@@ -1,0 +1,102 @@
+@import "mixins";
+@import "colors";
+*{
+	@include prefix(moz,o,webkit,ms,border-box);
+}
+/*@import url('https://fonts.googleapis.com/css?family=Abel');*/
+body.index_body{
+	font: 15px;
+	/*color: white;*/
+	// background: linear-gradient(#D7967D,#27475C);
+	background-color: #fff;
+	// overflow: hidden;
+	// height: auto;
+}
+h1	{
+	font-family: 'Abel', sans-serif !important;
+}
+.custom{
+	margin:15px;
+}
+.card{
+	/*border: 1px solid #C16C86;*/
+	font-family: 'Montserrat', sans-serif !important;
+}
+.btn-grey{
+	background-color: #3C5060;
+	color:rgb(255, 255, 255);
+	width: 100%;
+	
+}
+.btn-grey:hover{
+	background-color: light(#3C5060, 40%);
+}
+.text-underline{
+	text-decoration: underline;
+	color: black;
+}
+.mt-5>li{
+	font-size: 1.5em;
+	font-family: 'Raleway', sans-serif;
+	font-weight: lighter;
+	color: #000;
+	margin-bottom: .5em;
+}
+.card-footer-bold{
+	font-weight: bold;
+	line-height: 2.5em;
+}
+.card-title{
+	text-transform: uppercase;
+	color: inherit;
+	
+}
+.display-5{
+	font-size: 30px;
+}
+.card-header{
+	border: none !important;
+	box-shadow:0 1px 15px 0 rgba(19,61,124,0.32);
+}
+.card-title-bold{
+	font-weight: bold !important;
+	font-size: 25px;
+}
+.paginate{
+	// width: 100px;
+	// height: 50px;
+	display: flex;
+	// border:1px solid #eee;
+	margin-top: 10px;
+	
+	li{
+		list-style-type: none;
+
+		.previous,.next{
+			color:dodgerblue;
+			list-style-type: none;
+			line-height: 50px;
+			// border: 1px solid rgb(107, 90, 90);
+			box-shadow: 0 2px 15px 5px rgba(86,61,124,0.32);
+			padding: 15px;
+			width: 200px;
+			margin: 30px;
+			transition: 100ms all ease-in-out;
+			border-radius: 50%;
+			&:hover{
+				cursor: pointer;
+				background-color: dodgerblue;
+				color:#fff;
+			}
+		}
+		.previous{
+			margin-left: 0;
+		}
+		
+		}
+		
+	
+	
+}
+
+

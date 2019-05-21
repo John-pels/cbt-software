@@ -1,0 +1,34 @@
+<?php
+
+// require_once 'config.php';
+$takeexam = $_SESSION['id'];
+$duration = "";
+$se = mysqli_query ($con,"SELECT * FROM timer WHERE student_id = '$takeexam'");
+while ($row = mysqli_fetch_assoc($se)) {
+	$duration = $row['duration'];
+}
+$_SESSION['duration'] = $duration;
+// Storing current time into the session variable
+$_SESSION['start_time'] = date("Y-m-d H:i:s");
+
+$end_time = $end_time = date('Y-m-d H:i:s', strtotime('+'.$_SESSION['duration'].'minutes', strtotime($_SESSION['start_time']))); //Add the Duration to the current date;
+$_SESSION['end_time'] = $end_time;			
+?>
+
+<script src="js/jquery-1.8.3.min.js"></script>
+</div>
+
+</body>
+<script type="text/javascript">
+	setInterval(function()
+	{
+		var xmlhttp=new XMLHttpRequest();
+		xmlhttp.open("GET","includes/process.php",false);
+		xmlhttp.send(null);
+		document.getElementById("countdown").innerHTML=xmlhttp.responseText;
+
+	},1000);
+
+
+</script>
+</html>

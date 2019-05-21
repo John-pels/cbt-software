@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html><head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<link href="CKEditor%20CDN_files/prism.css" rel="stylesheet">
+	<style type="text/css">
+		body {
+			font-size: 1rem;
+			color: #444444;
+			font-family: Arial, Helvetica, sans-serif;
+			line-height: 1.5;
+			padding: 20px;
+		}
+
+		h1, h2, h3 {
+			font-weight: 400;
+		}
+		h1 {
+			font-size: 2.6rem;
+			color: #000;
+		}
+		h2 {
+			font-size: 2.2rem;
+			border-bottom: 1px solid #ddd;
+			color: #000;
+			padding-top: 50px;
+		}
+		h2:first-of-type {
+			padding-top: 30px;
+		}
+		h3 {
+			font-size: 1.6rem;
+			color: #000;
+		}
+
+		pre {
+			padding: 10px;
+			background-color: #EEEEEE;
+			font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+			margin-bottom: 10px;
+			width: auto;
+		}
+		.main {
+			max-width: 1060px;
+			margin: 0 auto;
+		}
+		.note {
+			border: 2px solid #ddd;
+			padding:20px;
+		}
+		/* Override prism styles */
+		code[class*="language-"] {
+			font-family: menlo, Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+			font-size:0.9em;
+		}
+	</style>
+	<title>CKEditor CDN</title>
+</head>
+<body class="language-html" cz-shortcut-listen="true">
+<div class="main">
+	<img src="CKEditor%20CDN_files/aws-poweredby.png" alt="Powered by AWS Cloud Computing" style="float:right;" width="150">
+	<h1>CKEditor CDN</h1>
+	<p><strong>Speed up your website</strong> by loading CKEditor from CDN:</p>
+	<ul>
+		<li>CKEditor is hosted on servers spread across the globe - scripts are loaded faster because they are served from the nearest
+			locations
+			to the end user.</li>
+		<li>If the same version of CKEditor has already been downloaded (even on a different website), it is loaded from cache.</li>
+		<li>CDN reduces the number of HTTP requests handled by your server so it speeds it up as well!</li>
+	</ul>
+	<h2 id="ckeditor4">CKEditor 4</h2>
+	<p>To start using CKEditor 4 on your website, add a single &lt;script&gt; tag to your HTML page:</p>
+	<pre class=" language-html"><code class=" language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code></pre>
+	<p>Quick example:</p>
+	<pre class=" language-html"><code class=" language-html"><span class="token doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>CKEditor<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>textarea</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>editor1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>textarea</span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
+			CKEDITOR<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span> <span class="token string">'editor1'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+		</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span></code></pre>
+	<h3 id="url-structure">URL Structure</h3>
+	<p>The URL structure for CKEditor 4 is as follows:</p>
+	<pre class=" language-html"><code class=" language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://cdn.ckeditor.com/[version.number]/[distribution]/ckeditor.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code></pre>
+	<p>The following distributions (see <a href="http://ckeditor.com/presets-all">comparison table</a>) are available:</p>
+	<ul>
+		<li><strong>basic</strong> - the Basic preset</li>
+		<li><strong>standard</strong> - the Standard preset</li>
+		<li><strong>standard-all</strong> - the Standard preset together with all other plugins created by CKSource<strong>*</strong></li>
+		<li><strong>full</strong> - the Full preset</li>
+		<li><strong>full-all</strong> - the Full preset together with all other plugins created by CKSource<strong>*</strong></li>
+	</ul>
+	<p>* Plugins not included in a preset need to be enabled with <a href="http://docs.ckeditor.com/#!/api/CKEDITOR.config-cfg-extraPlugins"><code>config.extraPlugins</code></a>.</p>
+	<div class="note"><strong>Note:</strong> Due to a human error to use CKEditor 4.4.5, you should specify
+		<strong>4.4.5.1</strong>.
+		The path that points to 4.4.5 actually points to an older version of 
+CKEditor (4.3.5). To avoid issues on existing installations, we
+		decided to keep the (invalid) old version under that path.</div>
+	<h3 id="plugins">Enabling Local Plugins</h3>
+	<p>To enable an extra plugin from a <strong>local folder</strong> while using CKEditor CDN, <a href="http://docs.ckeditor.com/#!/api/CKEDITOR.plugins-method-addExternal"><code>CKEDITOR.plugins.addExternal()</code></a> must
+		be
+		called first so that CKEditor knew from where to load the plugin.</p>
+	<p>The <code>CKEDITOR.plugins.addExternal()</code> method accepts three parameters:</p>
+	<ul>
+		<li>The name of the plugin.</li>
+		<li>The location of the plugin. Make sure that the path starts with a slash character ("/").</li>
+		<li>File name (usually "plugin.js").</li>
+	</ul>
+	<pre class=" language-javascript"><code class=" language-javascript"><span class="token comment" spellcheck="true">// Enable local "abbr" plugin from /myplugins/abbr/ folder.</span>
+CKEDITOR<span class="token punctuation">.</span>plugins<span class="token punctuation">.</span><span class="token function">addExternal</span><span class="token punctuation">(</span> <span class="token string">'abbr'</span><span class="token punctuation">,</span> <span class="token string">'/myplugins/abbr/'</span><span class="token punctuation">,</span> <span class="token string">'plugin.js'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// extraPlugins needs to be set too.</span>
+CKEDITOR<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span> <span class="token string">'editor1'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+	extraPlugins<span class="token punctuation">:</span> <span class="token string">'abbr'</span>
+<span class="token punctuation">}</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+	<h3 id="skins">Enabling Local Skins</h3>
+	<p>Enabling skins from a <strong>local folder</strong> is even easier than enabling plugins. To use a custom CKEditor skin while using
+		CKEditor CDN, use <a href="http://docs.ckeditor.com/#!/api/CKEDITOR.config-cfg-skin"><code>config.skin</code></a> and provide both,
+		the
+		skin name and the full URL after a comma:</p>
+	<pre class=" language-javascript"><code class=" language-javascript"><span class="token comment" spellcheck="true">// Enable "moonocolor" skin from the /myskins/moonocolor/ folder.</span>
+CKEDITOR<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span> <span class="token string">'editor1'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+	skin<span class="token punctuation">:</span> <span class="token string">'moonocolor,/myskins/moonocolor/'</span>
+<span class="token punctuation">}</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+	<h3 id="configuration">Local Configuration Files</h3>
+	<p>Some features in CKEditor are configured through JavaScript files by
+ default. Since all files are loaded from remote CDN, there is no
+		way
+		to modify them directly. You can however instruct CKEditor to load 
+local files instead, if you need to:</p>
+	<ul>
+		<li><a href="http://docs.ckeditor.com/#!/api/CKEDITOR.config-cfg-customConfig"><code>config.customConfig</code></a> - The path to
+			CKEditor configuration file. For more details, see <a href="http://docs.ckeditor.com/#!/guide/dev_configuration">Setting
+				CKEditor
+				Configuration</a>.</li>
+		<li><a href="http://docs.ckeditor.com/#!/api/CKEDITOR.config-cfg-contentsCss"><code>config.contentsCss</code></a> - The CSS file(s)
+			to
+			be used to apply style to the content.</li>
+		<li><a href="http://docs.ckeditor.com/#!/api/CKEDITOR.config-cfg-stylesSet"><code>config.stylesSet</code></a> - The "styles
+			definition
+			set" to use in the styles dropdown list. For more details, see <a href="http://docs.ckeditor.com/#!/guide/dev_styles">Setting
+				Styles</a>.</li>
+		<li><a href="http://docs.ckeditor.com/#!/api/CKEDITOR.config-cfg-templates_files"><code>config.templates_files</code></a> - The list
+			of
+			template files to use in the templates dialog window.</li>
+	</ul>
+	<p>In case of setting any of the options above, it is highly recommended to <a href="http://ckeditor.com/download">download</a>
+ locally
+		the
+		same CKEditor package that is loaded from CDN in order to copy 
+included configuration files and use them as base files for adding
+		additional changes.</p>
+	<pre class=" language-javascript"><code class=" language-javascript"><span class="token comment" spellcheck="true">// Always provide paths that start with a slash character ("/").</span>
+CKEDITOR<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span> <span class="token string">'editor1'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+	customConfig<span class="token punctuation">:</span> <span class="token string">'/ckeditor_settings/config.js'</span>
+<span class="token punctuation">}</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+	<h2 id="ckeditor5">CKEditor 5</h2>
+	<p>To start using CKEditor 5 Builds on your website, add a single &lt;script&gt; tag to your HTML page:</p>
+	<pre class=" language-html"><code class=" language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://cdn.ckeditor.com/ckeditor5/10.1.0/classic/ckeditor.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code></pre>
+	<p>Quick example:</p>
+	<pre class=" language-html"><code class=" language-html"><span class="token doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>CKEditor<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://cdn.ckeditor.com/ckeditor5/10.1.0/classic/ckeditor.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>textarea</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>content<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>editor<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This is some sample content.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>textarea</span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
+			ClassicEditor
+				<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span> <span class="token string">'#editor'</span> <span class="token punctuation">)</span> <span class="token punctuation">)</span>
+				<span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span> editor <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+					console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span> editor <span class="token punctuation">)</span><span class="token punctuation">;</span>
+				<span class="token punctuation">}</span> <span class="token punctuation">)</span>
+				<span class="token punctuation">.</span><span class="token keyword">catch</span><span class="token punctuation">(</span> error <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+					console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span> error <span class="token punctuation">)</span><span class="token punctuation">;</span>
+				<span class="token punctuation">}</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+		</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span></code></pre>
+	<h3 id="url-structure">URL Structure</h3>
+	<p>The URL structure for CKEditor 5 is as follows:</p>
+	<pre class=" language-html"><code class=" language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://cdn.ckeditor.com/ckeditor5/[version.number]/[distribution]/ckeditor.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code></pre>
+	<p>The following distributions (see <a href="https://docs.ckeditor.com/ckeditor5/latest/builds/guides/overview.html">CKEditor 5 Builds overview</a>)
+		are available:</p>
+	<ul>
+		<li><strong>classic</strong> - the Classic editor</li>
+		<li><strong>inline</strong> - the Inline editor</li>
+		<li><strong>balloon</strong> - the Balloon editor</li>
+		<li><strong>decoupled-document</strong> - the Document editor</li>
+	</ul>
+	<p>When choosing a different build than Classic editor, make sure in the example above to change not only the URL to a build but
+		also the initialization code as each build comes with a different editor class (<a href="https://docs.ckeditor.com/ckeditor5/latest/api/module_editor-classic_classiceditor-ClassicEditor.html"><code>ClassicEditor</code></a>,
+		<a href="https://docs.ckeditor.com/ckeditor5/latest/api/module_editor-inline_inlineeditor-InlineEditor.html"><code>InlineEditor</code></a>, <a href="https://docs.ckeditor.com/ckeditor5/latest/api/module_editor-balloon_ballooneditor-BalloonEditor.html"><code>BalloonEditor</code></a>, <a href="https://docs.ckeditor.com/ckeditor5/latest/api/module_editor-decoupled_decouplededitor-DecoupledEditor.html"><code>DecoupledEditor</code></a>).</p>
+
+	<script src="CKEditor%20CDN_files/prism.js" data-manual=""></script>
+	<script>
+		let x = document.body.querySelectorAll( 'pre code' );
+		for ( let i = 0; i < x.length; i++ ) {
+			Prism.highlightElement( x[ i ] );
+		}
+	</script>
+</div>
+
+
+</body></html>

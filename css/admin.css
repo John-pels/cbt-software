@@ -1,0 +1,85 @@
+                        * {
+                            box-sizing: border-box;
+                            -webkit-box-sizing: border-box;
+                        }
+                        
+                        body,
+                        html {
+                            height: 100%;
+                            width: 100%;
+                            margin: 0;
+                            padding: 0;
+                            background: url('../images/5.jpg');
+                            background-size: cover;
+                            background-repeat: no-repeat;
+                            overflow-x: hidden;
+                        }
+                        
+                        .navbar-default {
+                            background: #243665 !important;
+                        }
+                        
+                        .navbar-default ul.navbar-nav>li>a,
+                        .navbar-default ul.navbar-nav>li>a:hover {
+                            color: #8BD8BD;
+                            font-size: 1.5em;
+                        }
+                        
+                        .navbar-default a.navbar-brand,
+                        .navbar-default a.navbar-brand:hover {
+                            color: #8BD8BD;
+                            line-height: 40px;
+                            font-size: 1.7em;
+                        }
+                        
+                        .aside-instruction {
+                            background: #57565665;
+                            min-height: 200px;
+                            margin: 80px 40px;
+                            border-radius: 5px;
+                            box-shadow: 0 8px 8px 0 #858585;
+                        }
+                        
+                        .aside-question {
+                            background: #7e7c7c65;
+                            min-height: 200px;
+                            margin: 80px 40px;
+                            border-radius: 5px;
+                            box-shadow: 0 8px 8px 0 #858585;
+                        }
+                        
+                        .aside-instruction .inst-heading {
+                            text-align: center;
+                            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                            font-size: 1.5em;
+                            background: #243665;
+                            color: #FFF;
+                            border-radius: 5px;
+                            padding: 10px;
+                        }
+                        
+                        .aside-question .quest-heading {
+                            text-align: center;
+                            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                            font-size: 1.5em;
+                            background:#243665;
+                            color: #FFF;
+                            border-radius: 5px;
+                            padding: 10px;
+                        }
+                        
+                        .aside-instruction ol>li {
+                            text-align: justify;
+                            font-family: Arial, Helvetica, sans-serif;
+                            font-size: 1.2em;
+                            padding: 10px;
+                            margin: 5px;
+                        }
+                        
+                        .aside-question .quest-upload {
+                            padding: 30px;
+                        }
+                        
+                        button#btn-submit {
+                            border-radius: none;
+                        }
