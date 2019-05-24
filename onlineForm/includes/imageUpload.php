@@ -43,7 +43,7 @@ $userPassport = $_FILES['userPassport'];
 			}
 		}
 		else{
-			echo "You cannot upload book of this type";
+			echo "You cannot upload Image of this type";
 		}
 		
  ?>

@@ -10,23 +10,22 @@
 				<div class="card mt-5" >
 				<?php 
 					$userid = $_SESSION['id'];
-					$selectuserquery = mysqli_query($con, "SELECT * FROM register WHERE reg_id=$userid");
+					$selectuserquery = mysqli_query($con, "SELECT * FROM register WHERE id=$userid");
 					$fetch = mysqli_fetch_array($selectuserquery);
-					$first = $fetch['first'];
-					$middle = $fetch['middle'];
-					$last = $fetch['last'];
-					$phone = $fetch['phone'];
-					$regno = $fetch['reg_no'];
-					$dept = $fetch['dept'];
+					$first = $fetch['surname'];
+					$other = $fetch['otherNames'];
+					$phone = $fetch['phoneNumber'];
+					$examNumber = $fetch['examNumber'];
+					$dept = $fetch['department'];
 					$level = $fetch['level'];
-					$image = $fetch['image'];
+					$image = $fetch['passport'];
 					?>
 				
-					<img src="<?php output($image); ?>" class="card-img-top" alt="<?php output( $first.$middle.$last ); ?>">
+					<img src="<?php output(str_replace('../', 'onlineForm/', $image)); ?>" class="card-img-top" alt="<?php output( $first.$other ); ?>">
 					<div class="card-body">
-						<div class="card-title text-center text-muted badge badge-light" ><h4><?php outputTwo($first,$last); ?></h4></div>
+						<div class="card-title text-center text-muted" ><h4><?php outputTwo($first,$other); ?></h4></div>
 							<p>Phone No: <?php output($phone); ?> </p>
-							<p>Reg No: <?php output($regno); ?></p>
+							<p>Reg No: <?php output($examNumber); ?></p>
 							<p>Dept: <?php output($dept); ?></p>
 							<p>Level: <?php output($level); ?></p>
 						

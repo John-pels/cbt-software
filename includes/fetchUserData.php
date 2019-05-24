@@ -1,11 +1,11 @@
 <?php  
                         $getUserId = $_SESSION['id'];
-                        $selectUserId = mysqli_query($con, "SELECT * FROM register WHERE reg_id='$getUserId' ") or die(mysqli_error());
+                        $selectUserId = mysqli_query($con, "SELECT * FROM register WHERE id='$getUserId' ") or die(mysqli_error());
                         $fetchUserId = mysqli_fetch_array($selectUserId);
-                        $phone = $fetchUserId['phone'];
-                        $regno = $fetchUserId['reg_no'];
-                        $dept = $fetchUserId['dept'];
+                        $phone = $fetchUserId['phoneNumber'];
+                        $regno = $fetchUserId['examNumber'];
+                        $dept = $fetchUserId['department'];
                         $level = $fetchUserId['level'];
-                        $image = $fetchUserId['image'];
+                        $image = $fetchUserId['passport'];
                         
                     ?>

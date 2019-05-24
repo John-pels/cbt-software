@@ -9,11 +9,11 @@ include_once ('functions.php');
             echo "empty";
 
         } else{
-            $sql = "SELECT * FROM register WHERE reg_no='$regNumber'";
+            $sql = "SELECT * FROM register WHERE examNumber='$regNumber'";
              $query = mysqli_query($con, $sql) or die(mysqli_error($con));
              $countrow = mysqli_num_rows($query);
              $fetch = mysqli_fetch_array($query);
-             $userid = $fetch['reg_id'];
+             $userid = $fetch['id'];
                 if ($countrow == 1){
                     $_SESSION['id'] = $userid;
                     // header("location: ./instruction.php");

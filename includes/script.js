@@ -29,7 +29,8 @@
                                                 
                                         }
                                           else{
-                                                $("#loginForm")[0].reset();
+                                                // $("#loginForm")[0].reset();
+                                                alert(response);
                                         }
                                },
                         //        return: false
