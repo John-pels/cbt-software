@@ -17,6 +17,8 @@
 					$phone = $fetch['phoneNumber'];
 					$examNumber = $fetch['examNumber'];
 					$dept = $fetch['department'];
+					
+					
 					$level = $fetch['level'];
 					$image = $fetch['passport'];
 					?>
@@ -26,7 +28,7 @@
 						<div class="card-title text-center text-muted" ><h4><?php outputTwo($first,$other); ?></h4></div>
 							<p>Phone No: <?php output($phone); ?> </p>
 							<p>Reg No: <?php output($examNumber); ?></p>
-							<p>Dept: <?php output($dept); ?></p>
+							<p>Dept: <?php getDepartment($dept); ?></p>
 							<p>Level: <?php output($level); ?></p>
 						
 					</div>
