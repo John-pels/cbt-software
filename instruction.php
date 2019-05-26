@@ -53,7 +53,7 @@
 						<li><?php output($data['text']); ?></li>
 					</ul>
 					<?php endwhile; ?>
-					<a href="subjects.php?sid=<?php output($userid) ?>"><button class="btn btn-info" style="width: 100%;">PROCEED &nbsp;&nbsp;&nbsp;<i class="fa fa-arrow-right"></i></button></a>
+					<a href="subjects.php?cid=<?php output($userid) ?>"><button class="btn btn-info" style="width: 100%;">PROCEED &nbsp;&nbsp;&nbsp;<i class="fa fa-arrow-right"></i></button></a>
 					
 				</div>
 			</div>
