@@ -26,7 +26,7 @@
       $fetchData = mysqli_fetch_array($selectDept);
       $department = $fetchData['department'];
       #Determine what type of data to select from using the class and the departmental ID
-      $selectid_Class = mysqli_query($con,"SELECT * FROM register JOIN subject ON register.department = subject.class_id && status !=Disabled WHERE id=$getUSerId");
+      $selectid_Class = mysqli_query($con,"SELECT * FROM register JOIN subject ON register.department = subject.class_id WHERE id=1 && status!='Disabled'");
       $count = 0;
       while ($fetchIdANDClass = mysqli_fetch_array($selectid_Class)):
         $subjectId = $fetchIdANDClass['id'];
