@@ -1,6 +1,7 @@
 <?php require ('includes/session.php'); ?>
 <?php include ('includes/header.php'); ?>
 <?php include ('includes/config.php'); ?>
+
 <body class="index_body">
 	<div class="container ">
 		<div class="row">
@@ -20,13 +21,14 @@
   <tbody>
       <?php 
       #cid = Class ID
-        $getUSerId = $_GET['cid'];
+      $getUserId = $_GET['cid'];
+      // echo $getUserId;
       // $sql = "SELECT * FROM register WHERE id=$getUserId";
-      $selectDept = mysqli_query($con,"SELECT * FROM register WHERE id=$getUSerId");
+      $selectDept = mysqli_query($con,"SELECT * FROM register WHERE id=$getUserId");
       $fetchData = mysqli_fetch_array($selectDept);
       $department = $fetchData['department'];
       #Determine what type of data to select from using the class and the departmental ID
-      $selectid_Class = mysqli_query($con,"SELECT * FROM register JOIN subject ON register.department = subject.class_id WHERE id=1 && status!='Disabled'");
+      $selectid_Class = mysqli_query($con,"SELECT * FROM register JOIN subject ON register.department = subject.class_id WHERE id=$getUserId && status='Disabled'");
       $count = 0;
       while ($fetchIdANDClass = mysqli_fetch_array($selectid_Class)):
         $subjectId = $fetchIdANDClass['id'];
@@ -38,7 +40,7 @@
         
       ?>
     <tr>
-      <th scope="row"><?php echo $count += 1;; ?></th>
+      <th scope="row"><?php echo $count += 1; ?></th>
       <td><?php echo $subjectName; ?></td>
       <td><?php #echo $subjectHour; ?></td>
       <style>

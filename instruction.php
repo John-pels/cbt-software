@@ -7,7 +7,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-3 col-md-6 col-sm-12">
-				<div class="card mt-5" >
+				<div class="card mt-5" style="padding: 0px;" >
 				<?php 
 					$userid = $_SESSION['id'];
 					$selectuserquery = mysqli_query($con, "SELECT * FROM register WHERE id=$userid");
@@ -25,7 +25,7 @@
 				
 					<img src="<?php output(str_replace('../', 'onlineForm/', $image)); ?>" class="card-img-top" alt="<?php output( $first.$other ); ?>">
 					<div class="card-body">
-						<div class="card-title text-center text-muted" ><h4><?php outputTwo($first,$other); ?></h4></div>
+						<div class="card-title text-center p-2 text-dark" ><h6><?php outputTwo($first,$other); ?></h6></div>
 							<p>Phone No: <?php output($phone); ?> </p>
 							<p>Reg No: <?php output($examNumber); ?></p>
 							<p>Dept: <?php getDepartment($dept); ?></p>
