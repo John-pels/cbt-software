@@ -2,7 +2,7 @@
 <?php
 session_start();
 		try {
-					$connection = new PDO("mysql:host=localhost;dbname=tri-exam",'root','');
+				$connection = new PDO("mysql:host=localhost;dbname=tri-exam",'root','');
 				$connection->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 				$surname = $_POST['surname'];
 				$otherNames = $_POST['otherNames'];

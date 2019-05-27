@@ -29,4 +29,18 @@
         GLOBAL $data;
         return $data = mysqli_fetch_array($value);
     }
+
+    //Getting department that corresponds with number
+    function getDepartment($value){
+        switch ($value) {
+            case '1':
+                echo "Science";
+                break;
+            case '2':
+                echo "Arts";
+                break;
+            case '3':
+                echo "Commercial";
+        }
+    }
 ?>

@@ -35,7 +35,9 @@ require ('includes/config.php');
 					<option value="Female">Female</option>
 				</select>
 				Phone no. : <input type="number" name="phoneNumber" id="phoneNumber" placeholder="+2348188974303 " class="form-control ml-4" >
+
 			DOB: <input type="date" name="dateOfBirth" placeholder=" " id="dateOfBirth" class="form-control">
+
 				</div>
 			</fieldset>
 			<fieldset class="scheduler-border">
@@ -62,6 +64,10 @@ require ('includes/config.php');
 					<option value="S.S.S 2">S.S.S 2</option>
 					<option value="S.S.S 3">S.S.S 3</option>
 				</select>
+
+			<span style="float:left;">Passport:</span> <input type="file" name="passport" id="passport" placeholder="" class="form-control ml-5" ><span style="color:red;float:left;" class="mt-2">Not more than 150kb</span>
+				</div>
+
 			</fieldset>
 			<fieldset class="scheduler-border mb-3">
 				<legend class="scheduler-border ml-5">Examination Information:</legend>
@@ -103,8 +109,10 @@ require ('includes/config.php');
 					
 				</select>
 				<div class="text-center">
-					<button type="submit" name="submitForm" id="submitForm" class="mt-3">Proceed</button>
-					
+
+					<button type="submit" name="submitForm" id="submitForm" class="mt-3">Submit</button>
+					<input type="reset" value="Clear Form" class="m-2 btn btn-danger">
+
 				</div>
 			</fieldset>
 				<!-- </form> -->
@@ -139,10 +147,13 @@ require ('includes/config.php');
 					subject6 = $("#subject6").val(),
 					subject7 = $("#subject7").val(),
 					subject8 = $("#subject8").val(),
-					subject9 = $("#subject9").val();
+					subject9 = $("#subject9").val(),
+					passport = $("#passport").val();
+
 					if ( surname === '' || otherNames === '' || gender === '' || phoneNumber === '' || department === '' || level === '' || subject1 === '' || subject2 === '' || subject3 === '' || subject4 === '' || subject5 === '' ||  subject6 === '' || subject7 === '' || subject8 === '' || subject9 === '') {
 						alert('Input field cannot be left empty please fill up the required datas');
 					}
+
 					if ( surname === '') {
 						alert('Input the Surname');
 					}
@@ -168,6 +179,7 @@ require ('includes/config.php');
 								alert("Error in Submission, Please try again");
 							}
 						});
+
 
 					}
 						

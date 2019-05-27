@@ -35,7 +35,7 @@ $userPassport = $_FILES['userPassport'];
 <?php
 				}
 				else{
-					echo "Image too large to save!";
+					echo "<h3>" . "Image too large to save! Please refresh the page and upload a new image" . "</h3>";
 				}
 			}
 			else{
@@ -43,7 +43,7 @@ $userPassport = $_FILES['userPassport'];
 			}
 		}
 		else{
-			echo "You cannot upload book of this type";
+			echo "You cannot upload Image of this type";
 		}
 		
  ?>
