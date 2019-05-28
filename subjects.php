@@ -20,15 +20,18 @@
   </thead>
   <tbody>
       <?php 
+
+      #get User ID
+      $userid = $_SESSION['id'];
       #cid = Class ID
-      $getUserId = $_GET['cid'];
-      // echo $getUserId;
-      // $sql = "SELECT * FROM register WHERE id=$getUserId";
-      $selectDept = mysqli_query($con,"SELECT * FROM register WHERE id=$getUserId");
+      $getClassId = $_GET['cid'];
+      // echo $getClassId;
+      // $sql = "SELECT * FROM register WHERE id=$getClassId";
+      $selectDept = mysqli_query($con,"SELECT * FROM register WHERE id=$getClassId");
       $fetchData = mysqli_fetch_array($selectDept);
       $department = $fetchData['department'];
       #Determine what type of data to select from using the class and the departmental ID
-      $selectid_Class = mysqli_query($con,"SELECT * FROM register JOIN subject ON register.department = subject.class_id WHERE id=$getUserId && status='Disabled'");
+      $selectid_Class = mysqli_query($con,"SELECT * FROM register JOIN subject ON register.department = subject.class_id WHERE id=$userid && status='Disabled'");
       $count = 0;
       while ($fetchIdANDClass = mysqli_fetch_array($selectid_Class)):
         $subjectId = $fetchIdANDClass['id'];
@@ -50,7 +53,7 @@
         } */
 
       </style>
-      <td><a href="take_exam.php?cID=<?php echo $class_id; ?>&amp;sID=<?php echo $sub_id;?>"  class="btn btn-success " >START</a></td>
+      <td><a href="take_exam.php?userid=<?php echo $userid; ?>&amp;cID=<?php echo $class_id; ?>&amp;sID=<?php echo $sub_id;?>"  class="btn btn-success" id="disabled" >START</a></td>
     </tr>
       <?php endwhile; ?>
   </tbody>
@@ -77,4 +80,12 @@
 
 <?php include ('includes/footer.php'); ?>
 <script src="includes/quitExam.js"></script>
+<script>  
+  $disabled = $("#disabled");
+  $disabled.click(function(){
+    $.each($disabled, function(){
+      console.log("ID" + this.id);
+    })
+  });
+</script>
 

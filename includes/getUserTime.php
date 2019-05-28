@@ -1,5 +1,6 @@
 <?php  
-                            // Inserting student information into the timer
+                            
+
                             $takeExam = $_SESSION['id'];
                             $timei = date("g:ia");
                             $selectTime = mysqli_query($con, "SELECT * FROM timer WHERE student_id ='$takeExam'");

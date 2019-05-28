@@ -1,15 +1,13 @@
 <?php
 //session_start();
-
-$takeexam = $_SESSION['id'];
-$se = mysqli_query ($con,"SELECT * FROM timer WHERE student_id = '$takeexam'");
+$se = mysqli_query ($con,"SELECT * FROM dosubject WHERE std_id = $takeExam && class_id = $sesGetClassId && sub_id = $sesGetSubjectId ");
 $rowse = mysqli_fetch_assoc($se);
-$_SESSION['timerstudentid'] = $rowse['student_id'];
-$_SESSION['duration'] = $rowse['duration'];
+$_SESSION['timerstudentid'] = $rowse['std_id'];
+$_SESSION['duration'] = $rowse['sub_duration'];
 $duration = $_SESSION['duration'];
 			$tim = $rowse['timer'];
 			//No of Minute To Use
-			$expected = 10;
+			$expected = $duration;
 			$dateFormat = "d F Y -- g:ia";
 		// $targetDate = time() + (25*60);
 		$targetDate = strtotime($rowse['timer']) + ($expected*60);
@@ -76,8 +74,6 @@ function setCountDown()
   $("#countdown").html("0"+hours +":"+"0"+minutes+":"+"0"+seconds);
   	}
   	if (minutes < 2){
-  		clearInterval(SD);
-  		// window.location="hello.php";
   		$("#countdown").css({color:'red'});
   	}
  	
@@ -85,7 +81,7 @@ function setCountDown()
   		 seconds = "00"; 
   		 clearInterval(SD);
    		//window.alert("Time is up. Press OK to continue."); // change timeout message as required
-  		window.location = "timer.php" // Add your redirect url
+  		// window.location = "timer.php" // Add your redirect url
  	} 
 
 }

@@ -4,12 +4,50 @@
 <?php //require ('includes/loadQuestions.php'); ?>
 <?php require ('includes/processQuestions.php'); ?>
 <?php include ('includes/header.php'); ?>
-<?php require ('includes/getUserTime.php'); ?>
-<?php require ('includes/timer.php'); ?>  
+
+
+    <?php
+
+
+    ?>
 <?php 
+
+    $takeExam = $_SESSION['id'];
     // Getting the class ID and the subject ID
     $getClassId = $_GET['cID'];
     $getSubjectId = $_GET['sID'];
+
+    // Storing the GET ID in a session variable
+    $_SESSION['getClassId'] = $getClassId;
+    $_SESSION['getSubjectId'] = $getSubjectId;
+
+    $sesGetClassId = $_SESSION['getClassId'];
+    $sesGetSubjectId = $_SESSION['getSubjectId'];
+
+    echo $sesGetClassId;
+    echo $sesGetSubjectId;
+    echo $takeExam;
+?>
+<?php require ('includes/timer.php'); ?>  
+<?php
+    # WORKING WITH TIME AND CHECKING IF THE USER HAS DONE A PARTICULAR SUBJECT BEFORE
+
+    $takeExam = $_SESSION['id'];
+    $timei = date("g:ia");
+    $selectTime = mysqli_query($con, "SELECT * FROM dosubject WHERE std_id = $takeExam && class_id = $sesGetClassId && sub_id = $sesGetSubjectId ");
+    $selectTimeRow = mysqli_num_rows($selectTime);
+    $fetchTime = mysqli_fetch_assoc($selectTime);
+
+    // Checking if the student Id exist in timer table
+    if ( $selectTimeRow > 0 ) {
+        header("location: subjects.php?cid=$takeExam");
+        
+    } 
+    // If it doesn't exist then insert into the timer table
+    else if ( $selectTimeRow <=0 ){
+        $insertTime = mysqli_query ($con, "INSERT INTO dosubject (std_id, class_id, sub_id, time, sub_duration, istaken, status) VALUES ('$takeExam', '$sesGetClassId', '$sesGetSubjectId', CURRENT_TIMESTAMP, '$duration', '0', 'undone');");
+    }
+
 ?>
 
 <div class="container-fluid">
@@ -19,10 +57,11 @@
                      <div id="loop">
                             <?php
                             # SELECT FROM SUBJECT TABLE
-                            $selectSubject = mysqli_query($con, "SELECT sub_name FROM subject WHERE sub_id=$getSubjectId");
+                            $selectSubject = mysqli_query($con, "SELECT sub_name FROM subject WHERE sub_id=$sesGetSubjectId");
                             $fetchSubject = mysqli_fetch_array($selectSubject);
                             $subTitle = $fetchSubject['sub_name'];
-                            $selectquery = mysqli_query($con, "SELECT * FROM question WHERE class_id=$getClassId AND subject_id=$getSubjectId") or die(mysqli_error());
+                            $selectquery = mysqli_query($con, "SELECT * FROM question WHERE class_id=$sesGetClassId AND subject_id=$sesGetSubjectId") or die(mysqli_error());
+                            $countNumber = 0;
                              while ($fetchquery = mysqli_fetch_array($selectquery)): 
                                 $subjectId = $fetchquery['subject_id'];
                                 # GETTING ALL THE QUESTIONS AND ANSWER FROM THE TABLE 
@@ -32,7 +71,7 @@
                                 $option3 = $fetchquery['option3'];
                                 $option4 = $fetchquery['option4'];
                                 $TrueAnswer = $fetchquery['true_answer'];
-                                $countNumber = 0;
+                                
                                 ?>
                                     
                                      <div class="card list-group">
@@ -42,7 +81,7 @@
                      </div>
 
                     <div class="card-body  pl-5">
-                        <div class="card-title card-title-bold">Question <?php echo $countNumber +=1; ?> <br> <?php echo $QueTitle; ?></div>
+                        <div class="card-title card-title-bold">Question <?php echo $countNumber = $countNumber + 1; ?> <br> <?php echo $QueTitle; ?></div>
                         <form action="">
                             <div class="form-group">
                               A  <input type="checkbox" name="firstanswer" id="firstanswer" class="ans"> <label for="firstanswer"><?php echo $option1; ?></label>
@@ -75,10 +114,9 @@
                     <div class="card-footer">
                             <?php  
                                 // Getting the number of question that the student is going to work on
-                                $getQuestionNumber = mysqli_query($con, "SELECT * FROM register where id='$takeExam'") or die(mysqli_error($con));
-                                $countQuestionNumber = mysqli_num_rows($getQuestionNumber);                        
+                                $countQuestionNumber = mysqli_num_rows($selectquery);                     
                             ?>
-                                    <label class="badge badge-info p-3" ><?php output($countQuestionNumber. "  Available Questions"); ?></label>
+                                    <label class="badge badge-info p-3" ><?php output($countQuestionNumber. " Questions"); ?></label>
                                     <button class="btn btn-success float-right" type="submit" onclick="submitAnswer();" >SUBMIT ANSWER</button>
                      </div>
                     
@@ -112,8 +150,9 @@
                             Department: <span style="color: green; font-weight: bold; font-size: 0.8rem;"><?php getDepartment($dept); ?></span>  <br>
                             Class: <span style="color: green; font-weight: bold; font-size: 0.8rem;"><?php output($level); ?> </span>  <br>
                               </p>
-                    </div>                   
-                    <button type="button" onClick="ask()" class="btn btn-danger float-right" >END EXAM</button>                                
+                    </div>    
+                    <input type="hidden" name="<?php echo $takeExam; ?>" id="takeExam" value="<?php echo $takeExam; ?>">
+                    <button type="button" onClick="ask($takeExam)" class="btn btn-danger float-right" >END EXAM</button>                                
                     </div>
                     </div>
                 </div>
@@ -147,3 +186,6 @@
 
 <?php include ('includes/footer.php'); ?>
 <script src="includes/endExam.js"></script>
+<script>
+    $takeExam = $("#takeExam").val();
+</script>

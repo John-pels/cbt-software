@@ -53,7 +53,11 @@
 						<li><?php output($data['text']); ?></li>
 					</ul>
 					<?php endwhile; ?>
-					<a href="subjects.php?cid=<?php output($userid) ?>"><button class="btn btn-info" style="width: 100%;">PROCEED &nbsp;&nbsp;&nbsp;<i class="fa fa-arrow-right"></i></button></a>
+					<?php 
+						$selectClass = mysqli_query($con, "SELECT department FROM register WHERE id=$userid");
+						$fetchClass = mysqli_fetch_array($selectClass);
+					?>
+					<a href="subjects.php?userid=<?php echo $userid; ?>&amp;cid=<?php echo $fetchClass['department']; ?>"><button class="btn btn-info" style="width: 100%;">PROCEED &nbsp;&nbsp;&nbsp;<i class="fa fa-arrow-right"></i></button></a>
 					
 				</div>
 			</div>
