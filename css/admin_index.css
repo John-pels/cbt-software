@@ -61,7 +61,7 @@ input[type=password] {
 }
 
 .form-input:before {
-    content: "\f003";
+    content: "\f007";
     font-family: "FontAwesome";
     position: absolute;
     margin-left: 20px;
@@ -95,6 +95,6 @@ input[type=password] {
 .input-section button:hover {
     border: 2px solid #97716e;
     /* background: #86DFF0; */
-    color: #551310;
+    color: #FF6;
     transition: #86DFF0 3s ease-out 2s;
 }
