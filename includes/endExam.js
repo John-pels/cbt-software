@@ -1,5 +1,5 @@
     // Sweetalert function for end exam
- function ask(){
+ function ask(id){
     swal({
 title: "Are you sure you want to end Exam?",
 text: "Note that your score will be submitted immediately after you end exam",
@@ -16,7 +16,7 @@ icon: "success",
 
     
 }).then(function(){
-    window.location="subjects.php";
+    window.location="subjects.php?cid="+id;
 })
 
 } 

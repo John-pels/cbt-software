@@ -1,18 +1,17 @@
 <?php
 //session_start();
 
-$takeexam = $_SESSION['id'];
-$se = mysqli_query ($con,"SELECT * FROM timer WHERE student_id = '$takeexam'");
+$se = mysqli_query ($con,"SELECT * FROM dosubject WHERE dostd_id = $takeExam && doclass_id = $sesGetClassId && dosub_id = $sesGetSubjectId ");
 $rowse = mysqli_fetch_assoc($se);
-$_SESSION['timerstudentid'] = $rowse['student_id'];
+// $_SESSION['timerstudentid'] = $rowse['dostd_id'];
 $_SESSION['duration'] = $rowse['duration'];
 $duration = $_SESSION['duration'];
-			$tim = $rowse['timer'];
+			$tim = $rowse['time'];
 			//No of Minute To Use
-			$expected = 10;
+			$expected = $duration;
 			$dateFormat = "d F Y -- g:ia";
 		// $targetDate = time() + (25*60);
-		$targetDate = strtotime($rowse['timer']) + ($expected*60);
+		$targetDate = strtotime($rowse['time']) + ($expected*60);
 
 		// echo $targetDate;
 		//Change the $expected to any minutes you want to countdown
@@ -76,8 +75,6 @@ function setCountDown()
   $("#countdown").html("0"+hours +":"+"0"+minutes+":"+"0"+seconds);
   	}
   	if (minutes < 2){
-  		clearInterval(SD);
-  		// window.location="hello.php";
   		$("#countdown").css({color:'red'});
   	}
  	
