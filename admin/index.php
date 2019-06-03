@@ -1,7 +1,7 @@
 <?php
 session_start();
-include_once '../includes/config.php';
-require_once '../includes/add_question.php';
+// include_once '../includes/config.php';
+// require_once '../includes/add_question.php';
  ?>
 
 <!DOCTYPE html>
@@ -25,25 +25,91 @@ require_once '../includes/add_question.php';
             <div class="row">
                 <div class="col-lg-6 offset-lg-6  col-md-12 col-sm-12 col-xs-12">
                 <div class="aside-bar">
-                <form action=""  enctype="multipart/form-data" method="POST" id="login-form">
+                <!-- <form action=""  enctype="multipart/form-data" method="POST" id="login-form"> -->
                         <h4 class="form-heading">Login to Continue...</h4>
-                        <div class="input-section">
-                        <div class="form-input">
-                            <?php echo $errorMessage; ?>
-                            </div>
+                        <div class="input-section" id="formContainer">
+                        <div class="alert alert-info" style="display: none;" id="errorMessage"></div>
                             <div class="form-input">
                             <input type="text" name="username" id="username" placeholder="Your Username">
                             </div>
                             <div class="form-input2">
                             <input type="password" name="password" id="password" placeholder=" Your Password">
                             </div>
-                            <center><button type="submit" name="adminLogin">Login</button></center>
+                            <center><button type="submit" name="adminLogin" id="adminLogin">Login</button></center>
                         </div>  
                 </div>
-                </form>
+                <!-- </form> -->
                 </div>
             </div>
         </div>
     </div>
+    <script type="text/javascript" src="../onlineForm/js/jquery-3.2.1.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#username").focusout(function(){
+                var username = $("#username").val().length;
+                if(username === "" || username < 3){
+                    $("#errorMessage").html("Please, Enter a valid Username!");
+                    $("#errorMessage").slideDown(500).delay(2000).hide(500);
+                }
+                else {
+                    $("#errorMessage").hide();
+                }
+               
+            });
+                $("#password").focusout(function(){
+                var password = $("#password").val().length;
+                    if(password ==="" || password < 3){
+                    $("#errorMessage").html("Please, Enter a valid Password!");
+                    $("#errorMessage").slideDown(500).delay(2000).hide(500);
+                }
+                else {
+                    $("#errorMessage").hide();
+                }
+            });
+            $("#adminLogin").click(function(){
+                var username = $("#username").val();
+                var password = $("#password").val();
+                if (username === "" || password === ""){
+                    $("#errorMessage").html(" All Fields are required!");
+                    $("#errorMessage").slideDown(500).delay(2000).hide(500);
+                }
+                // else if (password === "" ){
+                //     $("#errorMessage").html("Password cannot be empty!");
+                //     $("#errorMessage").slideDown(500).delay(2000).hide(500);
+                // }
+                else {
+                    $.ajax({
+                    url:"../includes/login.php",
+                    type: "POST",
+                    data:{username:username,password:password},
+                    cache: false,
+                    success: function(response){
+                        if (response == 1) {
+                            window.location = "question_portal.php";
+                        }
+                        else if (response == 2 ){
+                                $("#errorMessage").html("Username or Password is incorrect!");
+                                $("#errorMessage").slideDown(500).delay(2000).hide(500);
+                        }
+                        // else if (response === "empty"){
+                        //      $("#errorMessage").html("Username or Password is incorrect!");
+                        //         $("#errorMessage").slideDown(500).delay(2000).hide(500);
+                        // }
+                        else{
+                             $("#errorMessage").html("Username or Password is incorrect!");
+                                $("#errorMessage").slideDown(500).delay(2000).hide(500);
+                        }
+                    }
+                 
+                    
+                    
+                });
+                }
+                
+            });
+        });
+    </script>
 </body>
 </html>
