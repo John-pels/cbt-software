@@ -6,10 +6,19 @@
 <?php include ('includes/header.php'); ?>
 
 
-    <?php
+   
+<?php
+    // Calculating the answer and submitting into the database
+    $firstanswer = $_POST['firstanswer'];
+    $secondanswer = $_POST['secondanswer'];
+    $thirdanswer = $_POST['thirdanswer'];
+    $fourthanswer = $_POST['fourthanswer'];
 
+    if (isset($_POST['firstanswer'])) {
+        echo "You clicked on ".$firstanswer;
+    }
 
-    ?>
+?>                                                               
 <?php 
 
     $takeExam = $_SESSION['id'];
@@ -23,32 +32,46 @@
 
     $sesGetClassId = $_SESSION['getClassId'];
     $sesGetSubjectId = $_SESSION['getSubjectId'];
-
-    echo $sesGetClassId;
-    echo $sesGetSubjectId;
-    echo $takeExam;
 ?>
-<?php require ('includes/timer.php'); ?>  
+
+<?php  
+    $selectDuration = mysqli_query($con, "SELECT sub_duration FROM subject WHERE sub_id =$sesGetSubjectId  && class_id =$sesGetClassId");
+    $fetchDuration = mysqli_fetch_assoc($selectDuration);
+    $myDuration = $fetchDuration['sub_duration'];
+
+?>
+
 <?php
     # WORKING WITH TIME AND CHECKING IF THE USER HAS DONE A PARTICULAR SUBJECT BEFORE
 
     $takeExam = $_SESSION['id'];
     $timei = date("g:ia");
-    $selectTime = mysqli_query($con, "SELECT * FROM dosubject WHERE std_id = $takeExam && class_id = $sesGetClassId && sub_id = $sesGetSubjectId ");
+    $selectTime = mysqli_query($con, "SELECT * FROM dosubject WHERE dostd_id = $takeExam && doclass_id = $sesGetClassId && dosub_id = $sesGetSubjectId ");
     $selectTimeRow = mysqli_num_rows($selectTime);
     $fetchTime = mysqli_fetch_assoc($selectTime);
 
     // Checking if the student Id exist in timer table
-    if ( $selectTimeRow > 0 ) {
-        header("location: subjects.php?cid=$takeExam");
+    // if ( $selectTimeRow > 0 ) { // || $myDuration <=0
+    //     // header("location: subjects.php?cid=$takeExam");
+    //     echo "
+    //             <script>  
+    //             alert('You have taken this exam before and cannot take it again');
+    //             window.location='subjects.php?cid='+$takeExam;
+    //             </script>
+    //     ";
         
-    } 
-    // If it doesn't exist then insert into the timer table
-    else if ( $selectTimeRow <=0 ){
-        $insertTime = mysqli_query ($con, "INSERT INTO dosubject (std_id, class_id, sub_id, time, sub_duration, istaken, status) VALUES ('$takeExam', '$sesGetClassId', '$sesGetSubjectId', CURRENT_TIMESTAMP, '$duration', '0', 'undone');");
-    }
+    // }
+
+    // // If it doesn't exist then insert into the timer table
+    // else if ( $selectTimeRow <=0 ){
+    //     $insertTime = mysqli_query ($con, "INSERT INTO dosubject (dostd_id, doclass_id, dosub_id, time, duration, istaken) VALUES ('$takeExam', '$sesGetClassId', '$sesGetSubjectId', CURRENT_TIMESTAMP, '$myDuration', '0')");
+    // }
 
 ?>
+<?php 
+    #SELECTING TIMESTAMP FROM THE TIMER PAGE;
+require ('includes/timer.php');
+?>  
 
 <div class="container-fluid">
             
@@ -82,22 +105,23 @@
 
                     <div class="card-body  pl-5">
                         <div class="card-title card-title-bold">Question <?php echo $countNumber = $countNumber + 1; ?> <br> <?php echo $QueTitle; ?></div>
-                        <form action="">
+                        <form action="" method="POST">
                             <div class="form-group">
-                              A  <input type="checkbox" name="firstanswer" id="firstanswer" class="ans"> <label for="firstanswer"><?php echo $option1; ?></label>
+                              A  <input type="radio" name="que_<?php echo $fetchquery['id']; ?>" id="firstanswer" class="ans" value="<?php echo $option1; ?>"> <label for="firstanswer">que_<?php echo $fetchquery['id']; ?><?php echo $option1; ?></label>
                             </div>
                             <div class="form-group">
-                              B <input type="checkbox" name="secondanswer" id="secondanswer" class="ans" > <label for="secondanswer"><?php echo $option2; ?></label>
+                              B <input type="radio" name="que_<?php echo $fetchquery['id']; ?>" id="secondanswer" class="ans" value="<?php echo $option2; ?>"> <label for="secondanswer">que_<?php echo $fetchquery['id']; ?><?php echo $option2; ?></label>
                             </div>
                             <div class="form-group">
-                             C  <input type="checkbox" name="thirdanswer" id="thirdanswer" class="ans" > <label for="thirdanswer"><?php echo $option3; ?></label>
+                             C  <input type="radio" name="que_<?php echo $fetchquery['id']; ?>" id="thirdanswer" class="ans" value="<?php echo $option3; ?>"> <label for="thirdanswer">que_<?php echo $fetchquery['id']; ?><?php echo $option3; ?></label>
                             </div>
                             <div class="form-group">
-                             D   <input type="checkbox" name="fourthanswer" id="fourthanswer" class="ans" > <label for="fourthanswer"><?php echo $option4; ?></label>
+                             D   <input type="radio" name="que_<?php echo $fetchquery['id']; ?>" id="fourthanswer" class="ans" value="<?php echo $option4; ?>"> <label for="fourthanswer">que_<?php echo $fetchquery['id']; ?><?php echo $option4; ?></label>
                             </div>
-                            <!-- <div class="form-group">
-                            <input type="hidden" name="<?php echo $TrueAnswer; ?>" id="trueAnswer" value="<?php echo $TrueAnswer; ?>" > 
-                            </div> -->
+                            
+                            <input type="hidden" name="truanswer" id="truanswer" class="ans" value="<?php echo $TrueAnswer; ?>"> 
+                            
+                            
                             <nav aria-label="Page navigation example">
                                 <ul class="paginate">
                                     <li title="Click to go to the previous page"><span class="previous"> <i class="fa fa-angle-left"></i></span></li>
@@ -137,7 +161,7 @@
                    
                             
                   <div class="col-sm-3">
-                  <span class="" style="color: green;">TIME SPENT: </span> <span id="countdown" class="display-5" style="color: green;"></span>
+                  <span class="" style="color: green;">TIME REMAINING: </span> <span id="countdown" class="display-5" style="color: green;"></span>
                     <div class="card m-3">
                     <div class="card-body">
                     
@@ -156,14 +180,6 @@
                     </div>
                     </div>
                 </div>
-            
-            
-
-           
-            
-
-                
-            
 
         <div class="footer mt-3 d-flex col-sm-9 pt-10" style="overflow-x:scroll;">
                     <nav aria-label="Page navigation example">
@@ -175,17 +191,6 @@
                     </div>
    </div>
 
-
-
-
-
-
-
-
-
-
 <?php include ('includes/footer.php'); ?>
 <script src="includes/endExam.js"></script>
-<script>
-    $takeExam = $("#takeExam").val();
-</script>
+

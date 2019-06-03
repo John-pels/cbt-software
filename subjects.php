@@ -46,14 +46,10 @@
       <th scope="row"><?php echo $count += 1; ?></th>
       <td><?php echo $subjectName; ?></td>
       <td><?php #echo $subjectHour; ?></td>
-      <style>
-        /* .disabled {
-          pointer-events: none;
-          cursor: default;
-        } */
-
-      </style>
-      <td><a href="take_exam.php?userid=<?php echo $userid; ?>&amp;cID=<?php echo $class_id; ?>&amp;sID=<?php echo $sub_id;?>"  class="btn btn-success" id="disabled" >START</a></td>
+    
+      <td>
+      <a href="take_exam.php?userid=<?php echo $userid; ?>&amp;cID=<?php echo $class_id; ?>&amp;sID=<?php echo $sub_id;?>"  class="btn btn-success" id="disabled" >START</a>
+      </td>
     </tr>
       <?php endwhile; ?>
   </tbody>
@@ -81,11 +77,8 @@
 <?php include ('includes/footer.php'); ?>
 <script src="includes/quitExam.js"></script>
 <script>  
-  $disabled = $("#disabled");
-  $disabled.click(function(){
-    $.each($disabled, function(){
-      console.log("ID" + this.id);
-    })
+  $("#disabled").click(function(){
+      $(this).addClass("btn btn-danger");
   });
 </script>
 

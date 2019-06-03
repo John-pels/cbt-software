@@ -1,16 +1,17 @@
 <?php
 //session_start();
-$se = mysqli_query ($con,"SELECT * FROM dosubject WHERE std_id = $takeExam && class_id = $sesGetClassId && sub_id = $sesGetSubjectId ");
+
+$se = mysqli_query ($con,"SELECT * FROM dosubject WHERE dostd_id = $takeExam && doclass_id = $sesGetClassId && dosub_id = $sesGetSubjectId ");
 $rowse = mysqli_fetch_assoc($se);
-$_SESSION['timerstudentid'] = $rowse['std_id'];
-$_SESSION['duration'] = $rowse['sub_duration'];
+// $_SESSION['timerstudentid'] = $rowse['dostd_id'];
+$_SESSION['duration'] = $rowse['duration'];
 $duration = $_SESSION['duration'];
-			$tim = $rowse['timer'];
+			$tim = $rowse['time'];
 			//No of Minute To Use
 			$expected = $duration;
 			$dateFormat = "d F Y -- g:ia";
 		// $targetDate = time() + (25*60);
-		$targetDate = strtotime($rowse['timer']) + ($expected*60);
+		$targetDate = strtotime($rowse['time']) + ($expected*60);
 
 		// echo $targetDate;
 		//Change the $expected to any minutes you want to countdown
@@ -81,7 +82,7 @@ function setCountDown()
   		 seconds = "00"; 
   		 clearInterval(SD);
    		//window.alert("Time is up. Press OK to continue."); // change timeout message as required
-  		// window.location = "timer.php" // Add your redirect url
+  		window.location = "timer.php" // Add your redirect url
  	} 
 
 }
