@@ -14,7 +14,7 @@ session_start();
     <link rel="stylesheet" type="text/css" media="screen" href="../css/admin_index.css">
         <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="../assets/font-awesome-4.7.0/css/font-awesome.min.css">
-        <link rel="shortcut icon" href="/images/tri_icon-02.png" type="image/x-icon">
+        <link rel="shortcut icon" href="../images/tri_icon-02.png" type="image/x-icon">
 </head>
 <body>
     <div class="grid-container">
@@ -25,91 +25,63 @@ session_start();
             <div class="row">
                 <div class="col-lg-6 offset-lg-6  col-md-12 col-sm-12 col-xs-12">
                 <div class="aside-bar">
-                <!-- <form action=""  enctype="multipart/form-data" method="POST" id="login-form"> -->
+                <form action=""  enctype="multipart/form-data"  id="login-form">
                         <h4 class="form-heading">Login to Continue...</h4>
+                        <p id="errorMessage"></p>
                         <div class="input-section" id="formContainer">
-                        <div class="alert alert-info" style="display: none;" id="errorMessage"></div>
                             <div class="form-input">
-                            <input type="text" name="username" id="username" placeholder="Your Username">
+                            <input type="text" name="username" id="username" placeholder="Your Username" required autofocus>
                             </div>
                             <div class="form-input2">
-                            <input type="password" name="password" id="password" placeholder=" Your Password">
+                            <input type="password" name="password" id="password" placeholder=" Your Password" required>
                             </div>
                             <center><button type="submit" name="adminLogin" id="adminLogin">Login</button></center>
                         </div>  
                 </div>
-                <!-- </form> -->
+                </form>
                 </div>
             </div>
         </div>
     </div>
-    <script type="text/javascript" src="../onlineForm/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery-3.2.1.min.js"></script>
 
     <script type="text/javascript">
         $(document).ready(function(){
-            $("#username").focusout(function(){
-                var username = $("#username").val().length;
-                if(username === "" || username < 3){
-                    $("#errorMessage").html("Please, Enter a valid Username!");
-                    $("#errorMessage").slideDown(500).delay(2000).hide(500);
-                }
-                else {
-                    $("#errorMessage").hide();
-                }
-               
-            });
-                $("#password").focusout(function(){
-                var password = $("#password").val().length;
-                    if(password ==="" || password < 3){
-                    $("#errorMessage").html("Please, Enter a valid Password!");
-                    $("#errorMessage").slideDown(500).delay(2000).hide(500);
-                }
-                else {
-                    $("#errorMessage").hide();
-                }
-            });
-            $("#adminLogin").click(function(){
-                var username = $("#username").val();
-                var password = $("#password").val();
-                if (username === "" || password === ""){
-                    $("#errorMessage").html(" All Fields are required!");
-                    $("#errorMessage").slideDown(500).delay(2000).hide(500);
-                }
-                // else if (password === "" ){
-                //     $("#errorMessage").html("Password cannot be empty!");
-                //     $("#errorMessage").slideDown(500).delay(2000).hide(500);
-                // }
-                else {
-                    $.ajax({
-                    url:"../includes/login.php",
-                    type: "POST",
-                    data:{username:username,password:password},
-                    cache: false,
-                    success: function(response){
-                        if (response == 1) {
-                            window.location = "question_portal.php";
-                        }
-                        else if (response == 2 ){
-                                $("#errorMessage").html("Username or Password is incorrect!");
-                                $("#errorMessage").slideDown(500).delay(2000).hide(500);
-                        }
-                        // else if (response === "empty"){
-                        //      $("#errorMessage").html("Username or Password is incorrect!");
-                        //         $("#errorMessage").slideDown(500).delay(2000).hide(500);
-                        // }
-                        else{
-                             $("#errorMessage").html("Username or Password is incorrect!");
-                                $("#errorMessage").slideDown(500).delay(2000).hide(500);
-                        }
+             $("#login-form").submit(function(e){
+            e.preventDefault();
+            $.ajax({
+                type: "POST",
+                url: "../includes/login.php",
+                data: new FormData(this),
+                contentType: false,
+                cache: false,
+                processData: false,
+                success: function(response){
+                    $("#adminLogin").html("Logging in...");
+                    $("#adminLogin").attr('disabled',true);
+                        console.log(response);
+
+                    // window.location = "question_portal.php";
+                    if(response == "success"){
+                        
+                        // $("#errorMessage").html("<div class='alert alert-success'>Logged in!</div>");
+                        // $("#errorMessage").show();
+                        // window.location = "add_question.php";
+                        // 
                     }
-                 
-                    
-                    
-                });
+                    else if(response == "error"){
+                         $("#errorMessage").html("<div class='alert alert-danger'>Error!</div>");
+                        $("#errorMessage").show();
+                    $("#adminLogin").html("Logging in...")
+                    $("#adminLogin").removeAttr('disabled', true);
+                    }
                 }
-                
             });
         });
+        });
+       
     </script>
+
+
 </body>
 </html>

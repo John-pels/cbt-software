@@ -244,6 +244,8 @@ icon: "success",
                                 <option value="select" >Select  Subject</option>
                             </select>
         </div>
+
+
         <div class="form-group">
           <label for="exampleInputname">Action</label>
           <select name="status" id="status" class="form-control" style="margin-bottom:10px; margin-top:10px;" required>
@@ -252,6 +254,11 @@ icon: "success",
                                 <option value="Disabled" >Disabled</option>
                             </select>
         </div>
+
+           <div class="form-group">
+          <label for="exampleInputname">Subject Duration</label>
+          <input type="text" class="form-control" id="subjectDuration" name="subjectDuration" aria-describedby="subjectDuration" placeholder="In seconds(60secs)" required="">
+    </div>
         
         <button type="submit" class="btn btn-success" name="updateStatus" style="width: 100%;">Update Status</button>
 </form>

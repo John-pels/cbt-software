@@ -61,28 +61,28 @@ if(isset($_POST['addAdmin'])){
 
 <!-- For Administrator  Login-->
     <?php
-    // $errorMessage = '';
+    // // $errorMessage = '';
 
-        // if(isset($_POST['adminLogin'])){
-          $username = addslashes($_POST['username']);   
-          $password = sha1($_POST['password']);
-                $query = mysqli_query($con, "SELECT * FROM admin where Username = '$username' && password= '$password'");
-                $rows = mysqli_num_rows($query);
-                $fetch = mysqli_fetch_array($query);
-                // if (empty($username) || empty($password)) {
-                //   $errorMessage =  "<div class='alert alert-warning'><strong>All fields are required!</strong></div>";
-                // }
-                elseif($rows === 1){
-                  $_SESSION['id'] = $fetch['id'];
-                  $_SESSION['username'] = $fetch['Username'];
-                  header("Location: question_portal.php");
-                }
+    //     // if(isset($_POST['adminLogin'])){
+    //       $username = addslashes($_POST['username']);   
+    //       $password = sha1($_POST['password']);
+    //             $query = mysqli_query($con, "SELECT * FROM admin where Username = '$username' && password= '$password'");
+    //             $rows = mysqli_num_rows($query);
+    //             $fetch = mysqli_fetch_array($query);
+    //             // if (empty($username) || empty($password)) {
+    //             //   $errorMessage =  "<div class='alert alert-warning'><strong>All fields are required!</strong></div>";
+    //             // }
+    //             else if($rows === 1){
+    //               $_SESSION['id'] = $fetch['id'];
+    //               $_SESSION['username'] = $fetch['Username'];
+    //               header("Location: question_portal.php");
+    //             }
                 
-                else {
+    //             else {
                 
-                echo "Invalid Login credentials";
-                }
-            // }
+    //             echo "Invalid Login credentials";
+    //             }
+    //         // }
     ?>
 
     <!-- For Enabling/Disabling Subjects -->
@@ -91,8 +91,9 @@ if(isset($_POST['addAdmin'])){
       $classGroup = $_POST['classGroup'];
       $subjectStatus = $_POST['subjectStatus'];
       $status = $_POST['status'];
+      $subjectDuration = $_POST['subjectDuration'];
 
-        $query = mysqli_query($con,"UPDATE subject SET status='$status' WHERE class_id = '$classGroup' && sub_id = '$subjectStatus'");
+        $query = mysqli_query($con,"UPDATE subject SET status='$status', sub_duration = '$subjectDuration' WHERE class_id = '$classGroup' && sub_id = '$subjectStatus'");
         if($query)
         {
         echo ('<script> alert.render("Status Updated Successfully!");

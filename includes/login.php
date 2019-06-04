@@ -2,9 +2,9 @@
  session_start();
  include ('config.php');
     // $errorMessage = '';
-         if(!empty($username) && !empty($password)){
+         if($_SERVER['REQUEST_METHOD'] == "POST"){
         // if(isset($_POST['adminLogin'])){
-          $username = addslashes($con,$_POST['username']);   
+          $username = addslashes($_POST['username']);   
           $password = sha1($_POST['password']);
          
          
@@ -17,13 +17,13 @@
                if ($rows == 1) 
                 {
                   $_SESSION['id'] = $userid;
-                  $_SESSION['user'] = $userid;
+                  $_SESSION['username'] = $user;
 
-                  echo "1";
+                  echo "success";
                 }
 
                 else{
-                   echo "2";
+                   echo "error";
                   // header("Location: question_portal.php");
                 }
           }
