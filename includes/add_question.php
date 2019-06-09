@@ -72,7 +72,7 @@ if(isset($_POST['addAdmin'])){
                 // if (empty($username) || empty($password)) {
                 //   $errorMessage =  "<div class='alert alert-warning'><strong>All fields are required!</strong></div>";
                 // }
-                elseif($rows === 1){
+                if($rows === 1){
                   $_SESSION['id'] = $fetch['id'];
                   $_SESSION['username'] = $fetch['Username'];
                   header("Location: question_portal.php");
