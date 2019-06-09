@@ -1,0 +1,29 @@
+ #Calculating result here.........
+   
+    // foreach($_POST['truanswer'] as $truanswer){
+    //     echo $truanswer;
+    // }
+   
+       
+    // foreach($_POST['truanswer'] as $truanswer){
+    //     $truAnswer = mysqli_query($con, "SELECT * FROM question WHERE true_answer = $truanswer");
+    //     // $fetchTruAnswer = mysqli_fetch_array($truAnswer);
+    //     // echo $fetchTruAnswer['true_answer'];
+    //     echo $truanswer;
+    // }
+
+    // foreach($_POST['questionId'] as $questionId){
+        
+           
+    //         $FindAnswerQuery = mysqli_query($con, "SELECT * FROM question WHERE true_answer = $truanswer AND id = $questionId");
+    //         $answer = mysqli_fetch_array($FindAnswerQuery);
+    //         echo $answer['true_answer'];
+    //         echo $_POST['que_'.$questionId];
+    //             if($answer['true_answer'] == $_POST['que_'.$questionId]){
+    //                 $score += $total;
+    //             }
+      
+    // }
+
+
+    // }
