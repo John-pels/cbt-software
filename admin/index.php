@@ -25,7 +25,7 @@ session_start();
             <div class="row">
                 <div class="col-lg-6 offset-lg-6  col-md-12 col-sm-12 col-xs-12">
                 <div class="aside-bar">
-                <form action=""  enctype="multipart/form-data"  id="login-form">
+                <form action=""  enctype="multipart/form-data"  id="login-form" method="post">
                         <h4 class="form-heading">Login to Continue...</h4>
                         <p id="errorMessage"></p>
                         <div class="input-section" id="formContainer">
@@ -47,33 +47,23 @@ session_start();
 
     <script type="text/javascript">
         $(document).ready(function(){
-             $("#login-form").submit(function(e){
-            e.preventDefault();
+        $("#login-form").submit(function(){
+            // e.preventDefault();
             $.ajax({
                 type: "POST",
                 url: "../includes/login.php",
                 data: new FormData(this),
                 contentType: false,
-                cache: false,
+                cache:false,
                 processData: false,
-                success: function(response){
-                    $("#adminLogin").html("Logging in...");
-                    $("#adminLogin").attr('disabled',true);
-                        console.log(response);
+                success: function(resp){
+                    if (resp == 'success') {
+                    console.log(resp);
 
-                    // window.location = "question_portal.php";
-                    if(response == "success"){
-                        
-                        // $("#errorMessage").html("<div class='alert alert-success'>Logged in!</div>");
-                        // $("#errorMessage").show();
-                        // window.location = "add_question.php";
-                        // 
                     }
-                    else if(response == "error"){
-                         $("#errorMessage").html("<div class='alert alert-danger'>Error!</div>");
-                        $("#errorMessage").show();
-                    $("#adminLogin").html("Logging in...")
-                    $("#adminLogin").removeAttr('disabled', true);
+                    else if(resp == 'error'){
+                    console.log(resp);
+
                     }
                 }
             });

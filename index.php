@@ -34,7 +34,7 @@
                         <div class="input-group-prepend" >
                         <span class="input-group-text" id="basic-addon1" style="background-color: #94CDC5;"><i class="fa fa-user" style="color: #8A82A8;"></i></span>
                         </div>
-                        <input type="text"  id="regNumber"   class="form-control" placeholder="E-Mail Address/Registration/Matric Number">
+                        <input type="text"  id="regNumber"   class="form-control" placeholder="Registration Number">
                         </div>
                                         <center>
                                         <button type="button" class="btn btn-success btn-submit" id="login">LOGIN</button>

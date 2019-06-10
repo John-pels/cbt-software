@@ -30,9 +30,11 @@ body#indexpage {
 @keyframes change {
 	from {
 		background: url('../images/4.jpg') center center;
+		background-size: 100% 100%;
 	}
 	to {
 		background: url('../images/5.jpg') center no-repeat;
+		background-size: 100% 100%;
 	}
 }
 

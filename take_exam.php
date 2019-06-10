@@ -4,21 +4,7 @@
 <?php //require ('includes/loadQuestions.php'); ?>
 <?php require ('includes/processQuestions.php'); ?>
 <?php include ('includes/header.php'); ?>
-
-
-   
-<?php
-    // Calculating the answer and submitting into the database
-    $firstanswer = $_POST['firstanswer'];
-    $secondanswer = $_POST['secondanswer'];
-    $thirdanswer = $_POST['thirdanswer'];
-    $fourthanswer = $_POST['fourthanswer'];
-
-    if (isset($_POST['firstanswer'])) {
-        echo "You clicked on ".$firstanswer;
-    }
-
-?>                                                               
+                                                            
 <?php 
 
     $takeExam = $_SESSION['id'];
@@ -32,6 +18,7 @@
 
     $sesGetClassId = $_SESSION['getClassId'];
     $sesGetSubjectId = $_SESSION['getSubjectId'];
+
 ?>
 
 <?php  
@@ -50,7 +37,7 @@
     $selectTimeRow = mysqli_num_rows($selectTime);
     $fetchTime = mysqli_fetch_assoc($selectTime);
 
-    // Checking if the student Id exist in timer table
+   // Checking if the student Id exist in timer table
     // if ( $selectTimeRow > 0 ) { // || $myDuration <=0
     //     // header("location: subjects.php?cid=$takeExam");
     //     echo "
@@ -105,21 +92,22 @@ require ('includes/timer.php');
 
                     <div class="card-body  pl-5">
                         <div class="card-title card-title-bold">Question <?php echo $countNumber = $countNumber + 1; ?> <br> <?php echo $QueTitle; ?></div>
-                        <form action="" method="POST">
+                        <form action="result.php" method="POST">
                             <div class="form-group">
-                              A  <input type="radio" name="que_<?php echo $fetchquery['id']; ?>" id="firstanswer" class="ans" value="<?php echo $option1; ?>"> <label for="firstanswer">que_<?php echo $fetchquery['id']; ?><?php echo $option1; ?></label>
+                              A  <input type="radio" name="que_<?php echo $fetchquery['id']; ?>" id="firstanswer" class="ans" value="<?php echo $option1; ?>"> <label for="firstanswer"><?php echo $option1; ?></label>
                             </div>
                             <div class="form-group">
-                              B <input type="radio" name="que_<?php echo $fetchquery['id']; ?>" id="secondanswer" class="ans" value="<?php echo $option2; ?>"> <label for="secondanswer">que_<?php echo $fetchquery['id']; ?><?php echo $option2; ?></label>
+                              B <input type="radio" name="que_<?php echo $fetchquery['id']; ?>" id="secondanswer" class="ans" value="<?php echo $option2; ?>"> <label for="secondanswer"><?php echo $option2; ?></label>
                             </div>
                             <div class="form-group">
-                             C  <input type="radio" name="que_<?php echo $fetchquery['id']; ?>" id="thirdanswer" class="ans" value="<?php echo $option3; ?>"> <label for="thirdanswer">que_<?php echo $fetchquery['id']; ?><?php echo $option3; ?></label>
+                             C  <input type="radio" name="que_<?php echo $fetchquery['id']; ?>" id="thirdanswer" class="ans" value="<?php echo $option3; ?>"> <label for="thirdanswer"><?php echo $option3; ?></label>
                             </div>
                             <div class="form-group">
-                             D   <input type="radio" name="que_<?php echo $fetchquery['id']; ?>" id="fourthanswer" class="ans" value="<?php echo $option4; ?>"> <label for="fourthanswer">que_<?php echo $fetchquery['id']; ?><?php echo $option4; ?></label>
+                             D   <input type="radio" name="que_<?php echo $fetchquery['id']; ?>" id="fourthanswer" class="ans" value="<?php echo $option4; ?>"> <label for="fourthanswer"><?php echo $option4; ?></label>
                             </div>
                             
-                            <input type="hidden" name="truanswer" id="truanswer" class="ans" value="<?php echo $TrueAnswer; ?>"> 
+                            <input type="text" name="truanswer[]" id="truanswer" class="ans" value="<?php echo $TrueAnswer; ?>"> 
+                            <input type="hidden" name="questionId[]" id="questionId" class="que" value="<?php echo $fetchquery['id']; ?>"> 
                             
                             
                             <nav aria-label="Page navigation example">
@@ -128,7 +116,7 @@ require ('includes/timer.php');
                                     <li title="Click to go to the next page"><span class="next"><i class="fa fa-angle-right"></i></span></li>
                                 </ul>
                                 </nav>
-                            </form>
+                            
                     </div>
                    
 
@@ -141,21 +129,14 @@ require ('includes/timer.php');
                                 $countQuestionNumber = mysqli_num_rows($selectquery);                     
                             ?>
                                     <label class="badge badge-info p-3" ><?php output($countQuestionNumber. " Questions"); ?></label>
-                                    <button class="btn btn-success float-right" type="submit" onclick="submitAnswer();" >SUBMIT ANSWER</button>
+                                    <!-- <button class="btn btn-success float-right" type="submit"  name="btn-result">SUBMIT ANSWER</button> -->
                      </div>
-                    
                 </div>
-
-
-                             <?php  endwhile; ?>
-                    
-                    
-                         
+                
+                             <?php  endwhile; ?>  
+                             <button class="btn btn-success float-right" type="submit"  name="btn-result">SUBMIT ANSWER</button> 
+                             </form>
                 </div>
-
-
-
-
                  </div>
 
                    
