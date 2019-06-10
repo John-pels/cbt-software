@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 03, 2019 at 04:10 PM
+-- Generation Time: Jun 10, 2019 at 03:49 PM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 7.1.7
 
@@ -87,7 +87,7 @@ CREATE TABLE `dosubject` (
 --
 
 INSERT INTO `dosubject` (`id`, `dostd_id`, `doclass_id`, `dosub_id`, `time`, `duration`, `istaken`) VALUES
-(1, 2, 2, 10, '2019-05-30 05:29:30', 0, 0);
+(1, 2, 2, 10, '2019-06-05 23:36:16', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -145,9 +145,13 @@ INSERT INTO `question` (`id`, `class_id`, `subject_id`, `question_desc`, `option
 (5, 2, 10, '&lt;p&gt;What is the capital of Lagos state?&lt;/p&gt;\r\n', 'Oyo', 'Lagos', 'Osun', 'Zamfara', 'Lagos', '2019-03-12 19:13:47'),
 (6, 2, 10, '&lt;p&gt;What is the name of the first president of federal republic of Nigeria?&lt;/p&gt;\n', 'Tafawa Balewa', 'Nnamdi Azikiwe', 'Muhammadu Buhari', 'Goodluck Jonathan', 'Nnamdi Azikiwe', '2019-04-19 22:55:44'),
 (7, 3, 17, '&lt;p&gt;What is Accounting?&lt;/p&gt;\r\n', 'Study of Life', 'Study of Chemical', 'Study of money', 'Study of body metabolism', 'Study of money', '2019-04-19 23:02:32'),
-(8, 1, 2, '\r\nWhat is the first element on the periodic table?', 'Hydrogen', 'Helium', 'Lithium', 'Berelium', 'Hydrogen', '2019-05-27 10:39:15'),
+(8, 1, 2, '\r\nWhat is the first element on the periodic table?', 'Hydrogen', 'Helium', 'Lithium', 'Berelium', 'Hydrogen', '2019-06-04 10:40:31'),
 (9, 1, 2, 'What is the centre of an atom called?', ' A nucleus', 'Mercury', 'Nuclear', 'Nuclear fission', ' A nucleus', '2019-05-27 10:39:15'),
-(10, 4, 35, '&lt;p&gt;What is SEO&lt;/p&gt;\r\n', 'Beans', 'Rice', 'Yam', 'Garri', 'Beans', '2019-05-27 15:18:49');
+(10, 4, 35, '&lt;p&gt;What is SEO&lt;/p&gt;\r\n', 'Beans', 'Rice', 'Yam', 'Garri', 'Beans', '2019-05-27 15:18:49'),
+(11, 1, 3, 'What is biology', 'Study of life', 'Study of math', 'Study of Checmistry', 'Study', 'Study of life', '2019-06-06 00:24:52'),
+(12, 1, 3, 'What is the Osmosis', 'alaye', 'Wossss!', 'Omo Oloja!!!!', 'It is the study of Nose', 'alaye', '2019-06-06 00:24:52'),
+(13, 1, 23, 'What is a computer?', 'it is a machine', 'It is a food', 'It is a table', 'It is a cat', 'it is a machine', '2019-06-06 00:36:55'),
+(14, 1, 23, 'Example of a hard drive', 'HDD', 'YYD', 'DDS', 'SSE', 'HDD', '2019-06-06 00:36:55');
 
 -- --------------------------------------------------------
 
@@ -187,7 +191,8 @@ INSERT INTO `register` (`id`, `surname`, `otherNames`, `gender`, `phoneNumber`, 
 (2, 'Olajide', 'Joshua Tomiwa', 'Male', '08327438759', '1994-05-07', '2', 'S.S.S 2', '../images/Student_Images/Olajide Joshua Tomiwa.jpg', 'C.R.S', 'Computer Studies', 'Economics', 'Fine and Applied Arts', 'French Language', 'Government', 'History', 'History', 'Yoruba Language', '84434651TECH', '2019-05-21 11:42:43'),
 (3, 'Adegoke', 'Peter Adewale', 'Male', '0808237847', '2000-03-05', '3', 'S.S.S 2', '../images/Student_Images/Adegoke Peter Adewale.jpg', 'Account', 'Commerce', 'Computer Studies', 'Government', 'Government', 'Computer Studies', 'Commerce', 'Computer Studies', 'Economics', '62947691TECH', '2019-05-21 11:46:34'),
 (4, 'olajide', 'Joshua', 'Male', '8136023230', '2019-05-08', '1', 'S.S.S 3', '../images/Student_Images/olajide Joshua.png', 'Use of English ', 'Biology', 'Mathematics', 'Chemistry', 'Physics', 'Computer Studies', 'Further Mathematics', 'Geography', 'Economics', '88530877TECH', '2019-05-24 13:24:44'),
-(5, 'Olorunfemi', 'DOminion', 'Male', '2349091652799', '1997-04-21', '4', 'S.S.S 3', '', 'SEO ', 'Select Subjects', 'Select Subjects', 'Select Subjects', 'Select Subjects', 'Select Subjects', 'Select Subjects', 'Select Subjects', 'Select Subjects', '15840303TECH', '2019-05-27 14:59:30');
+(5, 'Olorunfemi', 'DOminion', 'Male', '2349091652799', '1997-04-21', '4', 'S.S.S 3', '', 'SEO ', 'Select Subjects', 'Select Subjects', 'Select Subjects', 'Select Subjects', 'Select Subjects', 'Select Subjects', 'Select Subjects', 'Select Subjects', '15840303TECH', '2019-05-27 14:59:30'),
+(6, 'olajide', 'vhfkjvf', 'Select...', '8136023230', '', 'Select...', 'S.S.S 1', '../images/Student_Images/olajide vhfkjvf.jpg', '', '', '', '', '', '', '', '', '', '45600035TECH', '2019-06-06 15:59:05');
 
 -- --------------------------------------------------------
 
@@ -197,16 +202,16 @@ INSERT INTO `register` (`id`, `surname`, `otherNames`, `gender`, `phoneNumber`, 
 
 CREATE TABLE `std_result` (
   `id` int(11) NOT NULL,
-  `student_id` int(11) NOT NULL,
-  `subject1` int(11) NOT NULL,
-  `subject2` int(11) NOT NULL,
-  `subject3` int(11) NOT NULL,
-  `subject4` int(11) NOT NULL,
-  `subject5` int(11) NOT NULL,
-  `subject6` int(11) NOT NULL,
-  `subject7` int(11) NOT NULL,
-  `subject8` int(11) NOT NULL,
-  `subject9` int(11) NOT NULL,
+  `student_id` varchar(200) NOT NULL,
+  `subject1` varchar(200) NOT NULL,
+  `subject2` varchar(200) NOT NULL,
+  `subject3` varchar(200) NOT NULL,
+  `subject4` varchar(200) NOT NULL,
+  `subject5` varchar(200) NOT NULL,
+  `subject6` varchar(200) NOT NULL,
+  `subject7` varchar(200) NOT NULL,
+  `subject8` varchar(200) NOT NULL,
+  `subject9` varchar(200) NOT NULL,
   `subject1_score` int(11) NOT NULL,
   `subject2_score` int(11) NOT NULL,
   `subject3_score` int(11) NOT NULL,
@@ -219,6 +224,17 @@ CREATE TABLE `std_result` (
   `total` int(11) NOT NULL,
   `resultdate` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `std_result`
+--
+
+INSERT INTO `std_result` (`id`, `student_id`, `subject1`, `subject2`, `subject3`, `subject4`, `subject5`, `subject6`, `subject7`, `subject8`, `subject9`, `subject1_score`, `subject2_score`, `subject3_score`, `subject4_score`, `subject5_score`, `subject6_score`, `subject7_score`, `subject8_score`, `subject9_score`, `total`, `resultdate`) VALUES
+(1, '4', '', '', '', 'Chemistry', '', '', '', '', '', 0, 0, 0, 40, 0, 0, 0, 0, 0, 0, '2019-06-06 01:56:33'),
+(2, '2', '', '', '', '', '', 'Government', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2019-06-06 01:59:04'),
+(3, '2', '', '', '', '', '', 'Government', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2019-06-06 02:01:31'),
+(4, '2', '', '', '', '', '', 'Government', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2019-06-09 14:43:15'),
+(5, '2', '', '', '', '', '', 'Government', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2019-06-09 14:43:37');
 
 -- --------------------------------------------------------
 
@@ -375,17 +391,17 @@ ALTER TABLE `instruction`
 -- AUTO_INCREMENT for table `question`
 --
 ALTER TABLE `question`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT for table `register`
 --
 ALTER TABLE `register`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `std_result`
 --
 ALTER TABLE `std_result`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `subject`
 --
