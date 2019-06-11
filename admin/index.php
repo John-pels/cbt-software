@@ -1,7 +1,7 @@
 <?php
 session_start();
-// include_once '../includes/config.php';
-// require_once '../includes/add_question.php';
+include_once '../includes/config.php';
+require_once '../includes/add_question.php';
  ?>
 
 <!DOCTYPE html>
@@ -27,13 +27,13 @@ session_start();
                 <div class="aside-bar">
                 <form action=""  enctype="multipart/form-data"  id="login-form" method="post">
                         <h4 class="form-heading">Login to Continue...</h4>
-                        <p id="errorMessage"></p>
+                        <p id="errorMessage"><?php echo $errorMessage;?></p>
                         <div class="input-section" id="formContainer">
                             <div class="form-input">
-                            <input type="text" name="username" id="username" placeholder="Your Username" required autofocus>
+                            <input type="text" name="username" id="username" placeholder="Your Username" autofocus>
                             </div>
                             <div class="form-input2">
-                            <input type="password" name="password" id="password" placeholder=" Your Password" required>
+                            <input type="password" name="password" id="password" placeholder=" Your Password">
                             </div>
                             <center><button type="submit" name="adminLogin" id="adminLogin">Login</button></center>
                         </div>  
@@ -45,7 +45,7 @@ session_start();
     </div>
     <script type="text/javascript" src="../assets/js/jquery-3.2.1.min.js"></script>
 
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
         $(document).ready(function(){
         $("#login-form").submit(function(){
             // e.preventDefault();
@@ -70,7 +70,7 @@ session_start();
         });
         });
        
-    </script>
+    </script> -->
 
 
 </body>
