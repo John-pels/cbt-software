@@ -58,7 +58,7 @@ $d = $deptFetch['class'];
 							<!-- <div id="targetLayer">No Image</div> -->
 							<label>Upload Image FIle:</label>
 						<input type="file" name="userPassport">
-						<input type="submit" value="Upload" name="uploadImage" class="btn btn-primary">
+						<input type="submit" value="Upload" name="uploadImage" class="btn btn-primary"><span style="color:red;" class="mt-2">Not more than 150kb</span>
 						</div>
 						</form>
 					</div>

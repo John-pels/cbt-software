@@ -30,7 +30,7 @@ require ('includes/config.php');
 				Surname: <input type="text" name="surname" id="surname" placeholder="" class="form-control" autofocus>
 				Other names: <input type="text" name="otherNames" id="otherNames" placeholder="" class="form-control"  >
 				Gender: <select name="gender" id="gender" class="form-control select ml-3 ">
-					<option selected="selected">Select...</option>
+					<option selected="selected" required>Select...</option>
 					<option value="Male">Male</option>
 					<option value="Female">Female</option>
 				</select>
@@ -43,7 +43,7 @@ require ('includes/config.php');
 			<fieldset class="scheduler-border">
 				<legend class="scheduler-border ml-5">School Information:</legend>
 				<div class="form-group">
-				Department: <select name="department" id="department" class="form-control select ml-3 " onchange="showSubject1(this.value);showSubject2(this.value);showSubject3(this.value);showSubject4(this.value);showSubject5(this.value);showSubject6(this.value);showSubject7(this.value);showSubject8(this.value);showSubject9(this.value);">
+				Department: <select name="department" id="department" class="form-control select ml-3 " onchange="showSubject1(this.value);showSubject2(this.value);showSubject3(this.value);showSubject4(this.value);showSubject5(this.value);showSubject6(this.value);showSubject7(this.value);showSubject8(this.value);showSubject9(this.value);" required>
 					<option selected="selected">Select...</option>
 					<?php
 					$query = mysqli_query($con,"SELECT * FROM class");
@@ -58,60 +58,60 @@ require ('includes/config.php');
 				?>
 					
 				</select>
-				Level: <select name="level" id="level" class="form-control select ml-3 ">
+				Level: <select name="level" id="level" class="form-control select ml-3 " required>
 					<option selected="selected">Select...</option>
 					<option value="S.S.S 1">S.S.S 1</option>
 					<option value="S.S.S 2">S.S.S 2</option>
 					<option value="S.S.S 3">S.S.S 3</option>
 				</select>
 
-			<span style="float:left;">Passport:</span> <input type="file" name="passport" id="passport" placeholder="" class="form-control ml-5" ><span style="color:red;float:left;" class="mt-2">Not more than 150kb</span>
+			<!-- <span style="float:left;">Passport:</span> <input type="file" name="passport" id="passport" placeholder="" class="form-control ml-5" ><span style="color:red;float:left;" class="mt-2">Not more than 150kb</span> -->
 				</div>
 
 			</fieldset>
 			<fieldset class="scheduler-border mb-3">
 				<legend class="scheduler-border ml-5">Examination Information:</legend>
 				<div class="form-group">
-				Subject1: <select name="subject1" id="subject1" class="form-control select ml-3 ">
+				Subject1: <select name="subject1" id="subject1" class="form-control select ml-3 " required>
 					<!-- <option selected="selected">Select...</option> -->
 					
 				</select>
-				Subject2: <select name="subject2" id="subject2" class="form-control select ml-3 ">
+				Subject2: <select name="subject2" id="subject2" class="form-control select ml-3 " required>
 				
 					
 				</select>
-				Subject3: <select name="subject3" id="subject3" class="form-control select ml-3 ">
+				Subject3: <select name="subject3" id="subject3" class="form-control select ml-3 " required>
 				
 					
 				</select>
-				Subject4: <select name="subject4" id="subject4" class="form-control select ml-3 ">
+				Subject4: <select name="subject4" id="subject4" class="form-control select ml-3 " required>
 					
 					
 				</select>
-				Subject5: <select name="subject5" id="subject5" class="form-control select ml-3 ">
+				Subject5: <select name="subject5" id="subject5" class="form-control select ml-3 " required>
 				
 					
 				</select>
-				Subject6: <select name="subject6" id="subject6" class="form-control select ml-3 ">
+				Subject6: <select name="subject6" id="subject6" class="form-control select ml-3 " required>
 					
 					
 				</select>
-				Subject7: <select name="subject7" id="subject7" class="form-control select ml-3 ">
+				Subject7: <select name="subject7" id="subject7" class="form-control select ml-3 " required>
 					
 					
 				</select>
-				Subject8: <select name="subject8" id="subject8" class="form-control select ml-3 ">
+				Subject8: <select name="subject8" id="subject8" class="form-control select ml-3 " required>
 					
 					
 				</select>
-				Subject9: <select name="subject9" id="subject9" class="form-control select ml-3 ">
+				Subject9: <select name="subject9" id="subject9" class="form-control select ml-3 " required>
 					
 					
 				</select>
 				<div class="text-center">
 
-					<button type="submit" name="submitForm" id="submitForm" class="mt-3">Submit</button>
-					<input type="reset" value="Clear Form" class="m-2 btn btn-danger">
+					<button type="submit" name="submitForm" id="submitForm" class="mt-3">Proceed</button>
+			
 
 				</div>
 			</fieldset>
@@ -147,23 +147,64 @@ require ('includes/config.php');
 					subject6 = $("#subject6").val(),
 					subject7 = $("#subject7").val(),
 					subject8 = $("#subject8").val(),
-					subject9 = $("#subject9").val(),
-					passport = $("#passport").val();
+					subject9 = $("#subject9").val();
 
-					if ( surname === '' || otherNames === '' || gender === '' || phoneNumber === '' || department === '' || level === '' || subject1 === '' || subject2 === '' || subject3 === '' || subject4 === '' || subject5 === '' ||  subject6 === '' || subject7 === '' || subject8 === '' || subject9 === '') {
-						alert('Input field cannot be left empty please fill up the required datas');
-					}
+					// if ( surname === '' || otherNames === '' || gender === 'Select...' || phoneNumber === '' || department === '' || level === '' || subject1 === 'Select Subjects' || subject2 === 'Select Subjects' || subject3 === 'Select Subjects' || subject4 === 'Select Subjects' || subject5 === 'Select Subjects' ||  subject6 === 'Select Subjects' || subject7 === 'Select Subjects' || subject8 === 'Select Subjects' || subject9 === 'Select Subjects') {
+					// 	alert('Input field cannot be left empty please fill up the required datas');
+					// }
 
 					if ( surname === '') {
-						alert('Input the Surname');
+						alert('Please,Input the Surname');
 					}
 					else if(otherNames ===''){
-						alert('Input the Other Names');
+						alert('Please,Input the Other Names');
+					}
+					else if(gender ==='Select...'){
+						alert('Please,Select your Gender');
 					}
 					
+					
 					else if(phoneNumber ===''){
-						alert('Input the Phone Number');
+						alert('Please,Input the Phone Number');
 					}
+					else if(dateOfBirth ===''){
+						alert('Please,Enter the Date of Birth');
+					}
+					else if(department ==='Select...'){
+						alert('Please,Select the Department');
+					}
+					
+					else if(level ==='Select...'){
+						alert('Please,Select the Level');
+					}
+					else if(subject1 ==='Select Subjects'){
+						alert('Please,Select the First Subject');
+					}
+					else if(subject2 ==='Select Subjects'){
+						alert('Please,Select the Second Subject');
+					}
+					else if(subject3 ==='Select Subjects'){
+						alert('Please,Select the Third Subject');
+					}
+					else if(subject4 ==='Select Subjects'){
+						alert('Please,Select the Fourth Subject');
+					}
+					else if(subject5 ==='Select Subjects'){
+						alert('Please,Select the Fifth Subject');
+					}
+					else if(subject6 ==='Select Subjects'){
+						alert('Please,Select the Sixth Subject');
+					}
+					else if(subject7 ==='Select Subjects'){
+						alert('Please,Select the Seventh Subject');
+					}
+					else if(subject8 ==='Select Subjects'){
+						alert('Please,Select the Eight Subject');
+					}
+					else if(subject9 ==='Select Subjects'){
+						alert('Please,Select the Last Subject');
+					}
+
 					
 					else{
 						$.ajax({
