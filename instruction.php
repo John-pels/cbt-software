@@ -43,14 +43,14 @@
 			<div class="col-lg-9 col-sm-12 take-in"> 
 				<div class="custom mt-5 hide">
 				
-					<h2 class="" id="list-subject">Please follow the Instructions Giving below before proceeding.....</h2>
+					<h3 class="" id="list-subject" >Please follow the Instructions Giving below before proceeding.</h3>
 					<hr>
 					<?php 
 					$getinstruction = getAllInstruction();
 					while(fetchData($data,$getinstruction)): 
 					?>
-					<ul class="mt-5 ">
-						<li><?php output($data['text']); ?></li>
+					<ul class="mt-5 p-0">
+						<li style="font-size: 1rem;"><?php output($data['text']); ?></li>
 					</ul>
 					<?php endwhile; ?>
 					<?php 
